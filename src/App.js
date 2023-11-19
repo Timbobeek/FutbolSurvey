@@ -1,18 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import LoginButton from './components/LoginButton';
+import LogoutButton from './components/LogoutButton';
+import Home from './components/Home';
+import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
+  const { isLoading, error} = useAuth0();
   return (
-    <div className="App">
-      <header className="App-header">
-      &#9917; Futbol Survey &#9917;
-        <h2>Who is your favorite player?</h2>
-        <form>
-          <input type="text" id="q1answer" name="fname"/><br/>
-          <input type="submit" value="SUBMIT" className="submitBtn"/>
-        </form> 
-      </header>
-    </div>
+    <main className="welcome">
+        <h1 className="welcomeText">Welcome!</h1>
+        {error && <p>Authentication Error</p>}
+        {!error && isLoading && <p>Loading....</p>}
+        {!error && !isLoading && (
+          <>
+            <LoginButton/>
+            <LogoutButton/>
+            <Home/>
+          </>
+        )}
+    </main>
   );
 }
 
