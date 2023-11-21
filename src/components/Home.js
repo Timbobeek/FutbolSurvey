@@ -14,7 +14,8 @@ const Home = () => {
                 <input type="submit" value="SUBMIT" className="submitBtn"/>
               </form> 
             </header>
-       </div>
+            <a href="/results">Results</a>
+          </div>
         )
     )
 }

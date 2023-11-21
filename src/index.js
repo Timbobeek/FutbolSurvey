@@ -2,19 +2,48 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Results from './components/Results';
 import reportWebVitals from './reportWebVitals';
-import { Auth0Provider } from '@auth0/auth0-react';
+import { Auth0Provider, withAuthenticationRequired } from '@auth0/auth0-react';
+import { Router, Route, Routes, useNavigate, BrowserRouter } from 'react-router-dom';
 
 
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;
 const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const ProtectedRoute = ({ component, ...args }) => {
+  const Component = withAuthenticationRequired(component, args);
+  return <Component />;
+};
+
+const Auth0ProviderWithRedirectCallback = ({ children, ...props }) => {
+  const navigate = useNavigate();
+  const onRedirectCallback = (appState) => {
+    navigate((appState && appState.returnTo) || window.location.pathname);
+  };
+  return (
+    <Auth0Provider onRedirectCallback={onRedirectCallback} {...props}>
+      {children}
+    </Auth0Provider>
+  );
+};
+
 root.render(
   <React.StrictMode>
-    <Auth0Provider domain={domain} clientId={clientId} redirectUri={window.location.origin} >
-    <App />
-    </Auth0Provider>
+        <BrowserRouter>
+          <Auth0ProviderWithRedirectCallback domain={domain} clientId={clientId} authorizationParams={{redirect_uri: window.location.origin}}>
+            <Routes>
+              <Route path='/' element={<App/>} />
+              <Route path='/results' element={<ProtectedRoute component={Results}/>}/>
+            </Routes>
+          </Auth0ProviderWithRedirectCallback>
+        </BrowserRouter>
+
+        {/* <Auth0Provider domain={domain} clientId={clientId} redirectUri={window.location.origin} > */}
+
+
   </React.StrictMode>
 );
 
