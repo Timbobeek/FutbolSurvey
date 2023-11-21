@@ -5,7 +5,7 @@ import App from './App';
 import Results from './components/Results';
 import reportWebVitals from './reportWebVitals';
 import { Auth0Provider, withAuthenticationRequired } from '@auth0/auth0-react';
-import { Router, Route, Routes, useNavigate, BrowserRouter } from 'react-router-dom';
+import { Route, Routes, useNavigate, BrowserRouter } from 'react-router-dom';
 
 
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;
@@ -33,17 +33,13 @@ const Auth0ProviderWithRedirectCallback = ({ children, ...props }) => {
 root.render(
   <React.StrictMode>
         <BrowserRouter>
-          <Auth0ProviderWithRedirectCallback domain={domain} clientId={clientId} authorizationParams={{redirect_uri: window.location.origin}}>
+          <Auth0ProviderWithRedirectCallback domain={domain} clientId={clientId} authorizationParams={{redirectUri: window.location.origin}}>
             <Routes>
               <Route path='/' element={<App/>} />
               <Route path='/results' element={<ProtectedRoute component={Results}/>}/>
             </Routes>
           </Auth0ProviderWithRedirectCallback>
         </BrowserRouter>
-
-        {/* <Auth0Provider domain={domain} clientId={clientId} redirectUri={window.location.origin} > */}
-
-
   </React.StrictMode>
 );
 
