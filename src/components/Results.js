@@ -33,20 +33,21 @@ const Results = () => {
     useEffect(()=>{
         axios.get(`https://restcountries.com/v3.1/name/eesti`)
           .then(res=>{
-            setData(res.data)
-            console.log(res.data)
+            setData(res.data[0])
+            //console.log(res.data)
           })
           .catch(err =>{
             console.log(err)
           })
       },[]);
 
-      const {cca2} = data;
+      const {capital, cca2} = data;
       // i wonna have different types of data in data state
 
     return (
         <div className="welcomeText">
             The poll results will be posted here!<br></br>
+            {capital}<br></br>
             {cca2}
         </div>
     )
