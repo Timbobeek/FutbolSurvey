@@ -39,6 +39,6 @@ Poll data:
 ```
 
 
-### Figma
+### Figma Design
 
 https://www.figma.com/file/e4kXYBl9MppgQWbkeM4kse/Untitled?type=design&node-id=0-1&mode=design&t=MGOl7xFL5Ux87A8o-0 
