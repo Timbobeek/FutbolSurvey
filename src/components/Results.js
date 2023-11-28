@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { API_KEY } from "../nasastuff";
 import axios from "axios";
 import "./Results.css";
+import jersey from "../jersey.jpg";
 
 // const Results = () => {
 
@@ -68,7 +69,7 @@ const Results = () => {
       a15: "Winning State with HS",
       a16: "Want to win Kickers A league",
       a17: "Listen to your heart",
-      a18: "Trash"
+      a18: "Trash",
     },
     { 
       // title: "Tab 2",
@@ -133,16 +134,12 @@ const Results = () => {
             {Object.entries(tab).map((arr) => (
                 <p className={ arr[0] !== 'a0' ? "answers" : "answersName"}> {arr[0]} : {arr[1]} </p>
             ))}
+            {/* either show the jersey on the right side or
+            have a button on which if you click the image pops up */}
+            <img src={jersey} alt="jersey" width={400} height={600}/>
           </div>
         </div>
       ))}
-      {/* <div className="accordionContent">
-        {tabs.map((tab) => (
-          Object.entries(tab).map((key,value) => (
-            <p>{key}:{value}</p>
-          ))
-        ))}
-      </div> */}
     </div>
   );
 };
