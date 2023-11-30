@@ -1,0 +1,39 @@
+
+.resultsHeader{
+	color: yellow;
+	text-align: center;
+	font-weight: bold;
+	font-size: 2rem;
+
+}
+
+.accordionTitle {
+	cursor: pointer;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.accordionItem{
+    background-color: yellow;
+	color: green;
+}
+
+.accordionTitle + .accordionContent {
+	display: none;
+}
+
+.accordionTitle.is-open + .accordionContent {
+	display: block;
+	background-color: green;
+	color: yellow;
+}
+
+.answers{
+	display: block;
+}
+
+.answersName{
+	display: none;
+}
