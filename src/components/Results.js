@@ -137,6 +137,7 @@ const Results = () => {
             {/* either show the jersey on the right side or
             have a button on which if you click the image pops up */}
             <img src={jersey} alt="jersey" width={400} height={600}/>
+
           </div>
         </div>
       ))}
