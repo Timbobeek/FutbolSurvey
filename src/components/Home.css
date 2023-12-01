@@ -46,4 +46,8 @@
   .form{
     background-color: yellow
   }
+
+  .remove-button {
+    display: none;
+  }
   
