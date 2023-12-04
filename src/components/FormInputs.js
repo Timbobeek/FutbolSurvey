@@ -1,6 +1,8 @@
 import Billing from "./Billing"
 import OptIn from "./OptIn"
 import Shipping from "./Shipping"
+import QuestionOne from "./QuestionOne"
+import QuestionTwo from "./QuestionTwo"
 import useFormContext from "../hooks/useFormContext"
 
 const FormInputs = () => {
@@ -10,7 +12,9 @@ const FormInputs = () => {
     const display = {
         0: <Billing />,
         1: <Shipping />,
-        2: <OptIn />
+        2: <QuestionOne />,
+        3: <OptIn />,
+        4: <QuestionTwo />
     }
 
     const content = (
