@@ -10,7 +10,8 @@ export const FormProvider = ({children})=> {
         1: 'Shipping Info',
         2: 'Question 1',
         3: 'Opt-In',
-        4: 'Question 2'
+        4: 'Question 2',
+        5: 'Question 3'
     }
 
     const [page, setPage] = useState(0)
