@@ -32,7 +32,14 @@ export const FormProvider = ({children})=> {
         shipCity: "",
         shipState: "",
         shipZipCode: "",
-        optInNews: false
+        optInNews: false,
+        name: "",
+        amateur: false,
+        hs: false,
+        acad: false,
+        college: false,
+        semipro: false,
+        pro: false
     })
 
     useEffect(() => {
@@ -70,6 +77,8 @@ export const FormProvider = ({children})=> {
             ? e.target.checked
             : e.target.value
 
+        console.log(Object.keys(title).length)
+
         setData(prevData => ({
             ...prevData,
             [name]: value
@@ -77,6 +86,8 @@ export const FormProvider = ({children})=> {
     }
 
     const { billAddress2, sameAsBilling, shipAddress2, optInNews, ...requiredInputs } = data
+
+    //next/prev/submit button data validation! 25:57
 
     const canSubmit = [...Object.values(requiredInputs)].every(Boolean) && page === Object.keys(title).length - 1
 
@@ -90,12 +101,59 @@ export const FormProvider = ({children})=> {
         .map(key => data[key])
         .every(Boolean)
 
+    const canNextPage3 = Object.keys(data)
+        .filter(key => key.startsWith('name'))   //makes sure that key "name" has some value entered,
+        .map(key => data[key])
+        .every(Boolean)
+    
+    const canNextPage4 = Object.keys(data)
+        .filter(key => key.startsWith('optInNews'))   
+        .map(key => data[key])
+        .every(Boolean)
+
+    const canNextPage51 = Object.keys(data)
+        .filter(key => key.startsWith('amateur'))   
+        .map(key => data[key])
+        .every(Boolean)
+    
+    const canNextPage52 = Object.keys(data)
+        .filter(key => key.startsWith('hs'))   
+        .map(key => data[key])
+        .every(Boolean)
+    
+    const canNextPage53 = Object.keys(data)
+        .filter(key => key.startsWith('acad'))   
+        .map(key => data[key])
+        .every(Boolean)
+
+    const canNextPage54 = Object.keys(data)
+        .filter(key => key.startsWith('college'))   
+        .map(key => data[key])
+        .every(Boolean)
+
+    const canNextPage55 = Object.keys(data)
+        .filter(key => key.startsWith('semipro'))   
+        .map(key => data[key])
+        .every(Boolean)
+
+    const canNextPage56 = Object.keys(data)
+        .filter(key => key.startsWith('pro'))   
+        .map(key => data[key])
+        .every(Boolean)
+
+    ///////////////////////////////////////////////////////////
+
     const disablePrev = page === 0
+
+    // disables the next button until necessary values are entered (according to canNextPage1/2/3/etc)
 
     const disableNext =
             (page === Object.keys(title).length - 1)
             || (page === 0 && !canNextPage1)
             || (page === 1 && !canNextPage2)
+            || (page === 2 && !canNextPage3)
+            || (page === 3 && !canNextPage4)
+            || (page === 4 && !canNextPage51 && !canNextPage52 && !canNextPage53 && !canNextPage54 && !canNextPage55 && !canNextPage56 )
     
     const prevHide = page === 0 && "remove-button"
     

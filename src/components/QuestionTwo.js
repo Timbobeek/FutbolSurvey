@@ -15,8 +15,8 @@ const QuestionTwo = () => {
                     <input
                         type="checkbox"
                         id="amateur"
-                        name="amateur"
-                        value="Amateur"
+                        name="amateur"  //this is what will be filtered by
+                        checked={data.amateur}
                         onChange={handleChange}
                     />
                     <label for="amateur">Amateur</label>
@@ -25,8 +25,8 @@ const QuestionTwo = () => {
                     <input
                         type="checkbox"
                         id="hs"
-                        name="high school"
-                        value="High School"
+                        name="hs"
+                        checked={data.hs}
                         onChange={handleChange}
                     />
                     <label for="hs">High School</label>
@@ -35,8 +35,8 @@ const QuestionTwo = () => {
                     <input
                         type="checkbox"
                         id="acad"
-                        name="proacademy"
-                        value="Pro Academy"
+                        name="acad"
+                        checked={data.acad}
                         onChange={handleChange}
                     />
                     <label for="proacademy">Pro Academy</label>
@@ -46,7 +46,7 @@ const QuestionTwo = () => {
                         type="checkbox"
                         id="college"
                         name="college"
-                        value="College"
+                        checked={data.college}
                         onChange={handleChange}
                     />
                     <label for="college">College</label>
@@ -56,7 +56,7 @@ const QuestionTwo = () => {
                         type="checkbox"
                         id="semipro"
                         name="semipro"
-                        value="SemiPro"
+                        checked={data.semipro}
                         onChange={handleChange}
                     />
                     <label for="semipro">Semi-Pro</label>
@@ -66,7 +66,7 @@ const QuestionTwo = () => {
                         type="checkbox"
                         id="pro"
                         name="pro"
-                        value="Pro"
+                        checked={data.pro}
                         onChange={handleChange}
                     />
                     <label for="pro">Pro</label>

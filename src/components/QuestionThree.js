@@ -2,6 +2,7 @@ import useFormContext from "../hooks/useFormContext"
 
 //testing radio button type here! 
 
+
 const QuestionThree = () => {
 
     const {data, handleChange} = useFormContext()
@@ -16,7 +17,7 @@ const QuestionThree = () => {
                     <input
                         type="radio"
                         id="messi"
-                        name="messi"
+                        name="mr"
                         value="Messi"
                         onChange={handleChange}
                     />
@@ -26,7 +27,7 @@ const QuestionThree = () => {
                     <input
                         type="radio"
                         id="ronaldo"
-                        name="ronaldo"
+                        name="mr"
                         value="Ronaldo"
                         onChange={handleChange} 
                     />
@@ -35,7 +36,7 @@ const QuestionThree = () => {
                     <input
                         type="radio"
                         id="both"
-                        name="both"
+                        name="mr"
                         value="Both"
                         onChange={handleChange}
                     />
@@ -44,7 +45,7 @@ const QuestionThree = () => {
                     <input
                         type="radio"
                         id="neither"
-                        name="neither"
+                        name="mr"
                         value="Neither"
                         onChange={handleChange}
                     />
@@ -54,7 +55,7 @@ const QuestionThree = () => {
                     <input
                         type="radio"
                         id="idc"
-                        name="idc"
+                        name="mr"
                         value="IDC"
                         onChange={handleChange}
                     />
