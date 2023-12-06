@@ -11,7 +11,8 @@ export const FormProvider = ({children})=> {
         2: 'Question 1',
         3: 'Opt-In',
         4: 'Question 2',
-        5: 'Question 3'
+        5: 'Question 3',
+        6: 'Question 4'
     }
 
     const [page, setPage] = useState(0)
@@ -39,7 +40,14 @@ export const FormProvider = ({children})=> {
         acad: false,
         college: false,
         semipro: false,
-        pro: false
+        pro: false,
+        mr: false,
+        // messi: false,
+        // ronaldo: false,
+        // both: false,
+        // neither: false,
+        // idc: false,
+        favteam: ""
     })
 
     useEffect(() => {
@@ -73,11 +81,9 @@ export const FormProvider = ({children})=> {
 
         const name = e.target.name
 
-        const value = type === "checkbox"
+        const value = type === ("checkbox" || "radio")
             ? e.target.checked
             : e.target.value
-
-        console.log(Object.keys(title).length)
 
         setData(prevData => ({
             ...prevData,
@@ -141,6 +147,41 @@ export const FormProvider = ({children})=> {
         .map(key => data[key])
         .every(Boolean)
 
+    const canNextPage6 = Object.keys(data)
+        .filter(key => key.startsWith('mr'))   
+        .map(key => data[key])
+        .every(Boolean)
+
+    const canNextPage61 = Object.keys(data)
+        .filter(key => key.startsWith('messi'))   
+        .map(key => data[key])
+        .every(Boolean)
+
+    const canNextPage62 = Object.keys(data)
+        .filter(key => key.startsWith('ronaldo'))   
+        .map(key => data[key])
+        .every(Boolean)
+
+    const canNextPage63 = Object.keys(data)
+        .filter(key => key.startsWith('both'))   
+        .map(key => data[key])
+        .every(Boolean)
+
+    const canNextPage64 = Object.keys(data)
+        .filter(key => key.startsWith('neither'))   
+        .map(key => data[key])
+        .every(Boolean)
+
+    const canNextPage65 = Object.keys(data)
+        .filter(key => key.startsWith('idc'))   
+        .map(key => data[key])
+        .every(Boolean)
+    
+    const canNextPage7 = Object.keys(data)
+        .filter(key => key.startsWith('favteam'))
+        .map(key => data[key])
+        .every(Boolean)
+
     ///////////////////////////////////////////////////////////
 
     const disablePrev = page === 0
@@ -154,6 +195,8 @@ export const FormProvider = ({children})=> {
             || (page === 2 && !canNextPage3)
             || (page === 3 && !canNextPage4)
             || (page === 4 && !canNextPage51 && !canNextPage52 && !canNextPage53 && !canNextPage54 && !canNextPage55 && !canNextPage56 )
+            || (page === 5 && !canNextPage6)  //doesnt work properly!
+            || (page === 6 && !canNextPage7)
     
     const prevHide = page === 0 && "remove-button"
     

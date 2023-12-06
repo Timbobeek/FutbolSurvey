@@ -19,6 +19,7 @@ const QuestionThree = () => {
                         id="messi"
                         name="mr"
                         value="Messi"
+                        checked={data.mr}
                         onChange={handleChange}
                     />
                     <label for="messi">Messi</label>
@@ -29,6 +30,7 @@ const QuestionThree = () => {
                         id="ronaldo"
                         name="mr"
                         value="Ronaldo"
+                        checked={data.mr}
                         onChange={handleChange} 
                     />
                     <label for="ronaldo">Ronaldo</label>
@@ -38,6 +40,7 @@ const QuestionThree = () => {
                         id="both"
                         name="mr"
                         value="Both"
+                        checked={data.mr}
                         onChange={handleChange}
                     />
                     <label for="both">Like and respect both</label>
@@ -47,6 +50,7 @@ const QuestionThree = () => {
                         id="neither"
                         name="mr"
                         value="Neither"
+                        checked={data.mr}
                         onChange={handleChange}
                     />
                     <label for="neither">Dislike both</label>
@@ -57,6 +61,7 @@ const QuestionThree = () => {
                         id="idc"
                         name="mr"
                         value="IDC"
+                        checked={data.mr}
                         onChange={handleChange}
                     />
                     <label for="neither">Literally don't care</label>

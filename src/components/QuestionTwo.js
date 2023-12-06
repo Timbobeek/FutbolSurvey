@@ -16,6 +16,7 @@ const QuestionTwo = () => {
                         type="checkbox"
                         id="amateur"
                         name="amateur"  //this is what will be filtered by
+                        value="amateur" //this is sent to the server?
                         checked={data.amateur}
                         onChange={handleChange}
                     />
@@ -26,6 +27,7 @@ const QuestionTwo = () => {
                         type="checkbox"
                         id="hs"
                         name="hs"
+                        value="high school"
                         checked={data.hs}
                         onChange={handleChange}
                     />
@@ -36,6 +38,7 @@ const QuestionTwo = () => {
                         type="checkbox"
                         id="acad"
                         name="acad"
+                        value="pro academy"
                         checked={data.acad}
                         onChange={handleChange}
                     />
@@ -46,6 +49,7 @@ const QuestionTwo = () => {
                         type="checkbox"
                         id="college"
                         name="college"
+                        value="college"
                         checked={data.college}
                         onChange={handleChange}
                     />
@@ -56,6 +60,7 @@ const QuestionTwo = () => {
                         type="checkbox"
                         id="semipro"
                         name="semipro"
+                        value="semi-pro"
                         checked={data.semipro}
                         onChange={handleChange}
                     />
@@ -66,6 +71,7 @@ const QuestionTwo = () => {
                         type="checkbox"
                         id="pro"
                         name="pro"
+                        value="pro"
                         checked={data.pro}
                         onChange={handleChange}
                     />

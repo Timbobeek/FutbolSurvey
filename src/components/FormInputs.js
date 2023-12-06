@@ -4,6 +4,7 @@ import Shipping from "./Shipping"
 import QuestionOne from "./QuestionOne"
 import QuestionTwo from "./QuestionTwo"
 import QuestionThree from "./QuestionThree"
+import QuestionFour from "./QuestionFour"
 import useFormContext from "../hooks/useFormContext"
 
 const FormInputs = () => {
@@ -16,7 +17,8 @@ const FormInputs = () => {
         2: <QuestionOne />,
         3: <OptIn />,
         4: <QuestionTwo />,
-        5: <QuestionThree />
+        5: <QuestionThree />,
+        6: <QuestionFour />
     }
 
     const content = (
