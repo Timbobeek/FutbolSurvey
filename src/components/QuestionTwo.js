@@ -15,6 +15,7 @@ const QuestionTwo = () => {
                     <input
                         type="checkbox"
                         id="amateur"
+                        //name="level" ---> for name based validation
                         name="amateur"  //this is what will be filtered by
                         value="amateur" //this is sent to the server?
                         checked={data.amateur}
@@ -26,6 +27,7 @@ const QuestionTwo = () => {
                     <input
                         type="checkbox"
                         id="hs"
+                        //name="level"
                         name="hs"
                         value="high school"
                         checked={data.hs}
@@ -37,6 +39,7 @@ const QuestionTwo = () => {
                     <input
                         type="checkbox"
                         id="acad"
+                        //name="level"
                         name="acad"
                         value="pro academy"
                         checked={data.acad}
@@ -49,6 +52,7 @@ const QuestionTwo = () => {
                         type="checkbox"
                         id="college"
                         name="college"
+                        //name="level"
                         value="college"
                         checked={data.college}
                         onChange={handleChange}
@@ -60,6 +64,7 @@ const QuestionTwo = () => {
                         type="checkbox"
                         id="semipro"
                         name="semipro"
+                        //name="level"
                         value="semi-pro"
                         checked={data.semipro}
                         onChange={handleChange}
@@ -71,6 +76,7 @@ const QuestionTwo = () => {
                         type="checkbox"
                         id="pro"
                         name="pro"
+                        //name="level"
                         value="pro"
                         checked={data.pro}
                         onChange={handleChange}

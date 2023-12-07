@@ -17,6 +17,7 @@ export const FormProvider = ({children})=> {
 
     const [page, setPage] = useState(0)
 
+    //this is the data object that will be sent to database on the future!
     const [data, setData] = useState({
         billFirstName: "",
         billLastName: "",
@@ -35,6 +36,10 @@ export const FormProvider = ({children})=> {
         shipZipCode: "",
         optInNews: false,
         name: "",
+        // option 2 (using same name and not checked) ---> level: "",
+        // you end up with {level : "last value checked or unchecked"}, which breaks the checkbox validation
+        // we would need to redesign validation and have this object
+        // level: [pro, semipro, acad] ???
         amateur: false,
         hs: false,
         acad: false,
@@ -42,11 +47,6 @@ export const FormProvider = ({children})=> {
         semipro: false,
         pro: false,  //this stays as a boolean
         mr: false,  //this gets value later
-        // messi: true,
-        // ronaldo: false,
-        // both: false,
-        // neither: false,
-        // idc: false,
         favteam: ""
     })
 
@@ -84,7 +84,7 @@ export const FormProvider = ({children})=> {
 
         // if target is checked absent, then uses target.value
         //hence why it works for radio button where checked char is missing
-        const value = type === ("checkbox" || "radio")
+        const value = type === ( "checkbox" || "radio")
             ? e.target.checked
             : e.target.value
 
@@ -119,6 +119,12 @@ export const FormProvider = ({children})=> {
         .filter(key => key.startsWith('optInNews'))   
         .map(key => data[key])
         .every(Boolean)
+
+        // this is for name based checkbox validation
+    // const canNextPage5 = Object.keys(data)
+    //     .filter(key => key.startsWith('level'))   
+    //     .map(key => data[key])
+    //     .every(Boolean)
 
     const canNextPage51 = Object.keys(data)
         .filter(key => key.startsWith('amateur'))   
@@ -155,31 +161,6 @@ export const FormProvider = ({children})=> {
         .map(key => data[key])
         .every(Boolean)
         console.log(data)
-
-    // const canNextPage61 = Object.keys(data)
-    //     .filter(key => key.startsWith('messi'))   
-    //     .map(key => data[key])
-    //     .every(Boolean)
-
-    // const canNextPage62 = Object.keys(data)
-    //     .filter(key => key.startsWith('ronaldo'))   
-    //     .map(key => data[key])
-    //     .every(Boolean)
-
-    // const canNextPage63 = Object.keys(data)
-    //     .filter(key => key.startsWith('both'))   
-    //     .map(key => data[key])
-    //     .every(Boolean)
-
-    // const canNextPage64 = Object.keys(data)
-    //     .filter(key => key.startsWith('neither'))   
-    //     .map(key => data[key])
-    //     .every(Boolean)
-
-    // const canNextPage65 = Object.keys(data)
-    //     .filter(key => key.startsWith('idc'))   
-    //     .map(key => data[key])
-    //     .every(Boolean)
     
     const canNextPage7 = Object.keys(data)
         .filter(key => key.startsWith('favteam'))
@@ -198,9 +179,9 @@ export const FormProvider = ({children})=> {
             || (page === 1 && !canNextPage2)
             || (page === 2 && !canNextPage3)
             || (page === 3 && !canNextPage4)
+            //|| (page === 4 && !canNextPage5) for name based checkbox validation
             || (page === 4 && !canNextPage51 && !canNextPage52 && !canNextPage53 && !canNextPage54 && !canNextPage55 && !canNextPage56 )
-            || (page === 5 && !canNextPage6)  //doesnt work properly!
-            //|| (page === 5 && !canNextPage61 && !canNextPage62)
+            || (page === 5 && !canNextPage6) 
             || (page === 6 && !canNextPage7)
     
     const prevHide = page === 0 && "remove-button"
