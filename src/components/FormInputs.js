@@ -12,13 +12,10 @@ const FormInputs = () => {
     const { page } = useFormContext()
 
     const display = {
-        0: <Billing />,
-        1: <Shipping />,
-        2: <QuestionOne />,
-        3: <OptIn />,
-        4: <QuestionTwo />,
-        5: <QuestionThree />,
-        6: <QuestionFour />
+        0: <QuestionOne />,
+        1: <QuestionTwo />,
+        2: <QuestionThree />,
+        3: <QuestionFour />
     }
 
     const content = (

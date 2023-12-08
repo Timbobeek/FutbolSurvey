@@ -23,6 +23,7 @@ const QuestionThree = () => {
                         id="messi"
                         name="mr"
                         value="Messi"
+                        
                         onChange={handleChange}
                     />
                     <label for="messi">Messi</label>
@@ -33,11 +34,12 @@ const QuestionThree = () => {
                         id="ronaldo"
                         name="mr"
                         value="Ronaldo"
+                        
                         onChange={handleChange} 
                     />
                     <label for="ronaldo">Ronaldo</label>
 
-                    <input
+                    {/* <input
                         type="radio"
                         id="both"
                         name="mr"
@@ -66,7 +68,7 @@ const QuestionThree = () => {
                         //checked={data.mr}
                         onChange={handleChange}
                     />
-                    <label for="neither">Literally don't care</label>
+                    <label for="neither">Literally don't care</label> */}
 
                 </div>
             </div>
