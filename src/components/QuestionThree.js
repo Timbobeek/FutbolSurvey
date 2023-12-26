@@ -9,7 +9,7 @@ import useFormContext from "../hooks/useFormContext"
 
 const QuestionThree = () => {
 
-    const {handleChange} = useFormContext()
+    const {data, handleChange} = useFormContext()
 
     const content = (
         <div className="flex-col">
@@ -23,7 +23,7 @@ const QuestionThree = () => {
                         id="messi"
                         name="mr"
                         value="Messi"
-                        
+                        checked={data.mr === 'Messi'}
                         onChange={handleChange}
                     />
                     <label for="messi">Messi</label>
@@ -34,17 +34,17 @@ const QuestionThree = () => {
                         id="ronaldo"
                         name="mr"
                         value="Ronaldo"
-                        
+                        checked={data.mr === 'Ronaldo'}
                         onChange={handleChange} 
                     />
                     <label for="ronaldo">Ronaldo</label>
 
-                    {/* <input
+                    <input
                         type="radio"
                         id="both"
                         name="mr"
                         value="Both"
-                        //checked={data.mr}
+                        checked={data.mr === "Both"}
                         onChange={handleChange}
                     />
                     <label for="both">Like and respect both</label>
@@ -54,7 +54,7 @@ const QuestionThree = () => {
                         id="neither"
                         name="mr"
                         value="Neither"
-                        //checked={data.mr}
+                        checked={data.mr === "Neither"}
                         onChange={handleChange}
                     />
                     <label for="neither">Dislike both</label>
@@ -65,10 +65,10 @@ const QuestionThree = () => {
                         id="idc"
                         name="mr"
                         value="IDC"
-                        //checked={data.mr}
+                        checked={data.mr === "IDC"}
                         onChange={handleChange}
                     />
-                    <label for="neither">Literally don't care</label> */}
+                    <label for="neither">Literally don't care</label>
 
                 </div>
             </div>

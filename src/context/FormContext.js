@@ -1,4 +1,10 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState} from "react";
+
+
+//current bugs
+
+// 2 --- submit won't work, because currently, submit requires ALL values to be true (which is not possible rn, because of checkboxes)
+//   solution ---> rewrite submit logic 
 
 const FormContext = createContext({});
 
@@ -27,8 +33,8 @@ export const FormProvider = ({children})=> {
         college: false,
         semipro: false,
         pro: false,  //this stays as a boolean
-        mr: false,  //this gets value later
-        favteam: ""
+        mr: '',  //this gets value later ('messi' or 'ronaldo')
+        favteam: "",
     })
 
     const handleChange = e => {
@@ -47,7 +53,7 @@ export const FormProvider = ({children})=> {
             [name]: value
         }))
 
-        console.log(type,name,'zzzzzzzzzzzzzzzzzzzzzzzzzzzzz')
+        console.log(data);
     }
 
     const { ...requiredInputs } = data
