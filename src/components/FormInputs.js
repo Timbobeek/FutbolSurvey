@@ -15,7 +15,7 @@ const FormInputs = () => {
         0: <QuestionOne />,
         1: <QuestionTwo />,
         2: <QuestionThree />,
-        3: <QuestionFour />
+        3: <QuestionFour />,
     }
 
     const content = (

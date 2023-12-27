@@ -14,7 +14,7 @@ const QuestionOne = () => {
                         id="name"
                         name="name"
                         placeholder="Timmy"
-                        pattern="([A-Z])[\w+.]{1,}"
+                        //pattern="([A-Z])[\w+.]{1,}"
                         value={data.name}
                         onChange={handleChange}
                     />

@@ -15,7 +15,7 @@ export const FormProvider = ({children})=> {
         0: 'Question 1',
         1: 'Question 2',
         2: 'Question 3',
-        3: 'Question 4'
+        3: 'Question 4',
     }
 
     const [page, setPage] = useState(0)
@@ -56,11 +56,13 @@ export const FormProvider = ({children})=> {
         console.log(data);
     }
 
-    const { ...requiredInputs } = data
+    const { amateur, hs, acad, college, semipro, pro, ...requiredInputs } = data
 
     //next/prev/submit button data validation! 25:57
 
-    const canSubmit = [...Object.values(requiredInputs)].every(Boolean) && page === Object.keys(title).length - 1
+    const canSubmit = [...Object.values(requiredInputs)].every(Boolean) &&
+     (data.amateur === true || data.hs === true || data.acad === true || data.college === true || data.semipro === true || data.pro === true) 
+     && page === Object.keys(title).length - 1
 
     const canNextPage1 = Object.keys(data)
         .filter(key => key.startsWith('name'))   //makes sure that key "name" has some value entered,
@@ -112,6 +114,11 @@ export const FormProvider = ({children})=> {
         .filter(key => key.startsWith('favteam'))
         .map(key => data[key])
         .every(Boolean)
+    
+    // const canNextPage5 = Object.keys(data)
+    //     .filter(key => key.startsWith('brands'))
+    //     .map(key => data[key])
+    //     .every(Boolean)
 
     ///////////////////////////////////////////////////////////
 

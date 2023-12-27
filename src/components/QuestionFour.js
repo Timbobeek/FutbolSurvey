@@ -14,7 +14,7 @@ const QuestionFour = () => {
                         id="favteam"
                         name="favteam"
                         placeholder="Barcelona"
-                        pattern="([A-Z])[\w+.]{1,}"
+                        //pattern="([A-Z])[\w+.]{1,}"
                         value={data.favteam}
                         onChange={handleChange}
                     />
