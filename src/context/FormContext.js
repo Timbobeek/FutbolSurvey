@@ -67,12 +67,19 @@ export const FormProvider = ({children})=> {
 
     // disables the next button until necessary values are entered (according to canNextPage1/2/3/etc)
 
-    const disableNext =
-            (page === Object.keys(title).length - 1)
-            || (page === 0 && !keysFilled(['name']))
-            || (page === 1 && !keysFilled(['amateur', 'hs', 'acad', 'college', 'semipro', 'pro']))
-            || (page === 2 && !keysFilled(['mr']))
-            || (page === 3 && !keysFilled(['favteam']))
+    // const disableNext =
+    //         (page === Object.keys(title).length - 1)
+    //         || (page === 0 && !keysFilled(['name']))
+    //         || (page === 1 && !keysFilled(['amateur', 'hs', 'acad', 'college', 'semipro', 'pro']))
+    //         || (page === 2 && !keysFilled(['mr']))
+    //         || (page === 3 && !keysFilled(['favteam']))
+    
+    const enableNext =
+                (page === Object.keys(title).length - 1)
+                || (page === 0 && keysFilled(['name']))
+                || (page === 1 && keysFilled(['amateur', 'hs', 'acad', 'college', 'semipro', 'pro']))
+                || (page === 2 && keysFilled(['mr']))
+                || (page === 3 && keysFilled(['favteam']))
 
     const prevHide = page === 0 && "remove-button"
     
@@ -81,7 +88,7 @@ export const FormProvider = ({children})=> {
     const submitHide = page !== Object.keys(title).length - 1 && "remove-button"
 
     return(
-        <FormContext.Provider value={{title, page, setPage, data, setData, canSubmit, handleChange, disablePrev, disableNext, prevHide, nextHide, submitHide}}>
+        <FormContext.Provider value={{title, page, setPage, data, setData, canSubmit, handleChange, disablePrev, enableNext, prevHide, nextHide, submitHide}}>
             {children}
         </FormContext.Provider>
     )

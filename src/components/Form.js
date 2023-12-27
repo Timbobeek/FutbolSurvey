@@ -13,7 +13,7 @@ const Form = () => {
         title,
         canSubmit,
         disablePrev,
-        disableNext,
+        enableNext,
         prevHide,
         nextHide,
         submitHide
@@ -35,7 +35,7 @@ const Form = () => {
                 <h2>{title[page]}</h2>
                 <div className="button-container">
                     <button type="button" className={`button ${prevHide}`} onClick={handlePrev} disabled={disablePrev}>Prev</button>
-                    <button type="button" className={`button ${nextHide}`} onClick={handleNext} disabled={disableNext}>Next</button>
+                    <button type="button" className={`button ${nextHide}`} onClick={handleNext} disabled={!enableNext}>Next</button>
                     {/* redirect on submission pf the form written below */}
                     <button type="submit" className={`button ${submitHide}`} disabled={!canSubmit} onClick={()=> navigate('/results')}>Submit</button>
                 </div>
