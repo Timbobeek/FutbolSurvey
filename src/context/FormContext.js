@@ -1,11 +1,5 @@
 import { createContext, useState} from "react";
 
-
-//current bugs
-
-// 2 --- submit won't work, because currently, submit requires ALL values to be true (which is not possible rn, because of checkboxes)
-//   solution ---> rewrite submit logic 
-
 const FormContext = createContext({});
 
 export const FormProvider = ({children})=> {
@@ -20,13 +14,9 @@ export const FormProvider = ({children})=> {
 
     const [page, setPage] = useState(0)
 
-    //this is the data object that will be sent to database on the future!
+    //this is the data object that will be sent to database in the future!
     const [data, setData] = useState({
         name: "",
-        // option 2 (using same name and not checked) ---> level: "",
-        // you end up with {level : "last value checked or unchecked"}, which breaks the checkbox validation
-        // we would need to redesign validation and have this object
-        // level: [pro, semipro, acad] ???
         amateur: false,
         hs: false,
         acad: false,
@@ -64,14 +54,23 @@ export const FormProvider = ({children})=> {
      (data.amateur === true || data.hs === true || data.acad === true || data.college === true || data.semipro === true || data.pro === true) 
      && page === Object.keys(title).length - 1
 
+    const keyFinder = () => {
+        // look for question number
+        let num = page;
+        // get key from data based on that number 
+        let answ = (Object.keys(data))[num];
+        console.log(page, answ)
+        return answ;
+        // e.g. --> 1, data
+    }
+
     const canNextPage1 = Object.keys(data)
         .filter(key => key.startsWith('name'))   //makes sure that key "name" has some value entered,
         .map(key => data[key])
         .every(Boolean)
 
-        // this is for name based checkbox validation
-    // const canNextPage2 = Object.keys(data)
-    //     .filter(key => key.startsWith('level'))   
+    // const canNextPage1 = Object.keys(data)
+    //     .filter(key => key.startsWith(keyFinder()))   
     //     .map(key => data[key])
     //     .every(Boolean)
 
@@ -110,15 +109,15 @@ export const FormProvider = ({children})=> {
         .map(key => data[key])
         .every(Boolean)
 
+    // const canNextPage3 = Object.keys(data)
+    //     .filter(key => key.startsWith(keyFinder()))   
+    //     .map(key => data[key])
+    //     .every(Boolean)
+
     const canNextPage4 = Object.keys(data)
         .filter(key => key.startsWith('favteam'))
         .map(key => data[key])
         .every(Boolean)
-    
-    // const canNextPage5 = Object.keys(data)
-    //     .filter(key => key.startsWith('brands'))
-    //     .map(key => data[key])
-    //     .every(Boolean)
 
     ///////////////////////////////////////////////////////////
 
@@ -132,8 +131,6 @@ export const FormProvider = ({children})=> {
             || (page === 1 && !canNextPage21 && !canNextPage22 && !canNextPage23 && !canNextPage24 && !canNextPage25 && !canNextPage26)
             || (page === 2 && !canNextPage3)
             || (page === 3 && !canNextPage4)
-            //|| (page === 1 && !canNextPage2) for name based checkbox validation
-
 
     
     const prevHide = page === 0 && "remove-button"

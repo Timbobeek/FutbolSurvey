@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom"
 import useFormContext from "../hooks/useFormContext"
 import FormInputs from './FormInputs'
 
 const Form = () => {
+
+    const navigate = useNavigate();
 
     const {
         page,
@@ -33,7 +36,8 @@ const Form = () => {
                 <div className="button-container">
                     <button type="button" className={`button ${prevHide}`} onClick={handlePrev} disabled={disablePrev}>Prev</button>
                     <button type="button" className={`button ${nextHide}`} onClick={handleNext} disabled={disableNext}>Next</button>
-                    <button type="submit" className={`button ${submitHide}`} disabled={!canSubmit}>Submit</button>
+                    {/* redirect on submission pf the form written below */}
+                    <button type="submit" className={`button ${submitHide}`} disabled={!canSubmit} onClick={()=> navigate('/results')}>Submit</button>
                 </div>
             </header>
 
