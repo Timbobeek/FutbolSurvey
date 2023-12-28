@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import SurveyOne from './components/SurveyOne';
 import Results from './components/Results';
 import reportWebVitals from './reportWebVitals';
 import { Auth0Provider, withAuthenticationRequired } from '@auth0/auth0-react';
@@ -36,6 +37,7 @@ root.render(
           <Auth0ProviderWithRedirectCallback domain={domain} clientId={clientId} authorizationParams={{redirectUri: window.location.origin}}>
             <Routes>
               <Route path='/' element={<App/>} />
+              <Route path='/survey1' element={<SurveyOne/>} />
               <Route path='/results' element={<ProtectedRoute component={Results}/>}/>
             </Routes>
           </Auth0ProviderWithRedirectCallback>

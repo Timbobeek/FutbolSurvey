@@ -1,6 +1,3 @@
-import Billing from "./Billing"
-import OptIn from "./OptIn"
-import Shipping from "./Shipping"
 import QuestionOne from "./QuestionOne"
 import QuestionTwo from "./QuestionTwo"
 import QuestionThree from "./QuestionThree"

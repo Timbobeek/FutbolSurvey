@@ -29,15 +29,15 @@ const Form = () => {
     }
 
     const content = (
-        <form className="form flex-col" onSubmit={handleSubmit}>
+        <form className="formContainer" onSubmit={handleSubmit}>
 
             <header>
                 <h2>{title[page]}</h2>
                 <div className="button-container">
-                    <button type="button" className={`button ${prevHide}`} onClick={handlePrev} disabled={disablePrev}>Prev</button>
-                    <button type="button" className={`button ${nextHide}`} onClick={handleNext} disabled={!enableNext}>Next</button>
+                    <button type="button" id="surveyBtn" className={`button ${prevHide}`} onClick={handlePrev} disabled={disablePrev}>Prev</button>
+                    <button type="button" id="surveyBtn" className={`button ${nextHide}`} onClick={handleNext} disabled={!enableNext}>Next</button>
                     {/* redirect on submission pf the form written below */}
-                    <button type="submit" className={`button ${submitHide}`} disabled={!canSubmit} onClick={()=> navigate('/results')}>Submit</button>
+                    <button type="submit" id="surveyBtn" className={`button ${submitHide}`} disabled={!canSubmit} onClick={()=> navigate('/')}>Submit</button>
                 </div>
             </header>
 
