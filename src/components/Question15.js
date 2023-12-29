@@ -2,7 +2,7 @@ import useFormContext from "../hooks/useFormContext"
 
 //testing checkbox type here! 
 
-const QuestionTwo = () => {
+const Question15 = () => {
 
     const {data, handleChange} = useFormContext()
 
@@ -89,4 +89,4 @@ const QuestionTwo = () => {
 
     return content
 }
-export default QuestionTwo
+export default Question15

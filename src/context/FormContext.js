@@ -10,6 +10,17 @@ export const FormProvider = ({children})=> {
         1: 'Question 2',
         2: 'Question 3',
         3: 'Question 4',
+        4: 'Question 5',
+        5: 'Question 6',
+        6: 'Question 7',
+        7: 'Question 8',
+        8: 'Question 9',
+        9: 'Question 10',
+        10: 'Question 11',
+        11: 'Question 12',
+        12: 'Question 13',
+        13: 'Question 14',
+        14: 'Question 15',
     }
 
     const [page, setPage] = useState(0)
@@ -17,14 +28,25 @@ export const FormProvider = ({children})=> {
     //this is the data object that will be sent to database in the future!
     const [data, setData] = useState({
         name: "",
+        position: '',
+        favplayer: '',
+        mr: '',  //this gets value later ('messi' or 'ronaldo')
+        favclub: '',
+        natteam: '',
+        favleague: '',
+        favjersey: '',
+        favmemspec: '',
+        wrsmemspec: '',
+        favmemplr: '',
+        wrsmemplr: '',
+        age: '',
+        why: '',
         amateur: false,
         hs: false,
         acad: false,
         college: false,
         semipro: false,
         pro: false,  //this stays as a boolean
-        mr: '',  //this gets value later ('messi' or 'ronaldo')
-        favteam: "",
     })
 
     const handleChange = e => {
@@ -64,22 +86,25 @@ export const FormProvider = ({children})=> {
     }
 
     const disablePrev = page === 0
-
-    // disables the next button until necessary values are entered (according to canNextPage1/2/3/etc)
-
-    // const disableNext =
-    //         (page === Object.keys(title).length - 1)
-    //         || (page === 0 && !keysFilled(['name']))
-    //         || (page === 1 && !keysFilled(['amateur', 'hs', 'acad', 'college', 'semipro', 'pro']))
-    //         || (page === 2 && !keysFilled(['mr']))
-    //         || (page === 3 && !keysFilled(['favteam']))
     
     const enableNext =
-                (page === Object.keys(title).length - 1)
-                || (page === 0 && keysFilled(['name']))
-                || (page === 1 && keysFilled(['amateur', 'hs', 'acad', 'college', 'semipro', 'pro']))
-                || (page === 2 && keysFilled(['mr']))
-                || (page === 3 && keysFilled(['favteam']))
+                    (page === Object.keys(title).length - 1)
+                    || (page === 0 && keysFilled(['name']))
+                    || (page === 1 && keysFilled(['position']))
+                    || (page === 2 && keysFilled(['favplayer']))
+                    || (page === 3 && keysFilled(['mr']))
+                    || (page === 4 && keysFilled(['favclub']))
+                    || (page === 5 && keysFilled(['natteam']))
+                    || (page === 6 && keysFilled(['favleague']))
+                    || (page === 7 && keysFilled(['favjersey']))
+                    || (page === 8 && keysFilled(['favmemspec']))
+                    || (page === 9 && keysFilled(['wrsmemspec']))
+                    || (page === 10 && keysFilled(['favmemplr']))
+                    || (page === 11 && keysFilled(['wrsmemplr']))
+                    || (page === 12 && keysFilled(['age']))
+                    || (page === 13 && keysFilled(['why']))
+                    || (page === 14 && keysFilled(['amateur', 'hs', 'acad', 'college', 'semipro', 'pro']))
+
 
     const prevHide = page === 0 && "remove-button"
     

@@ -1,21 +1,21 @@
 import useFormContext from "../hooks/useFormContext"
 
-const QuestionFour = () => {
+const Question5 = () => {
 
     const {data, handleChange} = useFormContext()
 
     const content = (
         <div className="flex-col">
             <div className="split-container">
-                <p>What's your favorite team?</p>
+                <p>What's your favorite club?</p>
                 <div className="flex-col">
                     <input
                         type="text"
-                        id="favteam"
-                        name="favteam"
+                        id="favclub"
+                        name="favclub"
                         placeholder="Barcelona"
                         //pattern="([A-Z])[\w+.]{1,}"
-                        value={data.favteam}
+                        value={data.favclub}
                         onChange={handleChange}
                     />
                 </div>
@@ -25,4 +25,4 @@ const QuestionFour = () => {
 
     return content
 }
-export default QuestionFour
+export default Question5

@@ -1,13 +1,6 @@
 import useFormContext from "../hooks/useFormContext"
 
-
-//testing radio button type here! 
-
-//bug!!!
-//when going back to the form, no radio buttons are selected, although the state value is saved correctly
-
-
-const QuestionThree = () => {
+const Question4 = () => {
 
     const {data, handleChange} = useFormContext()
 
@@ -77,4 +70,4 @@ const QuestionThree = () => {
 
     return content
 }
-export default QuestionThree
+export default Question4
