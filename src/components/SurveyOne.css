@@ -1,0 +1,64 @@
+/* .Home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 60rem;
+  }
+  
+.Home-header {
+    background-color: black;
+    min-height: 10vh;
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+  } */
+
+  .surveyPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .surveyHead{
+    color: yellow;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  #q1answer{
+    width: 500px;
+    height: 40px;
+    background-color: green;
+    color: yellow;
+    font-size: large;
+    border-radius: 20px;
+  }
+  
+  .submitBtn{
+    margin-top: 20px;
+    font-size: large;
+    font-weight: bold;
+    color: green;
+    background-color: yellow;
+    width: 8em;
+    padding: 15px;
+  }
+
+  .form{
+    background-color: yellow
+  }
+
+  .remove-button {
+    display: none;
+  }
