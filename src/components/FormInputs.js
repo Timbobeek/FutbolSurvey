@@ -13,6 +13,13 @@ import Question12 from "./Question12"
 import Question13 from "./Question13"
 import Question14 from "./Question14"
 import Question15 from "./Question15"
+import Question16 from "./Question16"
+import Question17 from "./Question17"
+import Question18 from "./Question18"
+import Question19 from "./Question19"
+import Question20 from "./Question20"
+import Question21 from "./Question21"
+import Question22 from "./Question22"
 import useFormContext from "../hooks/useFormContext"
 
 const FormInputs = () => {
@@ -34,7 +41,14 @@ const FormInputs = () => {
         11: <Question12 />,
         12: <Question13 />,
         13: <Question14 />,
-        14: <Question15 />
+        14: <Question15 />,
+        15: <Question16 />,
+        16: <Question17 />,
+        17: <Question18 />,
+        18: <Question19 />,
+        19: <Question20 />,
+        20: <Question21 />,
+        21: <Question22 />,
     }
 
     const content = (

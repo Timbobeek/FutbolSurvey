@@ -31,9 +31,12 @@ Poll data:
   I started playing because: "My dad was a coach",
   Levels I played at: ---> chekboxes, can choose any/all [Amateur, Pro Youth Academy, High School, College, Semi-Pro, Pro],
   Biggest achievement so far: "Won State with City High in 2016",
-  Soccer dream/goal: "Want to wint the world cup",
+  Soccer dream/goal: "Want to win the world cup",
   Best soccer advice you have received: "Listen to your heart",
-  Jabulani is: ---> radio button (3 options [Trash, Love it, No idea], can choose one)
+  Favorite pair of cleats: "Nike Total 90",
+  Favorite ball: "Brazuca",
+  Jabulani is: ---> radio button (3 options [Trash, Love it, No idea], can choose one),
+  Best compliment ever received: "You are the best"
 }
 ```
 

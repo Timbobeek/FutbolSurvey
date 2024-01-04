@@ -21,6 +21,13 @@ export const FormProvider = ({children})=> {
         12: 'Question 13',
         13: 'Question 14',
         14: 'Question 15',
+        15: 'Question 16',
+        16: 'Question 17',
+        17: 'Question 18',
+        18: 'Question 19',
+        19: 'Question 20',
+        20: 'Question 21',
+        21: 'Question 22',
     }
 
     const [page, setPage] = useState(0)
@@ -47,6 +54,13 @@ export const FormProvider = ({children})=> {
         college: false,
         semipro: false,
         pro: false,  //this stays as a boolean
+        achv: '',
+        goals: '',
+        advc: '',
+        clt: '',
+        ball: '',
+        jabu: '',
+        love: ''
     })
 
     const handleChange = e => {
@@ -104,6 +118,13 @@ export const FormProvider = ({children})=> {
                     || (page === 12 && keysFilled(['age']))
                     || (page === 13 && keysFilled(['why']))
                     || (page === 14 && keysFilled(['amateur', 'hs', 'acad', 'college', 'semipro', 'pro']))
+                    || (page === 15 && keysFilled(['achv']))
+                    || (page === 16 && keysFilled(['goals']))
+                    || (page === 17 && keysFilled(['advc']))
+                    || (page === 18 && keysFilled(['clt']))
+                    || (page === 19 && keysFilled(['ball']))
+                    || (page === 20 && keysFilled(['jabu']))
+                    || (page === 21 && keysFilled(['love']))
 
 
     const prevHide = page === 0 && "remove-button"
