@@ -40,6 +40,39 @@ Poll data:
 }
 ```
 
+#### Backend data
+
+```json
+{
+    "name": "aa",
+    "position": "",
+    "favplayer": "",
+    "mr": "",
+    "favclub": "",
+    "natteam": "",
+    "favleague": "",
+    "favjersey": "",
+    "favmemspec": "",
+    "wrsmemspec": "",
+    "favmemplr": "",
+    "wrsmemplr": "",
+    "age": "",
+    "why": "",
+    "amateur": false,
+    "hs": false,
+    "acad": false,
+    "college": false,
+    "semipro": false,
+    "pro": false,
+    "achv": "",
+    "goals": "",
+    "advc": "",
+    "clt": "",
+    "ball": "",
+    "jabu": "",
+    "love": ""
+}
+```
 
 ### Figma Design
 
