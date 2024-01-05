@@ -13,6 +13,7 @@ const Home = () => {
             {/* <FormProvider>
               <Form className="form" />
             </FormProvider> */}
+            <h1 className="surveyHead">Choose a Survey Below</h1>
             <div className="survey1">
               <p className="surveyTitle">Survey 1</p>
               <a href="/survey1"><button className="genericBtn">Start</button></a>

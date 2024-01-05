@@ -1,9 +1,8 @@
 .Home {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
     text-align: center;
-    height: 60rem;
+    flex-direction: column;
   }
   
 .Home-header {
@@ -35,4 +34,6 @@
   .surveyTitle{
     color: green;
   }
+
+
   

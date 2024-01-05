@@ -37,7 +37,8 @@ root.render(
           <Auth0ProviderWithRedirectCallback domain={domain} clientId={clientId} authorizationParams={{redirectUri: window.location.origin}}>
             <Routes>
               <Route path='/' element={<App/>} />
-              <Route path='/survey1' element={<SurveyOne/>} />
+              {/* the one below must be protected route? */}
+              <Route path='/survey1' element={<SurveyOne/>} /> 
               <Route path='/results' element={<ProtectedRoute component={Results}/>}/>
             </Routes>
           </Auth0ProviderWithRedirectCallback>
