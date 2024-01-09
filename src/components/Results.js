@@ -141,7 +141,7 @@ const Results = () => {
           </div>
         </div>
       ))}
-      <a href="/"><button className="genericBtn">Home</button></a>
+      <a href="/"><button id="surveyBtn">Home</button></a>
     </div>
   );
 };

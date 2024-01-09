@@ -6,6 +6,10 @@
   height: 60rem;
 }
 
+button{
+  font-family: 'MuseoModerno';
+}
+
 .welcome{
   display: flex;
   flex-direction: column;
@@ -14,6 +18,7 @@
 
 .welcomeText{
   color: yellow;
+  font-size: 5em;
 }
 
 .logBtn{
@@ -21,6 +26,13 @@
   height: 40px;
   background-color: red;
   color: azure;
+  border-color: azure;
+}
+
+.logBtn:hover{
+  background-color: azure;
+  color: red;
+  border-color: red;
 }
 
 #surveyBtn{
@@ -28,6 +40,19 @@
   height: 40px;
   background-color: green;
   color: yellow;
+  border-color: yellow;
+}
+
+#surveyBtn:hover{
+  background-color: yellow;
+  color: green;
+  border-color: green;
+}
+
+#surveyBtn:disabled:hover{
+  background-color: green;
+  color: yellow;
+  border-color: yellow;
 }
 
 #surveyBtn:disabled{

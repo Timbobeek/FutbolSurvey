@@ -16,7 +16,7 @@ const Home = () => {
             <h1 className="surveyHead">Choose a Survey Below</h1>
             <div className="survey1">
               <p className="surveyTitle">Survey 1</p>
-              <a href="/survey1"><button className="genericBtn">Start</button></a>
+              <a href="/survey1"><button id="surveyBtn">Start</button></a>
               <a href="/results" className="text2">Results</a>
             </div>
           </div>
