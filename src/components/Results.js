@@ -118,7 +118,7 @@ const Results = () => {
   ];
 
   return (
-    <div>
+    <div className="resultsPage">
       <header className="resultsHeader">&#9917;Results&#9917;</header>
       {tabs.map((tab, i) => (
         <div className="accordionItem">

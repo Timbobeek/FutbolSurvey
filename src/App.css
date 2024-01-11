@@ -26,7 +26,7 @@ button{
   height: 40px;
   background-color: red;
   color: azure;
-  border-color: azure;
+  border: solid azure;
 }
 
 .logBtn:hover{
@@ -40,7 +40,7 @@ button{
   height: 40px;
   background-color: green;
   color: yellow;
-  border-color: yellow;
+  border: solid yellow;
 }
 
 #surveyBtn:hover{
