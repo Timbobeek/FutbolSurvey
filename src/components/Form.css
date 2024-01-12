@@ -1,0 +1,58 @@
+.formContainer{
+    margin-top: 10%;
+    background-color: yellow;
+    min-height: 300px;
+}
+
+.questionTitle{
+    color: black;
+    font-size: 2rem;
+}
+
+#surveyBtnBig{
+  width: 100px;
+  height: 50px;
+  background-color: green;
+  color: yellow;
+  border: solid yellow;
+  font-size: 1rem;
+}
+
+#surveyBtnBig:hover{
+    background-color: yellow;
+    color: green;
+    border-color: green;
+  }
+  
+#surveyBtnBig:disabled:hover{
+    background-color: green;
+    color: yellow;
+    border-color: yellow;
+  }
+  
+#surveyBtnBig:disabled{
+    width: 100px;
+    height: 50px;
+    background-color: green;
+    color: yellow;
+    opacity: 0.4;
+  }
+
+.questionText{
+    font-size: 1.5rem;
+}
+
+.textField{
+    width: 60%;
+    height: 50px;
+    background-color: green;
+    color: yellow;
+    font-size: 1.5rem;
+    font-family: 'MuseoModerno';
+    resize: vertical;
+}
+
+::placeholder{
+    color: yellow;
+    opacity: 40%;
+}

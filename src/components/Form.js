@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import useFormContext from "../hooks/useFormContext"
 import FormInputs from './FormInputs'
+import './Form.css';
 
 const Form = () => {
 
@@ -32,12 +33,12 @@ const Form = () => {
         <form className="formContainer" onSubmit={handleSubmit}>
 
             <header>
-                <h2>{title[page]}</h2>
+                <h2 className="questionTitle">{title[page]}</h2>
                 <div className="button-container">
-                    <button type="button" id="surveyBtn" className={`button ${prevHide}`} onClick={handlePrev} disabled={disablePrev}>Prev</button>
-                    <button type="button" id="surveyBtn" className={`button ${nextHide}`} onClick={handleNext} disabled={!enableNext}>Next</button>
+                    <button type="button" id="surveyBtnBig" className={`button ${prevHide}`} onClick={handlePrev} disabled={disablePrev}>Prev</button>
+                    <button type="button" id="surveyBtnBig" className={`button ${nextHide}`} onClick={handleNext} disabled={!enableNext}>Next</button>
                     {/* redirect on submission pf the form written below */}
-                    <button type="submit" id="surveyBtn" className={`button ${submitHide}`} disabled={!canSubmit} onClick={()=> navigate('/')}>Submit</button>
+                    <button type="submit" id="surveyBtnBig" className={`button ${submitHide}`} disabled={!canSubmit} onClick={()=> navigate('/')}>Submit</button>
                 </div>
             </header>
 

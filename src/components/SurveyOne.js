@@ -11,7 +11,8 @@ const SurveyOne = () => {
     return(
         isAuthenticated && (
           <div className="surveyPage">
-            <h1 className="surveyHead2">Welcome to Survey1!</h1>
+            <h1 className="surveyHead2">Welcome to Basic Survey!</h1>
+            <a href="/" id="goBack">Go Back</a>
             <FormProvider>
               <Form className="form" />
             </FormProvider>

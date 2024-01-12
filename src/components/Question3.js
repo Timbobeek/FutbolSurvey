@@ -9,9 +9,10 @@ const Question3 = () => {
             <div className="split-container">
                 <p>Who is your favorite player?</p>
                 <div className="flex-col">
-                    <input
+                    <textarea
                         type="text"
                         id="favplayer"
+                        className="textField"
                         name="favplayer"
                         placeholder="Ronaldinho"
                         //pattern="([A-Z])[\w+.]{1,}"
