@@ -7,7 +7,7 @@ const Question3 = () => {
     const content = (
         <div className="flex-col">
             <div className="split-container">
-                <p>Who is your favorite player?</p>
+                <p className="questionText">Who is your favorite player?</p>
                 <div className="flex-col">
                     <textarea
                         type="text"

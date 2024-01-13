@@ -6,6 +6,10 @@
   height: 60rem;
 }
 
+#loadingTxt{
+  color: yellow;
+}
+
 button{
   font-family: 'MuseoModerno';
 }

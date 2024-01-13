@@ -9,10 +9,11 @@ const Question14 = () => {
     const content = (
         <div className="flex-col">
             <div className="split-container">
-                <p>Why did you start playing?</p>
+                <p className="questionText">Why did you start playing?</p>
                 <div className="flex-col">
-                    <input
+                    <textarea
                         type="text"
+                        className="textField"
                         id="why"
                         name="why"
                         placeholder="My dad was a pro player"

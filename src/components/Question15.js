@@ -9,11 +9,12 @@ const Question15 = () => {
     const content = (
         <div className="flex-col">
             <div className="split-container">
-                <p>What level did you play at?</p>
+                <p className="questionText">What level did you play at?</p>
                 <div className="flex-col">
                     
                     <input
                         type="checkbox"
+                        className="checkboxes"
                         id="amateur"
                         //name="level" ---> for name based validation
                         name="amateur"  //this is what will be filtered by
@@ -26,6 +27,7 @@ const Question15 = () => {
                     
                     <input
                         type="checkbox"
+                        className="checkboxes"
                         id="hs"
                         //name="level"
                         name="hs"
@@ -38,6 +40,7 @@ const Question15 = () => {
                     
                     <input
                         type="checkbox"
+                        className="checkboxes"
                         id="acad"
                         //name="level"
                         name="acad"
@@ -50,6 +53,7 @@ const Question15 = () => {
                     
                     <input
                         type="checkbox"
+                        className="checkboxes"
                         id="college"
                         name="college"
                         //name="level"
@@ -62,6 +66,7 @@ const Question15 = () => {
                     
                     <input
                         type="checkbox"
+                        className="checkboxes"
                         id="semipro"
                         name="semipro"
                         //name="level"
@@ -74,6 +79,7 @@ const Question15 = () => {
                     
                     <input
                         type="checkbox"
+                        className="checkboxes"
                         id="pro"
                         name="pro"
                         //name="level"

@@ -7,10 +7,11 @@ const Question8 = () => {
     const content = (
         <div className="flex-col">
             <div className="split-container">
-                <p>What's the favorite jersey you own?</p>
+                <p className="questionText">What's the favorite jersey you own?</p>
                 <div className="flex-col">
-                    <input
+                    <textarea
                         type="text"
+                        className="textField"
                         id="favjersey"
                         name="favjersey"
                         placeholder="2004 Barcelona Puyol Away "

@@ -7,10 +7,11 @@ const Question16 = () => {
     const content = (
         <div className="flex-col">
             <div className="split-container">
-                <p>What's your biggest achievement in futbol so far?</p>
+                <p className="questionText">What's your biggest achievement in futbol so far?</p>
                 <div className="flex-col">
-                    <input
+                    <textarea
                         type="text"
+                        className="textField"
                         id="achv"
                         name="achv"
                         placeholder="Winning State with Tate High"

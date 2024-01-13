@@ -8,11 +8,12 @@ const Question21 = () => {
         <div className="flex-col">
             <div className="split-container">
 
-                <p>Jabulani ball is ...</p>
+                <p className="questionText">Jabulani ball is ...</p>
                 <div className="flex-col">
                     
                     <input
                         type="radio"
+                        className="radioButtons"
                         id="trash"
                         name="jabu"
                         value="trash"
@@ -24,6 +25,7 @@ const Question21 = () => {
                     
                     <input
                         type="radio"
+                        className="radioButtons"
                         id="enjoyable"
                         name="jabu"
                         value="enjoyable"
@@ -34,6 +36,7 @@ const Question21 = () => {
 
                     <input
                         type="radio"
+                        className="radioButtons"
                         id="noidea"
                         name="jabu"
                         value="noidea"

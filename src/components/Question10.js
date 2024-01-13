@@ -7,10 +7,11 @@ const Question10 = () => {
     const content = (
         <div className="flex-col">
             <div className="split-container">
-                <p>What's your worst futbol memory as a spectator?</p>
+                <p className="questionText">What's your worst futbol memory as a spectator?</p>
                 <div className="flex-col">
-                    <input
+                    <textarea
                         type="text"
+                        className="textField"
                         id="wrsmemspec"
                         name="wrsmemspec"
                         placeholder="Ronaldo not winning WC2022"

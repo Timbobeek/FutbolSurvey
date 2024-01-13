@@ -8,11 +8,12 @@ const Question4 = () => {
         <div className="flex-col">
             <div className="split-container">
 
-                <p>Messi or Ronaldo?</p>
+                <p className="questionText">Messi or Ronaldo?</p>
                 <div className="flex-col">
                     
                     <input
                         type="radio"
+                        className="smallRadioButtons"
                         id="messi"
                         name="mr"
                         value="Messi"
@@ -24,6 +25,7 @@ const Question4 = () => {
                     
                     <input
                         type="radio"
+                        className="smallRadioButtons"
                         id="ronaldo"
                         name="mr"
                         value="Ronaldo"
@@ -34,6 +36,7 @@ const Question4 = () => {
 
                     <input
                         type="radio"
+                        className="smallRadioButtons"
                         id="both"
                         name="mr"
                         value="Both"
@@ -44,6 +47,7 @@ const Question4 = () => {
 
                     <input
                         type="radio"
+                        className="smallRadioButtons"
                         id="neither"
                         name="mr"
                         value="Neither"
@@ -55,13 +59,14 @@ const Question4 = () => {
                     
                     <input
                         type="radio"
+                        className="smallRadioButtons"
                         id="idc"
                         name="mr"
                         value="IDC"
                         checked={data.mr === "IDC"}
                         onChange={handleChange}
                     />
-                    <label for="neither">Literally don't care</label>
+                    <label for="neither">Don't care</label>
 
                 </div>
             </div>
