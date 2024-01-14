@@ -1,10 +1,18 @@
-import ronaldo from "../jersey.jpg"
-import img1 from "../surveyImages/vennegor.jpg"
 import { useNavigate } from "react-router-dom"
 import useFormContext from "../hooks/useFormContext"
 import FormInputs from './FormInputs'
 import './Form.css';
 import { useEffect, useState } from "react";
+
+import loadingImg from "../surveyImages/danburn.jpg"
+import img1 from "../surveyImages/vennegor.jpg"
+import img2 from "../surveyImages/Soccer-Formation.png"
+import img3 from "../surveyImages/ronaldogaucho.jpg"
+import img4 from "../surveyImages/Messi-&-Ronaldo.webp"
+import img5 from "../surveyImages/morecambe.jpg"
+import img6 from "../surveyImages/usmnt.jpg"
+import img7 from "../surveyImages/prem.jpg"
+import img8 from "../surveyImages/collection.webp"
 
 const pageToColor = new Map([
     [0, "green"],
@@ -15,18 +23,24 @@ const pageToColor = new Map([
 
 const pageToImage = new Map([
     [0, `url(${img1})`],
-    [1, `url(${ronaldo})`],
+    [1, `url(${img2})`],
+    [2, `url(${img3})`],
+    [3, `url(${img4})`],
+    [4, `url(${img5})`],
+    [5, `url(${img6})`],
+    [6, `url(${img7})`],
+    [7, `url(${img8})`],
 ])
 
 const defaultColor = "yellow"
 
-const defaultImage = "none";
+const defaultImage =  "none";
 
 const Form = () => {
 
     const navigate = useNavigate();
     const [color, setColor] = useState("yellow")
-    const [image, setImage] = useState("none")
+    const [image, setImage] = useState(defaultImage)
 
     const {
         page,
@@ -59,12 +73,12 @@ const Form = () => {
     }, [page])
 
     const content = (
-        <form id="formCont" className="formContainer" onSubmit={handleSubmit} style={{backgroundImage: image}}>
+        <form id="formCont" className="formContainer" onSubmit={handleSubmit} style={{backgroundImage: image, backgroundPosition: "center", backgroundSize: "cover"}}>
             <header>
                 <h2 className="questionTitle">{title[page]}</h2>
                 <div className="button-container">
-                    <button type="button" id="surveyBtnBig" className={`button ${prevHide}`} onClick={handlePrev} disabled={disablePrev}>Prev</button>
-                    <button type="button" id="surveyBtnBig" className={`button ${nextHide}`} onClick={handleNext} disabled={!enableNext}>Next</button>
+                    <button type="button" id="surveyBtnBig" className={`button ${prevHide}`} onClick={handlePrev} disabled={disablePrev} style={{marginRight: "5px"}}>Prev</button>
+                    <button type="button" id="surveyBtnBig" className={`button ${nextHide}`} onClick={handleNext} disabled={!enableNext} style={{marginRight: "5px"}}>Next</button>
                     {/* redirect on submission pf the form written below */}
                     <button type="submit" id="surveyBtnBig" className={`button ${submitHide}`} disabled={!canSubmit} onClick={()=> navigate('/')}>Submit</button>
                 </div>

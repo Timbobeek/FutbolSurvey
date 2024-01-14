@@ -1,21 +1,21 @@
 .formContainer{
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; */
     margin-top: 10%;
     background-color: yellow;
     min-height: 350px;
-    /* background: url(/public/vennegor.jpg);
-    background-position: right right;
-    background-size: cover; */
-}
-
-.formContainer2{
-  margin-top: 10%;
-  background-color: brown;
-  min-height: 350px;
+    border-radius: 10%;
+    border: solid 10px yellow;
 }
 
 .questionTitle{
     color: black;
     font-size: 2rem;
+    /* -webkit-text-stroke-width: .05px;
+    -webkit-text-stroke-color: yellow; */
+    /* background-color: green; */
 }
 
 #surveyBtnBig{
@@ -80,3 +80,5 @@
 .smallRadioButtons{
   accent-color: green;
 }
+
+
