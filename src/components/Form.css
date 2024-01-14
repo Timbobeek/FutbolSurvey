@@ -1,10 +1,16 @@
 .formContainer{
     margin-top: 10%;
     background-color: yellow;
-    min-height: 300px;
+    min-height: 350px;
     /* background: url(/public/vennegor.jpg);
     background-position: right right;
     background-size: cover; */
+}
+
+.formContainer2{
+  margin-top: 10%;
+  background-color: brown;
+  min-height: 350px;
 }
 
 .questionTitle{

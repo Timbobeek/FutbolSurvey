@@ -1,24 +1,3 @@
-/* .Home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 60rem;
-  }
-  
-.Home-header {
-    background-color: black;
-    min-height: 10vh;
-    max-width: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-    padding: 20px;
-    border-radius: 20px;
-  } */
 
   .surveyPage{
     display: flex;
@@ -36,7 +15,7 @@
 
   #goBack{
     color: green;
-    font-size: large;
+    font-size: 2rem;
   }
   
   /* .App-link {
