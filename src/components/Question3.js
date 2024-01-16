@@ -14,7 +14,7 @@ const Question3 = () => {
                         id="favplayer"
                         className="textField"
                         name="favplayer"
-                        placeholder="Ronaldinho"
+                        placeholder="Ronaldo"
                         //pattern="([A-Z])[\w+.]{1,}"
                         value={data.favplayer}
                         onChange={handleChange}

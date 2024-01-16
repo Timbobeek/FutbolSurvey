@@ -6,9 +6,9 @@ export const FormProvider = ({children})=> {
 
     // this code defines the order of pages and where is the submit button at! and title for each
     const title = {
-        0: 'Question 1',
-        1: 'Question 2',
-        2: 'Question 3',
+        0: '#22',  // change this back!!!
+        1: '#2',
+        2: '#3',
         3: 'Question 4',
         4: 'Question 5',
         5: 'Question 6',

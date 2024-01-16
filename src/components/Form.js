@@ -14,12 +14,12 @@ import img6 from "../surveyImages/usmnt.jpg"
 import img7 from "../surveyImages/prem.jpg"
 import img8 from "../surveyImages/collection.webp"
 
-const pageToColor = new Map([
-    [0, "green"],
-    [1, "yellow"],
-    [2, "red"],
-    [3, "blue"]
-])
+// const pageToColor = new Map([
+//     [0, "green"],
+//     [1, "yellow"],
+//     [2, "red"],
+//     [3, "blue"]
+// ])
 
 const pageToImage = new Map([
     [0, `url(${img1})`],
@@ -32,15 +32,22 @@ const pageToImage = new Map([
     [7, `url(${img8})`],
 ])
 
-const defaultColor = "yellow"
+const pageToButtonPosition = new Map([
+    [0, "flex-end"]
+])
+
+// const defaultColor = "yellow"
 
 const defaultImage =  "none";
+
+const defaultButtonPosition = "space-between";
 
 const Form = () => {
 
     const navigate = useNavigate();
-    const [color, setColor] = useState("yellow")
+    // const [color, setColor] = useState(defaultColor)
     const [image, setImage] = useState(defaultImage)
+    const [position, setPosition] = useState(defaultButtonPosition)
 
     const {
         page,
@@ -65,28 +72,50 @@ const Form = () => {
     }
 
     useEffect(() => {
-        const color = pageToColor.get(page) ?? defaultColor
-        setColor(color)
+        // const color = pageToColor.get(page) ?? defaultColor
+        // setColor(color)
         const image = pageToImage.get(page) ?? defaultImage
-        console.log(image);
         setImage(image)
+        const position = pageToButtonPosition.get(page) ?? defaultButtonPosition
+        setPosition(position)
     }, [page])
 
+    // const content = (
+    //     <form id="formCont" className="formContainer" onSubmit={handleSubmit} 
+    //         style={{backgroundImage: image, backgroundPosition: "center", backgroundSize: "cover"}}
+    //     >
+    //         <header>
+    //             <h2 className="questionTitle">{title[page]}</h2>
+    //             <div className="button-container">
+    //                 <button type="button" id="surveyBtnBig" className={`button ${prevHide}`} onClick={handlePrev} disabled={disablePrev} style={{marginRight: "5px"}}>Prev</button>
+    //                 <button type="button" id="surveyBtnBig" className={`button ${nextHide}`} onClick={handleNext} disabled={!enableNext} style={{marginRight: "5px"}}>Next</button>
+    //                 {/* redirect on submission pf the form written below */}
+    //                 <button type="submit" id="surveyBtnBig" className={`button ${submitHide}`} disabled={!canSubmit} onClick={()=> navigate('/')}>Submit</button>
+    //             </div>
+    //         </header>
+
+    //         <FormInputs/>
+
+    //     </form>
+    //)
+
     const content = (
-        <form id="formCont" className="formContainer" onSubmit={handleSubmit} style={{backgroundImage: image, backgroundPosition: "center", backgroundSize: "cover"}}>
-            <header>
-                <h2 className="questionTitle">{title[page]}</h2>
-                <div className="button-container">
-                    <button type="button" id="surveyBtnBig" className={`button ${prevHide}`} onClick={handlePrev} disabled={disablePrev} style={{marginRight: "5px"}}>Prev</button>
-                    <button type="button" id="surveyBtnBig" className={`button ${nextHide}`} onClick={handleNext} disabled={!enableNext} style={{marginRight: "5px"}}>Next</button>
-                    {/* redirect on submission pf the form written below */}
-                    <button type="submit" id="surveyBtnBig" className={`button ${submitHide}`} disabled={!canSubmit} onClick={()=> navigate('/')}>Submit</button>
+            <form id="formCont" className="formContainer" onSubmit={handleSubmit} style={{backgroundImage: image, backgroundPosition: "center", backgroundSize: "cover"}}>
+                
+                <div className="questionTitle">{title[page]}</div>
+
+                <div className="formBottom">
+                    <div className="button-container" style={{display: "flex", justifyContent: position }}>
+                        <button type="button" id="surveyBtnBig" className={`button ${prevHide}`} onClick={handlePrev} disabled={disablePrev} >Prev</button>
+                        <button type="button" id="surveyBtnBig" className={`button ${nextHide}`} onClick={handleNext} disabled={!enableNext} >Next</button>
+                        {/* redirect on submission pf the form written below */}
+                        <button type="submit" id="surveyBtnBig" className={`button ${submitHide}`} disabled={!canSubmit} onClick={()=> navigate('/')}>Submit</button>
+                    </div>
+                    <FormInputs/>
                 </div>
-            </header>
 
-            <FormInputs/>
+            </form>
 
-        </form>
     )
 
     return content
