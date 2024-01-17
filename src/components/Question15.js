@@ -22,7 +22,7 @@ const Question15 = () => {
                         checked={data.amateur}
                         onChange={handleChange}
                     />
-                    <label for="amateur">Amateur</label>
+                    <label for="amateur" className="checkboxText">Amateur</label>
 
                     
                     <input
@@ -35,7 +35,7 @@ const Question15 = () => {
                         checked={data.hs}
                         onChange={handleChange}
                     />
-                    <label for="hs">High School</label>
+                    <label for="hs" className="checkboxText">High School</label>
 
                     
                     <input
@@ -48,7 +48,7 @@ const Question15 = () => {
                         checked={data.acad}
                         onChange={handleChange}
                     />
-                    <label for="proacademy">Pro Academy</label>
+                    <label for="proacademy" className="checkboxText">Pro Academy</label>
 
                     
                     <input
@@ -61,7 +61,7 @@ const Question15 = () => {
                         checked={data.college}
                         onChange={handleChange}
                     />
-                    <label for="college">College</label>
+                    <label for="college" className="checkboxText">College</label>
 
                     
                     <input
@@ -74,7 +74,7 @@ const Question15 = () => {
                         checked={data.semipro}
                         onChange={handleChange}
                     />
-                    <label for="semipro">Semi-Pro</label>
+                    <label for="semipro" className="checkboxText">Semi-Pro</label>
 
                     
                     <input
@@ -87,7 +87,7 @@ const Question15 = () => {
                         checked={data.pro}
                         onChange={handleChange}
                     />
-                    <label for="pro">Pro</label>
+                    <label for="pro" className="checkboxText">Pro</label>
                 </div>
             </div>
         </div>

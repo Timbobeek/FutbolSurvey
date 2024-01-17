@@ -13,6 +13,20 @@ import img5 from "../surveyImages/morecambe.jpg"
 import img6 from "../surveyImages/usmnt.jpg"
 import img7 from "../surveyImages/prem.jpg"
 import img8 from "../surveyImages/collection.webp"
+import img9 from "../surveyImages/liverpool.avif"
+import img10 from "../surveyImages/brazilgermany.jpg"
+import img11 from "../surveyImages/hawklooong.jpg"
+import img12 from "../surveyImages/urnpublinjury.webp"
+import img13 from "../surveyImages/kids.jpg"
+import img14 from "../surveyImages/son.jpg"
+import img15 from "../surveyImages/level.webp"
+import img16 from "../surveyImages/worldcup.webp"
+import img17 from "../surveyImages/achievement.webp"
+import img18 from "../surveyImages/advice.webp"
+import img19 from "../surveyImages/total.webp"
+import img20 from "../surveyImages/brazuca.jpg"
+import img21 from "../surveyImages/jabulani.avif"
+import img22 from "../surveyImages/klopp.jpg"
 
 // const pageToColor = new Map([
 //     [0, "green"],
@@ -30,6 +44,20 @@ const pageToImage = new Map([
     [5, `url(${img6})`],
     [6, `url(${img7})`],
     [7, `url(${img8})`],
+    [8, `url(${img9})`],
+    [9, `url(${img10})`],
+    [10, `url(${img11})`],
+    [11, `url(${img12})`],
+    [12, `url(${img13})`],
+    [13, `url(${img14})`],
+    [14, `url(${img15})`],
+    [15, `url(${img16})`],
+    [16, `url(${img17})`],
+    [17, `url(${img18})`],
+    [18, `url(${img19})`],
+    [19, `url(${img20})`],
+    [20, `url(${img21})`],
+    [21, `url(${img22})`],
 ])
 
 const pageToButtonPosition = new Map([

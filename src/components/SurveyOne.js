@@ -10,10 +10,13 @@ const SurveyOne = () => {
         isAuthenticated && (
           <div className="surveyPage">
             <h1 className="surveyHead2">Welcome to Basic Survey!</h1>
-            <a href="/" id="goBack">Go Back</a>
+            <a href="/" id="goBack">HOME</a>
+
             <FormProvider>
               <Form className="form" />
             </FormProvider>
+
+
           </div>
         )
     )
