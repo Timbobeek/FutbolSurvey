@@ -7,7 +7,7 @@ const Question12 = () => {
     const content = (
         <div className="flex-col">
             <div className="split-container">
-                <p className="questionText">What's your worst futbol memory as a player?</p>
+                <p className="questionTextLong">What's your worst futbol memory <br/> as a player?</p>
                 <div className="flex-col">
                     <textarea
                         type="text"

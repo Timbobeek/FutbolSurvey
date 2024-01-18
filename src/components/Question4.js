@@ -20,7 +20,7 @@ const Question4 = () => {
                         checked={data.mr === 'Messi'}
                         onChange={handleChange}
                     />
-                    <label for="messi">Messi</label>
+                    <label for="messi" className="radioText">Messi</label>
 
                     
                     <input
@@ -32,7 +32,7 @@ const Question4 = () => {
                         checked={data.mr === 'Ronaldo'}
                         onChange={handleChange} 
                     />
-                    <label for="ronaldo">Ronaldo</label>
+                    <label for="ronaldo" className="radioText">Ronaldo</label>
 
                     <input
                         type="radio"
@@ -43,7 +43,7 @@ const Question4 = () => {
                         checked={data.mr === "Both"}
                         onChange={handleChange}
                     />
-                    <label for="both">Like and respect both</label>
+                    <label for="both" className="radioText">Like and respect both</label>
 
                     <input
                         type="radio"
@@ -54,7 +54,7 @@ const Question4 = () => {
                         checked={data.mr === "Neither"}
                         onChange={handleChange}
                     />
-                    <label for="neither">Dislike both</label>
+                    <label for="neither" className="radioText">Dislike both</label>
 
                     
                     <input
@@ -66,7 +66,7 @@ const Question4 = () => {
                         checked={data.mr === "IDC"}
                         onChange={handleChange}
                     />
-                    <label for="neither">Don't care</label>
+                    <label for="neither" className="radioText">Don't care</label>
 
                 </div>
             </div>

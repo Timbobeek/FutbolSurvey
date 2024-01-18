@@ -20,7 +20,7 @@ const Question21 = () => {
                         checked={data.jabu === 'trash'}
                         onChange={handleChange}
                     />
-                    <label for="trash">Trash</label>
+                    <label for="trash" className="radioText">Trash</label>
 
                     
                     <input
@@ -32,7 +32,7 @@ const Question21 = () => {
                         checked={data.jabu === 'enjoyable'}
                         onChange={handleChange} 
                     />
-                    <label for="enjoyable">Enjoyable</label>
+                    <label for="enjoyable" className="radioText">Enjoyable</label>
 
                     <input
                         type="radio"
@@ -43,7 +43,7 @@ const Question21 = () => {
                         checked={data.jabu === "noidea"}
                         onChange={handleChange}
                     />
-                    <label for="noidea">No idea</label>
+                    <label for="noidea" className="radioText">No idea</label>
 
                 </div>
             </div>
