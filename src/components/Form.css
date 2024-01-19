@@ -6,7 +6,8 @@
     margin-top: 10%;
     background-color: yellow;
     min-height: 350px;
-    border-radius: 10%;
+    /* border-radius: 10%; */
+    border-radius: 52px;
     border: solid 10px yellow;
     background-color: yellow;
     width: 600px;
@@ -25,6 +26,20 @@
     /* -webkit-text-stroke-width: .5px;
     -webkit-text-stroke-color: yellow; */
     background-color: yellow;
+    z-index: 2;
+}
+
+.bannerImg{
+  height: 350px;
+  width: 600px;
+  z-index: 0;
+  position: absolute;
+  border-top-right-radius: 45px;
+  border-top-left-radius: 45px;
+}
+
+.formBottom{
+  z-index: 1;
 }
 
 .button-container{
