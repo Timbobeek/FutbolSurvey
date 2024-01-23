@@ -17,12 +17,16 @@
 }
 
 .accordionTitle {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 	cursor: pointer;
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
 	text-align: center;
+	height: 20px;
 }
 
 .accordionItem{
@@ -54,5 +58,19 @@
 
 .answersName{
 	display: none;
+}
+
+.arrow{
+  border: solid green;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.accordionTitle.is-open .arrow{
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
 }
 

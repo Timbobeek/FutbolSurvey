@@ -28,7 +28,6 @@ import jersey from "../jersey.jpg";
 //     )
 // }
 
-const defaultColor = "yellow";
 
 function switchTab(tabId) {
   const accordionTitle = document.getElementById(tabId);
@@ -50,15 +49,19 @@ function switchTab(tabId) {
 const Results = () => {
 
   // const [color, setColor] = useState(defaultColor)
+  // const [isOpen, setIsOpen] = useState(false)
+  // // const nameClick = document.querySelector(".is-open");
 
   // useEffect(() => {
   //   // on accordion click, color changes?
-  //   const nameClick = document.querySelector(".is-open")
-  //   console.log("asdsadsad",nameClick);
-  //   if (nameClick !== "null"){
+  //   // console.log("asdsadsad",nameClick);
+  //   if (isOpen){
   //     setColor("blue")
   //   }
-  // },[])
+  //   else {
+  //     setColor(defaultColor);
+  //   }
+  // },[isOpen])
 
   //replace const below with the actual data coming from an api
   const tabs = [
@@ -144,21 +147,22 @@ const Results = () => {
           <h2
             id={`accordionTitle-${i}`}
             className="accordionTitle"
-            onClick={() => switchTab(`accordionTitle-${i}`)}
+            onClick={() => {
+              switchTab(`accordionTitle-${i}`);
+            }}
           >
+            <div><i className="arrow"/></div>
             <p>{tab.a0}</p>
+            <div><i className="arrow"/></div>
           </h2>
           <div className="accordionContent">
-            {console.log(Object.entries(tab)[0])}
+            {/* {console.log(Object.entries(tab)[0])} */}
             {Object.entries(tab).map((arr) => (
                 <p className={ arr[0] !== 'a0' ? "answers" : "answersName"}> {arr[0]} : {arr[1]} </p>
             ))}
           </div>
         </div>
       ))}
-
-    <div className="test1">sadasdddasd</div>
-
     </div>
   );
 };
