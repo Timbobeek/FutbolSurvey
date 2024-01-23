@@ -28,6 +28,8 @@ import jersey from "../jersey.jpg";
 //     )
 // }
 
+const defaultColor = "yellow";
+
 function switchTab(tabId) {
   const accordionTitle = document.getElementById(tabId);
   if (!accordionTitle) {
@@ -47,29 +49,43 @@ function switchTab(tabId) {
 
 const Results = () => {
 
+  // const [color, setColor] = useState(defaultColor)
+
+  // useEffect(() => {
+  //   // on accordion click, color changes?
+  //   const nameClick = document.querySelector(".is-open")
+  //   console.log("asdsadsad",nameClick);
+  //   if (nameClick !== "null"){
+  //     setColor("blue")
+  //   }
+  // },[])
+
   //replace const below with the actual data coming from an api
   const tabs = [
     { 
       // title: "Tab 1",
       a0: "Jessica Knoxman",
-      a1: "Midfield",
-      a2: "Cristiano Ronaldo",
-      a3: "Messi",
-      a4: "Bayern Munchen",
-      a5: "Australia",
-      a6: "Bundesliga",
-      a7: "2007 Barcelona Away Puyol ",
-      a8: "The Invincibles Arsenal Season",
-      a9: "Arsen Wenger leaving Arsenal",
-      a10: "Scoring a double in the HS State final",
-      a11: "Breaking my knee freshman year college",
-      a12: "7",
-      a13: "My parents signed me up for a local club",
-      a14: "Semi-Pro",
-      a15: "Winning State with HS",
-      a16: "Want to win Kickers A league",
-      a17: "Listen to your heart",
-      a18: "Trash",
+      "Favorite position": "Midfield",
+      "Favorite player": "Cristiano Ronaldo",
+      "Messi or Ronaldo": "Messi",
+      "Favorite club": "Bayern Munchen",
+      "Favorite national team": "Australia",
+      "Favorite league": "Bundesliga",
+      "Favorite jersey I own": "2007 Barcelona Away Puyol ",
+      "Favorite memory as a specator": "The Invincibles Arsenal Season",
+      "Worst memory as a spectator": "Arsen Wenger leaving Arsenal",
+      "Favorite memory as a player": "Scoring a double in the HS State final",
+      "Worst memory as a player": "Breaking my knee freshman year college",
+      "I started playing at": "7",
+      "I started playing because": "My parents signed me up for a local club",
+      "Levels I played at": "Semi-Pro",
+      "My biggest achievement is": "Winning State with HS",
+      "My futbol-related goal is": "Want to win Kickers A league",
+      "Best futbol advice I have received": "Listen to your heart",
+      "Favorite pair of cleats": "Nike Total 90",
+      "Favorite ball": "Brazuca",
+      "Jabulani is": "Trash",
+      "Best compliment I received": "Your touch is magical"
     },
     { 
       // title: "Tab 2",
@@ -119,7 +135,10 @@ const Results = () => {
 
   return (
     <div className="resultsPage">
-      <header className="resultsHeader">&#9917;Results&#9917;</header>
+      <header className="resultsHeader">Results</header>
+      <a href="/" className="resultsHome"><button id="surveyBtn">Home</button></a>
+
+
       {tabs.map((tab, i) => (
         <div className="accordionItem">
           <h2
@@ -134,14 +153,12 @@ const Results = () => {
             {Object.entries(tab).map((arr) => (
                 <p className={ arr[0] !== 'a0' ? "answers" : "answersName"}> {arr[0]} : {arr[1]} </p>
             ))}
-            {/* either show the jersey on the right side or
-            have a button on which if you click the image pops up */}
-            <img src={jersey} alt="jersey" width={400} height={600}/>
-
           </div>
         </div>
       ))}
-      <a href="/"><button id="surveyBtn">Home</button></a>
+
+    <div className="test1">sadasdddasd</div>
+
     </div>
   );
 };

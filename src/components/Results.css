@@ -1,10 +1,19 @@
 
+.resultsPage{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .resultsHeader{
 	color: yellow;
-	text-align: center;
 	font-weight: bold;
-	font-size: 2rem;
+	font-size: 5em;
+	margin-top: 40px; 
+}
 
+.resultsHome{
+	margin: 30px;
 }
 
 .accordionTitle {
@@ -13,27 +22,37 @@
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	text-align: center;
 }
 
 .accordionItem{
+	width: 820px;
     background-color: yellow;
 	color: green;
+	margin-bottom: 10px;
 }
 
-.accordionTitle + .accordionContent {
-	display: none;
-}
-
-.accordionTitle.is-open + .accordionContent {
-	display: block;
+.accordionContent {
 	background-color: green;
 	color: yellow;
 }
 
+.accordionTitle + .accordionContent {
+	overflow: hidden;
+	max-height: 0px;
+	transition: all 0.7s ease-in;
+}
+
+.accordionTitle.is-open + .accordionContent {
+	max-height: 35em;
+}
+
 .answers{
 	display: block;
+	margin: 0px;
 }
 
 .answersName{
 	display: none;
 }
+
