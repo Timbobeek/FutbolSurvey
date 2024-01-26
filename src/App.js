@@ -8,9 +8,10 @@ function App() {
   const { isLoading, error} = useAuth0();
   return (
     <main className="welcome">
+      {/* <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro"></link> */}
         <h1 className="welcomeText">Welcome!</h1>
         {error && <p>Authentication Error</p>}
-        {!error && isLoading && <p>Loading....</p>}
+        {!error && isLoading && <p id='loadingTxt'>Loading....</p>}
         {!error && !isLoading && (
           <>
             <LoginButton/>

@@ -7,13 +7,14 @@ const Question3 = () => {
     const content = (
         <div className="flex-col">
             <div className="split-container">
-                <p>Who is your favorite player?</p>
+                <p className="questionText">Who is your favorite player?</p>
                 <div className="flex-col">
-                    <input
+                    <textarea
                         type="text"
                         id="favplayer"
+                        className="textField"
                         name="favplayer"
-                        placeholder="Ronaldinho"
+                        placeholder="Ronaldo"
                         //pattern="([A-Z])[\w+.]{1,}"
                         value={data.favplayer}
                         onChange={handleChange}

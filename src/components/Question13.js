@@ -7,15 +7,23 @@ const Question13 = () => {
     const content = (
         <div className="flex-col">
             <div className="split-container">
-                <p>At what age did you start playing?</p>
-                <div className="flex-col">
+                <p className="questionText">At what age did you start playing?</p>
+                <div className="flex-col number">
                     <input
-                        type="number"
+                        // type="number"
+                        type="text"
+                        min={0}
+                        className="textField"
                         id="age"
                         name="age"
                         placeholder="4"
                         value={data.age}
                         onChange={handleChange}
+                        onKeyPress={(event) => {
+                            if (!/[0-9]/.test(event.key)) {
+                              event.preventDefault();
+                            }
+                          }}
                     />
                 </div>
             </div>

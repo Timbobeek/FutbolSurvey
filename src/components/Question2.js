@@ -8,49 +8,53 @@ const Question2 = () => {
         <div className="flex-col">
             <div className="split-container">
 
-                <p>Favorite position?</p>
-                <div className="flex-col">
+                <p className="questionText">Favorite position?</p>
+                <div className="flex-col radioBtns">
                     
                     <input
                         type="radio"
+                        className="radioButtons"
                         id="gk"
                         name="position"
                         value="Goalkeeping"
                         checked={data.position === 'Goalkeeping'} //value
                         onChange={handleChange}
                     />
-                    <label for="gk">GK</label>
+                    <label for="gk" className="radioText">GK</label>
 
                     
                     <input
                         type="radio"
+                        className="radioButtons"
                         id="def"
                         name="position"
                         value="Defense"
                         checked={data.position === 'Defense'}
                         onChange={handleChange} 
                     />
-                    <label for="defense">DEF</label>
+                    <label for="defense" className="radioText">DEF</label>
 
                     <input
                         type="radio"
+                        className="radioButtons"
                         id="mid"
                         name="position"
                         value="Midfield"
                         checked={data.position === "Midfield"}
                         onChange={handleChange}
                     />
-                    <label for="midfield">MID</label>
+                    <label for="midfield" className="radioText">MID</label>
 
                     <input
                         type="radio"
+                        className="radioButtons"
                         id="fwd"
                         name="position"
                         value="Forward"
                         checked={data.position === "Forward"}
                         onChange={handleChange}
                     />
-                    <label for="forward">FWD</label>
+                    <label for="forward" className="radioText">FWD</label>
 
                 </div>
             </div>

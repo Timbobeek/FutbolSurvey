@@ -8,60 +8,65 @@ const Question4 = () => {
         <div className="flex-col">
             <div className="split-container">
 
-                <p>Messi or Ronaldo?</p>
+                <p className="questionText">Messi or Ronaldo?</p>
                 <div className="flex-col">
                     
                     <input
                         type="radio"
+                        className="smallRadioButtons"
                         id="messi"
                         name="mr"
                         value="Messi"
                         checked={data.mr === 'Messi'}
                         onChange={handleChange}
                     />
-                    <label for="messi">Messi</label>
+                    <label for="messi" className="radioText">Messi</label>
 
                     
                     <input
                         type="radio"
+                        className="smallRadioButtons"
                         id="ronaldo"
                         name="mr"
                         value="Ronaldo"
                         checked={data.mr === 'Ronaldo'}
                         onChange={handleChange} 
                     />
-                    <label for="ronaldo">Ronaldo</label>
+                    <label for="ronaldo" className="radioText">Ronaldo</label>
 
                     <input
                         type="radio"
+                        className="smallRadioButtons"
                         id="both"
                         name="mr"
                         value="Both"
                         checked={data.mr === "Both"}
                         onChange={handleChange}
                     />
-                    <label for="both">Like and respect both</label>
+                    <label for="both" className="radioText">Like and respect both</label>
 
                     <input
                         type="radio"
+                        className="smallRadioButtons"
                         id="neither"
                         name="mr"
                         value="Neither"
                         checked={data.mr === "Neither"}
                         onChange={handleChange}
                     />
-                    <label for="neither">Dislike both</label>
+                    <label for="neither" className="radioText">Dislike both</label>
 
                     
                     <input
                         type="radio"
+                        className="smallRadioButtons"
                         id="idc"
                         name="mr"
                         value="IDC"
                         checked={data.mr === "IDC"}
                         onChange={handleChange}
                     />
-                    <label for="neither">Literally don't care</label>
+                    <label for="neither" className="radioText">Don't care</label>
 
                 </div>
             </div>

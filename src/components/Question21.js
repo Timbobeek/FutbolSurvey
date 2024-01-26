@@ -8,39 +8,42 @@ const Question21 = () => {
         <div className="flex-col">
             <div className="split-container">
 
-                <p>Jabulani ball is ...</p>
+                <p className="questionText">Jabulani ball is ...</p>
                 <div className="flex-col">
                     
                     <input
                         type="radio"
+                        className="radioButtons"
                         id="trash"
                         name="jabu"
                         value="trash"
                         checked={data.jabu === 'trash'}
                         onChange={handleChange}
                     />
-                    <label for="trash">Trash</label>
+                    <label for="trash" className="radioText">Trash</label>
 
                     
                     <input
                         type="radio"
+                        className="radioButtons"
                         id="enjoyable"
                         name="jabu"
                         value="enjoyable"
                         checked={data.jabu === 'enjoyable'}
                         onChange={handleChange} 
                     />
-                    <label for="enjoyable">Enjoyable</label>
+                    <label for="enjoyable" className="radioText">Enjoyable</label>
 
                     <input
                         type="radio"
+                        className="radioButtons"
                         id="noidea"
                         name="jabu"
                         value="noidea"
                         checked={data.jabu === "noidea"}
                         onChange={handleChange}
                     />
-                    <label for="noidea">No idea</label>
+                    <label for="noidea" className="radioText">No idea</label>
 
                 </div>
             </div>

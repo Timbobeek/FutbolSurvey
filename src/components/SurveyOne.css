@@ -1,24 +1,3 @@
-/* .Home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 60rem;
-  }
-  
-.Home-header {
-    background-color: black;
-    min-height: 10vh;
-    max-width: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-    padding: 20px;
-    border-radius: 20px;
-  } */
 
   .surveyPage{
     display: flex;
@@ -28,22 +7,29 @@
     text-align: center;
   }
 
-  .surveyHead{
+  .surveyHead2{
     color: yellow;
+    font-size: 60px;
+    /* margin-top: 15%; */
+  }
+
+  #goBack{
+    color: green;
+    font-size: 2rem;
   }
   
-  .App-link {
+  /* .App-link {
     color: #61dafb;
-  }
+  } */
   
-  #q1answer{
+  /* #q1answer{
     width: 500px;
     height: 40px;
     background-color: green;
     color: yellow;
     font-size: large;
     border-radius: 20px;
-  }
+  } */
   
   .submitBtn{
     margin-top: 20px;
@@ -62,3 +48,4 @@
   .remove-button {
     display: none;
   }
+

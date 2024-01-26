@@ -9,11 +9,12 @@ const Question15 = () => {
     const content = (
         <div className="flex-col">
             <div className="split-container">
-                <p>What level did you play at?</p>
+                <p className="questionText">What level did you play at?</p>
                 <div className="flex-col">
                     
                     <input
                         type="checkbox"
+                        className="checkboxes"
                         id="amateur"
                         //name="level" ---> for name based validation
                         name="amateur"  //this is what will be filtered by
@@ -21,11 +22,12 @@ const Question15 = () => {
                         checked={data.amateur}
                         onChange={handleChange}
                     />
-                    <label for="amateur">Amateur</label>
+                    <label for="amateur" className="checkboxText">Amateur</label>
 
                     
                     <input
                         type="checkbox"
+                        className="checkboxes"
                         id="hs"
                         //name="level"
                         name="hs"
@@ -33,11 +35,12 @@ const Question15 = () => {
                         checked={data.hs}
                         onChange={handleChange}
                     />
-                    <label for="hs">High School</label>
+                    <label for="hs" className="checkboxText">High School</label>
 
                     
                     <input
                         type="checkbox"
+                        className="checkboxes"
                         id="acad"
                         //name="level"
                         name="acad"
@@ -45,11 +48,12 @@ const Question15 = () => {
                         checked={data.acad}
                         onChange={handleChange}
                     />
-                    <label for="proacademy">Pro Academy</label>
+                    <label for="proacademy" className="checkboxText">Pro Academy</label>
 
                     
                     <input
                         type="checkbox"
+                        className="checkboxes"
                         id="college"
                         name="college"
                         //name="level"
@@ -57,11 +61,12 @@ const Question15 = () => {
                         checked={data.college}
                         onChange={handleChange}
                     />
-                    <label for="college">College</label>
+                    <label for="college" className="checkboxText">College</label>
 
                     
                     <input
                         type="checkbox"
+                        className="checkboxes"
                         id="semipro"
                         name="semipro"
                         //name="level"
@@ -69,11 +74,12 @@ const Question15 = () => {
                         checked={data.semipro}
                         onChange={handleChange}
                     />
-                    <label for="semipro">Semi-Pro</label>
+                    <label for="semipro" className="checkboxText">Semi-Pro</label>
 
                     
                     <input
                         type="checkbox"
+                        className="checkboxes"
                         id="pro"
                         name="pro"
                         //name="level"
@@ -81,7 +87,7 @@ const Question15 = () => {
                         checked={data.pro}
                         onChange={handleChange}
                     />
-                    <label for="pro">Pro</label>
+                    <label for="pro" className="checkboxText">Pro</label>
                 </div>
             </div>
         </div>

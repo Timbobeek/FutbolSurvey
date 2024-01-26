@@ -52,7 +52,7 @@ const FormInputs = () => {
     }
 
     const content = (
-        <div className="form-inputs flex-col">
+        <div className="form-inputs">
             {display[page]}
         </div>
     )
