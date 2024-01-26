@@ -75,7 +75,7 @@ const Results = () => {
       "Favorite national team": "Australia",
       "Favorite league": "Bundesliga",
       "Favorite jersey I own": "2007 Barcelona Away Puyol ",
-      "Favorite memory as a specator": "The Invincibles Arsenal Season",
+      "Favorite memory as a specator": "The Invincibles Arsenal Season jsdhfjdshj djshfjkdshf sdhnfjksdhkfjh sdfjhsdjfhjks sdhjfhdsjfhs",
       "Worst memory as a spectator": "Arsen Wenger leaving Arsenal",
       "Favorite memory as a player": "Scoring a double in the HS State final",
       "Worst memory as a player": "Breaking my knee freshman year college",
@@ -158,7 +158,13 @@ const Results = () => {
           <div className="accordionContent">
             {/* {console.log(Object.entries(tab)[0])} */}
             {Object.entries(tab).map((arr) => (
-                <p className={ arr[0] !== 'a0' ? "answers" : "answersName"}> {arr[0]} : {arr[1]} </p>
+                <div className={ arr[0] !== 'a0' ? "answers" : "answersName"}> 
+                  {/* <div className="spacer"/> */}
+                  <p className="answersLeft">{arr[0]} </p>
+                  <div id="diagonal"></div>
+                  <div className="spacer"/>
+                  <p className="answersRight">{arr[1]} </p> 
+                </div>
             ))}
           </div>
         </div>

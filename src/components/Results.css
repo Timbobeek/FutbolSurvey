@@ -18,7 +18,7 @@
 
 .accordionTitle {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
 	cursor: pointer;
 	-moz-user-select: none;
@@ -34,43 +34,127 @@
     background-color: yellow;
 	color: green;
 	margin-bottom: 10px;
+	border-radius: 10px;
+	border: solid 5px green;
 }
 
 .accordionContent {
+	overflow-y: scroll;
+	scrollbar-color: red green;
 	background-color: green;
 	color: yellow;
+	/* centralized version */
+	display: flex;
+	flex-direction: column;
+	/* align-items: center; */
+
+	/* width: 90%; */
+	border-radius: 10px;
+
 }
 
+.accordionContent::-webkit-scrollbar {
+	width: 15px;
+	height: 15px;
+	background: green;
+	-webkit-border-radius: 10px;
+ }
+
+ .accordionContent::-webkit-scrollbar-thumb {
+    background: yellow;
+	-webkit-border-radius: 1ex;
+}
+
+
 .accordionTitle + .accordionContent {
-	overflow: hidden;
+	/* overflow: hidden; */
 	max-height: 0px;
 	transition: all 0.7s ease-in;
 }
 
 .accordionTitle.is-open + .accordionContent {
-	max-height: 35em;
+	/* the one below is the length with all answers as one liners */
+	/* max-height: 35em; */
+	max-height: 20em;
 }
 
 .answers{
-	display: block;
+	display: flex;
 	margin: 0px;
+
+	/* border-bottom: yellow;
+    border-bottom-style: dotted; */
+
+
 }
 
 .answersName{
 	display: none;
 }
 
-.arrow{
-  border: solid green;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
+.answersLeft{
+	margin: 0px;
+	background-color: yellow;
+	color: green;
+	/* border-top: 1px solid green; */
+
+	border-bottom-style: dashed;
+	/* border-width: 2px; */
+	/* margin-left: -20px; */
+	/* margin-right: 10px; */
+	/* right: 0px; */
 }
+
+.answersRight{
+	margin: 0;
+	/* border-top: 1px solid yellow; */
+	/* flex-grow: 5; */
+	width: 50%;
+
+	border-bottom-style: dashed;
+	border-color: yellow;
+	padding-left: 10px;
+}
+
+#diagonal{
+	content: '';
+	top: 0;
+	left: 0;
+	/* border-top: 25px solid yellow;
+  	border-right: 25px solid green; */
+	border-bottom-style: dashed;
+}
+
+.spacer {
+	flex-grow: 1;
+	border-bottom: yellow;
+	background-color: yellow;
+	color: green;
+
+	border-bottom-style: dashed;
+	border-color: green;
+
+    /* border-bottom-style: dotted; */
+
+	/* border-bottom-style: dashed;
+	border-width: 2px;
+	margin-left: -20px;
+	margin-right: 10px; */
+}
+
+.arrow{
+	border: solid green;
+	border-width: 0 5px 5px 0;
+	display: inline-block;
+	padding: 6px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	margin: 10px;
+  }
 
 .accordionTitle.is-open .arrow{
 	transform: rotate(-135deg);
 	-webkit-transform: rotate(-135deg);
 }
+
 
