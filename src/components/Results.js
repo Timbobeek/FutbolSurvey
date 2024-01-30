@@ -4,31 +4,6 @@ import "./Results.css";
 
 const apiKey = process.env.REACT_APP_API_KEY;
 
-// const Results = () => {
-
-//     const [data, setData] = useState({})
-
-//     useEffect(()=>{
-//         axios.get(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
-//           .then(res=>{
-//             setData(res.data)
-//           })
-//           .catch(err =>{
-//             console.log(err)
-//           })
-//       },[]);
-
-//       const {title} = data;
-
-//     return (
-//         <div className="welcomeText">
-//             The poll results will be posted here!<br></br>
-//             {title}
-//         </div>
-//     )
-// }
-
-
 function switchTab(tabId) {
   const accordionTitle = document.getElementById(tabId);
   if (!accordionTitle) {
@@ -46,31 +21,88 @@ function switchTab(tabId) {
   }
 }
 
+function label(text, key) {
+  return { text, key };
+}
+
+const orderedKeys = [
+  label("name", "name"),
+  label("Favorite position", "position"),
+  label("Favorite player", "favplayer"),
+  label("Messi or Ronaldo", "mr"),
+  label("Favorite club", "favclub"),
+  label("Favorite national team", "natteam"),
+  label("Favorite league", "favleague"),
+  label("Favorite jersey I own", "favjersey"),
+  label("Favorite memory as a spectator", "favmemspec"),
+  label("Worst memory as a spectator", "wrsmemspec"),
+  label("Favorite memory as a player", "favmemplr"),
+  label("Worst memory as a player", "wrsmemplr"),
+  label("I started playing at", "age"),
+  label("I started playing because", "why"),
+  label("Levels I played at", "levels"), //["amateur","hs","acad", "college", "semipro",'pro'),
+  label("My biggest achievement is", "achv"),
+  label("My futbol-related goal is", "goals"),
+  label("Best futbol advice I have received", "advc"),
+  label("Favorite pair of cleats", "clt"),
+  label("Favorite ball", "ball"),
+  label("Jabulani is", "jabu"),
+  label("Best compliment I received", "love"),
+];
+
+function getLevels(row) {
+  const levelKeys = ["amateur", "hs", "acad", "college", "semipro", "pro"];
+  const levelNames = {
+    amateur: "Amateur",
+    hs: "High School",
+    acad: "Academy",
+    college: "College",
+    semipro: "Semi-Pro",
+    pro: "Pro",
+  };
+  const foundLevels = levelKeys.filter((level) => row[level]);
+  return foundLevels.map((level) => levelNames[level] ?? "").join(", ");
+}
+
 const Results = () => {
+  const [data, setData] = useState([]);
 
-  const [data, setData] = useState({})
+  useEffect(() => {
+    axios({
+      url: `https://ferrata-crud2.builtwithdark.com/v1/surveys/`,
+      method: "get",
+      headers: {
+        "x-api-key": `${apiKey}`,
+      },
+    })
+      .then((res) => {
+        const list = Object.values(res.data);
+        const result = list.map((row) => {
+          const member = {
+            name: row["name"],
+            answers: [],
+          };
+          
+          orderedKeys.forEach((label) => {
+            const data =
+              label.key === "levels" ? getLevels(row) : row[label.key];
 
-  useEffect(()=>{
-        axios({
-          url: `https://ferrata-crud2.builtwithdark.com/v1/surveys/`,
-          method: 'get',
-          headers: {
-            'x-api-key': `${apiKey}`
-          }
-        })
-          .then(res=>{
-            setData(res.data)
-            console.log(res.data);
-          })
-          .catch(err =>{
-            console.log(err)
-          })
-      },[]);
+            member.answers.push({ label: label.text, data });
+          });
 
+          return member;
+        });
+
+        setData(result)
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   //replace const below with the actual data coming from an api
   // const tabs = [
-  //   { 
+  //   {
   //     // title: "Tab 1",
   //     "name" : "Jessica Knoxman",
   //     "Favorite position": "Midfield",
@@ -95,7 +127,7 @@ const Results = () => {
   //     "Jabulani is": "Trash",
   //     "Best compliment I received": "Your touch is magical"
   //   },
-  //   { 
+  //   {
   //     // title: "Tab 2",
   //    'name': "Abdul Salah",
   //    a1: "Goakeeper",
@@ -117,7 +149,7 @@ const Results = () => {
   //    a17: "Listen to your heart",
   //    a18: "Love it"
   //   },
-  //   { 
+  //   {
   //     // title: "Tab 3",
   //    "name": "Ivan Popov",
   //    a1: "Forward",
@@ -142,7 +174,7 @@ const Results = () => {
   // ];
 
   // const userData = {
-  //   'obj1': { 
+  //   'obj1': {
   //     // title: "Tab 1",
   //     'name': "Jessica Knoxman",
   //     "Favorite position": "Midfield",
@@ -167,7 +199,7 @@ const Results = () => {
   //     "Jabulani is": "Trash",
   //     "Best compliment I received": "Your touch is magical"
   //   },
-  //   'obj2': { 
+  //   'obj2': {
   //     // title: "Tab 2",
   //     'name': "Abdul Salah",
   //     a1: "Goakeeper",
@@ -189,7 +221,7 @@ const Results = () => {
   //     a17: "Listen to your heart",
   //     a18: "Love it"
   //   },
-  //   'obj3':{ 
+  //   'obj3':{
   //     // title: "Tab 3",
   //     'name': "Ivan Popov",
   //     a1: "Forward",
@@ -213,68 +245,18 @@ const Results = () => {
   //    },
   // };
 
-  const userDataKeys = [
-      "Favorite position",
-      "Favorite player",
-      "Messi or Ronaldo",
-      "Favorite club",
-      "Favorite national team",
-      "Favorite league",
-      "Favorite jersey I own",
-      "Favorite memory as a spectator",
-      "Worst memory as a spectator",
-      "Favorite memory as a player",
-      "Worst memory as a player",
-      "I started playing at",
-      "I started playing because",
-      "Levels I played at",
-      "My biggest achievement is",
-      "My futbol-related goal is",
-      "Best futbol advice I have received",
-      "Favorite pair of cleats",
-      "Favorite ball",
-      "Jabulani is",
-      "Best compliment I received"
-  ]
-
-  const tabs = Object.values(data);
-
-  // let levelValues = tabs.map(tab => {
-  //   let vals = [];
-  //   if ( (Object.entries(tab).find((elem) => (elem[0] === 'acad' && elem[1] === true))) !== undefined ){
-  //     levelValues.push('Academy');
-  //   }
-  //   if ( (Object.entries(tab).find((elem) => (elem[0] === 'amateur' && elem[1] === true))) !== undefined ){
-  //     levelValues.push('Amateur');
-  //   }
-  //   if ( (Object.entries(tab).find((elem) => (elem[0] === 'college' && elem[1] === true))) !== undefined ){
-  //     levelValues.push('College');
-  //   }
-  //   if ( (Object.entries(tab).find((elem) => (elem[0] === 'hs' && elem[1] === true))) !== undefined ){
-  //     levelValues.push('High School');
-  //   }
-  //   if ( (Object.entries(tab).find((elem) => (elem[0] === 'pro' && elem[1] === true))) !== undefined ){
-  //     levelValues.push('Professional');
-  //   }
-  //   if ( (Object.entries(tab).find((elem) => (elem[0] === 'semipro' && elem[1] === true))) !== undefined ){
-  //     levelValues.push('Semi-professional');
-  //   }
-  //   return vals;
-  // })
-
-  
-
+  // const tabs = Object.values(data);
+  //console.log(tabs);
 
   return (
     <div className="resultsPage">
       <header className="resultsHeader">Results</header>
-      <a href="/" className="resultsHome"><button id="surveyBtn">Home</button></a>
+      <a href="/" className="resultsHome">
+        <button id="surveyBtn">Home</button>
+      </a>
 
-
-      {tabs.map((tab, i) => (
-        <div className="accordionItem">
-          
-         
+      {data.map((member, i) => (
+        <div key={`member-${i}`} className="accordionItem">
           <h2
             id={`accordionTitle-${i}`}
             className="accordionTitle"
@@ -282,68 +264,30 @@ const Results = () => {
               switchTab(`accordionTitle-${i}`);
             }}
           >
-            <div><i className="arrow"/></div>
+            <div>
+              <i className="arrow" />
+            </div>
             {/* name header is below */}
-            <p>{tab.name}</p> 
-            <div><i className="arrow"/></div>
+            <p>{member.name}</p>
+            <div>
+              <i className="arrow" />
+            </div>
           </h2>
 
-
           <div className="accordionContent">
-            
-            {Object.entries(tab).map((arr,i) => (
+            {member.answers.map((answer, i) => (
+              <div key={`answer-${i}`}
+                className={answer.label !== "name" ? "answers" : "answersName"}
+              >
+                <p className="answersLeft">{answer.label} </p>
 
-                <div className={ arr[0] !== 'name' ? "answers" : "answersName"}> 
-
-                  <p className="answersLeft">{userDataKeys[i]} </p>
-                  
-                  <div className="spacer"/>
-                  {/* <p className="answersRight">{arr[1]} </p>  */}
-                  {/* {console.log(userDataKeys[i],arr[0],arr[1])} */}
-                  <p className="answersRight">
-                    {
-                    ((userDataKeys[i] !== userDataKeys[13]) ? arr[1] : '')
-                    } 
-                    {
-                    ((userDataKeys[i] === userDataKeys[13]) &&
-                    (((Object.entries(tab).find((elem) => (elem[0] === 'acad' && elem[1] === true))) !== undefined ))) 
-                    ? 'Academy ' : ''
-                    } 
-                    {
-                    ((userDataKeys[i] === userDataKeys[13]) &&
-                    (((Object.entries(tab).find((elem) => (elem[0] === 'amateur' && elem[1] === true))) !== undefined ))) 
-                    ? 'Amateur ' : ''
-                    }
-                    {
-                    ((userDataKeys[i] === userDataKeys[13]) &&
-                    (((Object.entries(tab).find((elem) => (elem[0] === 'college' && elem[1] === true))) !== undefined ))) 
-                    ? 'College ' : ''
-                    }
-                    {
-                    ((userDataKeys[i] === userDataKeys[13]) &&
-                    (((Object.entries(tab).find((elem) => (elem[0] === 'hs' && elem[1] === true))) !== undefined ))) 
-                    ? 'High School ' : ''
-                    }
-                    {
-                    ((userDataKeys[i] === userDataKeys[13]) &&
-                    (((Object.entries(tab).find((elem) => (elem[0] === 'semipro' && elem[1] === true))) !== undefined ))) 
-                    ? 'Semi-Pro ' : ''
-                    }
-                    {
-                    ((userDataKeys[i] === userDataKeys[13]) &&
-                    (((Object.entries(tab).find((elem) => (elem[0] === 'pro' && elem[1] === true))) !== undefined ))) 
-                    ? 'Pro ' : ''
-                    }
-                  </p>
-                </div>
+                <div className="spacer" />
+                <p className="answersRight">{answer.data} </p>
+              </div>
             ))}
-
           </div>
-
         </div>
       ))}
-
-
     </div>
   );
 };
