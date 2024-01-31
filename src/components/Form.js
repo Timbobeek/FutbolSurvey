@@ -3,6 +3,7 @@ import useFormContext from "../hooks/useFormContext"
 import FormInputs from './FormInputs'
 import './Form.css';
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 import testImage from "../vennegorMono.jpg"
 
@@ -30,6 +31,7 @@ import img20 from "../surveyImages/brazuca.jpg"
 import img21 from "../surveyImages/jabulani.avif"
 import img22 from "../surveyImages/klopp.jpg"
 
+const apiKey = process.env.REACT_APP_API_KEY;
 
 const pageToImage = new Map([
     [0, `url(${img1})`],
@@ -88,9 +90,34 @@ const Form = () => {
     const handleNext = () => setPage(prev => prev + 1)
 
     const handleSubmit = e => {
+        console.log('submitted');
         e.preventDefault()
-        console.log(JSON.stringify(data))
+        //console.log(JSON.stringify(data))
+        axios.post(`https://ferrata-crud2.builtwithdark.com/v1/surveys/`, data, {headers: {'x-api-key': apiKey}}).then((res) => {
+            console.log(res.status, res.data)
+        })
     }
+
+    // const [results, setData] = useState();
+
+    // useEffect(() => {
+    //     axios({
+    //       url: `https://ferrata-crud2.builtwithdark.com/v1/surveys/`,
+    //       method: "post",
+    //       headers: {
+    //         "x-api-key": `${apiKey}`,
+    //       },
+    //       body: {
+    //         results
+    //       }
+    //     })
+    //       .then((res) => {    
+    //         setData(data)
+    //       })
+    //       .catch((err) => {
+    //         console.log(err);
+    //       });
+    //   }, []);
 
     useEffect(() => {
         const image = pageToImage.get(page) ?? defaultImage
@@ -100,7 +127,7 @@ const Form = () => {
     }, [page])
 
     const content = (
-        <form id="formCont" className="formContainer" onSubmit={handleSubmit}>
+        <form id="formCont" className="formContainer" onSubmit={handleSubmit} >
             
             <div className="questionTitle">{title[page]}</div>
 

@@ -84,8 +84,6 @@ export const FormProvider = ({children})=> {
 
     const { amateur, hs, acad, college, semipro, pro, ...requiredInputs } = data
 
-    //next/prev/submit button data validation! 25:57
-
     const canSubmit = [...Object.values(requiredInputs)].every(Boolean) &&
      (data.amateur === true || data.hs === true || data.acad === true || data.college === true || data.semipro === true || data.pro === true) 
      && page === Object.keys(title).length - 1
