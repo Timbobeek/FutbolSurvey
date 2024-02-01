@@ -1,4 +1,4 @@
-import { createContext, useState} from "react";
+import { createContext, useEffect, useState} from "react";
 
 const FormContext = createContext({});
 
@@ -46,7 +46,7 @@ export const FormProvider = ({children})=> {
         wrsmemspec: '',
         favmemplr: '',
         wrsmemplr: '',
-        age: '',
+        age: 0,
         why: '',
         amateur: false,
         hs: false,
@@ -72,7 +72,9 @@ export const FormProvider = ({children})=> {
         //hence why it works for radio button where checked char is missing
         const value = type === ( "checkbox" || "radio" )
             ? e.target.checked
-            : e.target.value
+            : name === "age"
+                ? parseInt(e.target.value)
+                : e.target.value 
 
         setData(prevData => ({
             ...prevData,

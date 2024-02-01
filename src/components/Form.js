@@ -90,34 +90,14 @@ const Form = () => {
     const handleNext = () => setPage(prev => prev + 1)
 
     const handleSubmit = e => {
-        console.log('submitted');
         e.preventDefault()
-        //console.log(JSON.stringify(data))
-        axios.post(`https://ferrata-crud2.builtwithdark.com/v1/surveys/`, data, {headers: {'x-api-key': apiKey}}).then((res) => {
-            console.log(res.status, res.data)
+        axios.post('https://ferrata-crud2.builtwithdark.com/v1/surveys/', data, {headers: {'x-api-key': apiKey}})
+        .then((res) => {
+            console.log('dsadsad', res.status, res.data)
+            navigate('/')
         })
     }
 
-    // const [results, setData] = useState();
-
-    // useEffect(() => {
-    //     axios({
-    //       url: `https://ferrata-crud2.builtwithdark.com/v1/surveys/`,
-    //       method: "post",
-    //       headers: {
-    //         "x-api-key": `${apiKey}`,
-    //       },
-    //       body: {
-    //         results
-    //       }
-    //     })
-    //       .then((res) => {    
-    //         setData(data)
-    //       })
-    //       .catch((err) => {
-    //         console.log(err);
-    //       });
-    //   }, []);
 
     useEffect(() => {
         const image = pageToImage.get(page) ?? defaultImage
@@ -127,7 +107,7 @@ const Form = () => {
     }, [page])
 
     const content = (
-        <form id="formCont" className="formContainer" onSubmit={handleSubmit} >
+        <form id="formCont" className="formContainer" >
             
             <div className="questionTitle">{title[page]}</div>
 
@@ -141,7 +121,7 @@ const Form = () => {
                     <button type="button" id="surveyBtnBig" className={`button ${prevHide}`} onClick={handlePrev} disabled={disablePrev} >Prev</button>
                     <button type="button" id="surveyBtnBig" className={`button ${nextHide}`} onClick={handleNext} disabled={!enableNext} >Next</button>
                     {/* redirect on submission pf the form written below */}
-                    <button type="submit" id="surveyBtnBig" className={`button ${submitHide}`} disabled={!canSubmit} onClick={()=> navigate('/')}>Submit</button>
+                    <button type="button" id="surveyBtnBig" className={`button ${submitHide}`} disabled={!canSubmit} onClick={handleSubmit} >Submit</button>
                 </div>
                 <FormInputs/>
             </div>
