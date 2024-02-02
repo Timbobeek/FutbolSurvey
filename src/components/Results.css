@@ -40,7 +40,7 @@
 
 .accordionContent {
 	overflow-y: scroll;
-	scrollbar-color: red green;
+	/* scrollbar-color: green green; */
 	background-color: green;
 	color: yellow;
 	/* centralized version */

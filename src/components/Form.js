@@ -3,6 +3,7 @@ import useFormContext from "../hooks/useFormContext"
 import FormInputs from './FormInputs'
 import './Form.css';
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 import testImage from "../vennegorMono.jpg"
 
@@ -30,12 +31,7 @@ import img20 from "../surveyImages/brazuca.jpg"
 import img21 from "../surveyImages/jabulani.avif"
 import img22 from "../surveyImages/klopp.jpg"
 
-// const pageToColor = new Map([
-//     [0, "green"],
-//     [1, "yellow"],
-//     [2, "red"],
-//     [3, "blue"]
-// ])
+const apiKey = process.env.REACT_APP_API_KEY;
 
 const pageToImage = new Map([
     [0, `url(${img1})`],
@@ -66,8 +62,6 @@ const pageToButtonPosition = new Map([
     [0, "flex-end"]
 ])
 
-// const defaultColor = "yellow"
-
 const defaultImage =  "none";
 
 const defaultButtonPosition = "space-between";
@@ -75,7 +69,6 @@ const defaultButtonPosition = "space-between";
 const Form = () => {
 
     const navigate = useNavigate();
-    // const [color, setColor] = useState(defaultColor)
     const [image, setImage] = useState(defaultImage)
     const [position, setPosition] = useState(defaultButtonPosition)
 
@@ -98,55 +91,37 @@ const Form = () => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        console.log(JSON.stringify(data))
+        axios.post('https://ferrata-crud2.builtwithdark.com/v1/surveys/', data, {headers: {'x-api-key': apiKey}})
+        .then((res) => {
+            console.log('dsadsad', res.status, res.data)
+            navigate('/')
+        })
     }
 
+
     useEffect(() => {
-        // const color = pageToColor.get(page) ?? defaultColor
-        // setColor(color)
         const image = pageToImage.get(page) ?? defaultImage
         setImage(image)
         const position = pageToButtonPosition.get(page) ?? defaultButtonPosition
         setPosition(position)
     }, [page])
 
-    // const content = (
-    //         <form id="formCont" className="formContainer" onSubmit={handleSubmit} style={{backgroundImage: image, backgroundPosition: "center", backgroundSize: "cover"}}>
-                
-    //             <div className="questionTitle">{title[page]}</div>
-
-    //             <div className="formBottom">
-    //                 <div className="button-container" style={{display: "flex", justifyContent: position }}>
-    //                     <button type="button" id="surveyBtnBig" className={`button ${prevHide}`} onClick={handlePrev} disabled={disablePrev} >Prev</button>
-    //                     <button type="button" id="surveyBtnBig" className={`button ${nextHide}`} onClick={handleNext} disabled={!enableNext} >Next</button>
-    //                     {/* redirect on submission pf the form written below */}
-    //                     <button type="submit" id="surveyBtnBig" className={`button ${submitHide}`} disabled={!canSubmit} onClick={()=> navigate('/')}>Submit</button>
-    //                 </div>
-    //                 <FormInputs/>
-    //             </div>
-
-    //         </form>
-    // )
-
     const content = (
-        <form id="formCont" className="formContainer" onSubmit={handleSubmit}>
+        <form id="formCont" className="formContainer" >
             
             <div className="questionTitle">{title[page]}</div>
-
-            {/* <img className="bannerImg" src={testImage} alt="bannerImg"/> */}
 
             <div className="bannerImg" style={{backgroundImage: image, 
                 // backgroundPosition: "top",
                  backgroundSize: "cover"
                  }}/>
           
-
             <div className="formBottom">
                 <div className="button-container" style={{display: "flex", justifyContent: position }}>
                     <button type="button" id="surveyBtnBig" className={`button ${prevHide}`} onClick={handlePrev} disabled={disablePrev} >Prev</button>
                     <button type="button" id="surveyBtnBig" className={`button ${nextHide}`} onClick={handleNext} disabled={!enableNext} >Next</button>
                     {/* redirect on submission pf the form written below */}
-                    <button type="submit" id="surveyBtnBig" className={`button ${submitHide}`} disabled={!canSubmit} onClick={()=> navigate('/')}>Submit</button>
+                    <button type="button" id="surveyBtnBig" className={`button ${submitHide}`} disabled={!canSubmit} onClick={handleSubmit} >Submit</button>
                 </div>
                 <FormInputs/>
             </div>
