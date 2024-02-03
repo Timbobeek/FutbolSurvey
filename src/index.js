@@ -7,6 +7,7 @@ import Results from './components/Results';
 import reportWebVitals from './reportWebVitals';
 import { Auth0Provider, withAuthenticationRequired } from '@auth0/auth0-react';
 import { Route, Routes, useNavigate, BrowserRouter } from 'react-router-dom';
+import Footer from './components/Footer';
 
 
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;
@@ -41,6 +42,7 @@ root.render(
               <Route path='/survey1' element={<SurveyOne/>} /> 
               <Route path='/results' element={<ProtectedRoute component={Results}/>}/>
             </Routes>
+            <Footer/>
           </Auth0ProviderWithRedirectCallback>
         </BrowserRouter>
   </React.StrictMode>
