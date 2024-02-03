@@ -10,7 +10,7 @@ const Home = () => {
     return(
         isAuthenticated && (
           <div className="Home">
-            <h1 className="surveyHead">Choose a Survey Below</h1>
+            {/* <h1 className="surveyHead">Choose a Survey Below</h1> */}
 
             <div className="survey1">
               <div className="leftSrvSide">
@@ -27,8 +27,7 @@ const Home = () => {
                 <p className="surveyTitle">Survey #2</p>
               </div>
               <div className="rightSrvSide">
-                <a href="/results" className="resultsTxt">What Others Said</a>
-                <a href="/survey1"><button id="surveyBtn">Start</button></a>
+                <p className="surveyTitle"> Coming Soon</p>
               </div>
             </div>
 
@@ -37,8 +36,7 @@ const Home = () => {
                 <p className="surveyTitle">Survey #3</p>
               </div>
               <div className="rightSrvSide">
-                <a href="/results" className="resultsTxt">What Others Said</a>
-                <a href="/survey1"><button id="surveyBtn">Start</button></a>
+                <p className="surveyTitle"> Coming Soon</p>
               </div>
             </div>
           </div>

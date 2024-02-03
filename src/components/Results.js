@@ -105,7 +105,7 @@ const Results = () => {
     <div className="resultsPage">
       <header className="resultsHeader">Results</header>
       <a href="/" className="resultsHome">
-        <button id="surveyBtn">Home</button>
+        <button className="genericBtn">Home</button>
       </a>
 
       {data.map((member, i) => (

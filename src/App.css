@@ -21,9 +21,31 @@ button{
   margin-top: -2rem;
 }
 
+.welcomeDiv{
+  display: flex;
+  align-items: baseline;
+}
+
 .welcomeText{
   color: yellow;
   font-size: 5em;
+  margin-bottom: 0;
+}
+
+.soccerBall{
+  font-size: 3em;
+  margin-bottom: 0;
+}
+
+.welcomeTextSmall{
+  text-align: center;
+  color: yellow;
+  font-size: 1.3em;
+  margin-top: 0;
+  border: dotted 4px green;
+  border-radius: 10px;
+  padding: 2%;
+  width: 24em;
 }
 
 .logBtn{
@@ -46,6 +68,9 @@ button{
   background-color: green;
   color: yellow;
   border: solid yellow;
+  /* background-color: blue;
+  color: white;
+  border: solid white; */
 }
 
 #surveyBtn:hover{
@@ -69,13 +94,16 @@ button{
 }
 
 .genericBtn{
-  width: 80px;
+  width: 180px;
   height: 40px;
   background-color: green;
   color: yellow;
+  border: solid yellow;
 }
 
-.text2{
-  color: black;
+.genericBtn:hover{
+  background-color: yellow;
+  color: green;
+  border: solid green;
 }
 

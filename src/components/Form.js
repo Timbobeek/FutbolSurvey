@@ -56,6 +56,7 @@ const pageToImage = new Map([
     [19, `url(${img20})`],
     [20, `url(${img21})`],
     [21, `url(${img22})`],
+    [22, `url(${loadingImg})`]
 ])
 
 const pageToButtonPosition = new Map([
@@ -94,7 +95,8 @@ const Form = () => {
         axios.post('https://ferrata-crud2.builtwithdark.com/v1/surveys/', data, {headers: {'x-api-key': apiKey}})
         .then((res) => {
             console.log('dsadsad', res.status, res.data)
-            navigate('/')
+            handleNext();
+            // navigate('/')
         })
     }
 

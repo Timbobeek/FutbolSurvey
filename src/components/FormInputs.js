@@ -20,6 +20,7 @@ import Question19 from "./Question19"
 import Question20 from "./Question20"
 import Question21 from "./Question21"
 import Question22 from "./Question22"
+import SubmissionMsg from "./SubmissionMessage"
 import useFormContext from "../hooks/useFormContext"
 
 const FormInputs = () => {
@@ -49,6 +50,7 @@ const FormInputs = () => {
         19: <Question20 />,
         20: <Question21 />,
         21: <Question22 />,
+        22: <SubmissionMsg />
     }
 
     const content = (
