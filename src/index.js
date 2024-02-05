@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import { Auth0Provider, withAuthenticationRequired } from '@auth0/auth0-react';
 import { Route, Routes, useNavigate, BrowserRouter } from 'react-router-dom';
 import Footer from './components/Footer';
-
+import { useAuth0 } from "@auth0/auth0-react";
 
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;
 const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
@@ -32,19 +32,29 @@ const Auth0ProviderWithRedirectCallback = ({ children, ...props }) => {
   );
 };
 
+const AppContainer = () => {
+  const { isLoading } = useAuth0();
+
+  return (
+    <>
+      <Routes>
+        <Route path='/' element={<App/>} />
+        {/* the one below must be protected route? */}
+        <Route path='/survey1' element={<SurveyOne/>} /> 
+        <Route path='/results' element={<ProtectedRoute component={Results}/>}/>
+      </Routes>
+      {!isLoading && <Footer/>}
+    </>
+  )
+}
+
 root.render(
   <React.StrictMode>
-        <BrowserRouter>
-          <Auth0ProviderWithRedirectCallback domain={domain} clientId={clientId} authorizationParams={{redirectUri: window.location.origin}}>
-            <Routes>
-              <Route path='/' element={<App/>} />
-              {/* the one below must be protected route? */}
-              <Route path='/survey1' element={<SurveyOne/>} /> 
-              <Route path='/results' element={<ProtectedRoute component={Results}/>}/>
-            </Routes>
-            <Footer/>
-          </Auth0ProviderWithRedirectCallback>
-        </BrowserRouter>
+    <BrowserRouter>
+      <Auth0ProviderWithRedirectCallback domain={domain} clientId={clientId} authorizationParams={{redirectUri: window.location.origin}}>
+        <AppContainer/>
+      </Auth0ProviderWithRedirectCallback>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

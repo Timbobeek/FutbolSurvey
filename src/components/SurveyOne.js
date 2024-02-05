@@ -11,7 +11,7 @@ const SurveyOne = () => {
           <div className="surveyPage">
             <h1 className="surveyHead2">Welcome to Basic Survey!</h1>
             {/* <a href="/" id="goBack">HOME</a> */}
-            <a href="/" className="resultsHome">
+            <a href="/" className="surveyHome">
              <button className="genericBtn">Home</button>
             </a>
 

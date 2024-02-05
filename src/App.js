@@ -5,7 +5,7 @@ import Home from './components/Home';
 import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
-  const { isLoading, error} = useAuth0();
+  const { isLoading, error } = useAuth0();
   return (
     <main className="welcome">
       {/* <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro"></link> */}
@@ -19,8 +19,6 @@ function App() {
             <LogoutButton/>
             <Home/>
           </>
-
-
         )}
     </main>
   );

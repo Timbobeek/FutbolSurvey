@@ -4,6 +4,7 @@ import FormInputs from './FormInputs'
 import './Form.css';
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useAuth0 } from "@auth0/auth0-react";
 
 import testImage from "../vennegorMono.jpg"
 
@@ -69,6 +70,7 @@ const defaultButtonPosition = "space-between";
 
 const Form = () => {
 
+    const { user,  } = useAuth0();
     const navigate = useNavigate();
     const [image, setImage] = useState(defaultImage)
     const [position, setPosition] = useState(defaultButtonPosition)
@@ -92,6 +94,9 @@ const Form = () => {
 
     const handleSubmit = e => {
         e.preventDefault()
+
+        // const postData = { ...data, userId: user.sub };
+
         axios.post('https://ferrata-crud2.builtwithdark.com/v1/surveys/', data, {headers: {'x-api-key': apiKey}})
         .then((res) => {
             console.log('dsadsad', res.status, res.data)
@@ -99,7 +104,6 @@ const Form = () => {
             // navigate('/')
         })
     }
-
 
     useEffect(() => {
         const image = pageToImage.get(page) ?? defaultImage

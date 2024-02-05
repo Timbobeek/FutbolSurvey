@@ -3,29 +3,30 @@ import linkedin from '../linkedin.png'
 
 const Footer = () => {
     return(
-        <div className="footer">
-            <div className='footerText'>built by Tim Goloshchapov</div>
-            <div className='footerLinks'>
-                <div className="git">
+            <div className="footer">
+                {/* <div className='footerText'>built by Tim Goloshchapov</div> */}
+                <div className='footerLinks'>
+                    <div className="git">
+                        <a
+                            href="https://github.com/Timbobeek"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                        <img src={github} width="40" height="40" alt="logo" />
+                        </a>
+                    </div>
+                    <div className="lin">
                     <a
-                        href="https://github.com/Timbobeek"
+                        href="https://www.linkedin.com/in/timofey-goloshchapov/"
                         target="_blank"
                         rel="noreferrer"
                     >
-                    <img src={github} width="40" height="40" alt="logo" />
+                        <img src={linkedin} width="40" height="40" alt="logo" />
                     </a>
+                    </div>
                 </div>
-                <div className="lin">
-                <a
-                    href="https://www.linkedin.com/in/timofey-goloshchapov/"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <img src={linkedin} width="40" height="40" alt="logo" />
-                </a>
-                </div>
+                <div className='footerText'>Tim Goloshchapov</div>
             </div>
-        </div>
     )
 }
 
