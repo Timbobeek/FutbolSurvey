@@ -21,7 +21,7 @@ const Home = () => {
                 <a href="/survey1"><button id="surveyBtn">Start</button></a>
               </div>
             </div>
-{/* 
+
             <div className="survey2">
               <div className="leftSrvSide">
                 <p className="surveyTitle">Survey #2</p>
@@ -38,7 +38,7 @@ const Home = () => {
               <div className="rightSrvSide">
                 <p className="surveyTitle"> Coming Soon</p>
               </div>
-            </div> */}
+            </div>
           </div>
         )
     )
