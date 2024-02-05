@@ -127,9 +127,9 @@ export const FormProvider = ({children})=> {
                     || (page === 21 && keysFilled(['love']))
 
 
-    const prevHide = page === 0 && "remove-button"
+    const prevHide = ((page === 0 && "remove-button") || (page === 22 && "remove-button") )
     
-    const nextHide = page === Object.keys(title).length - 1 && "remove-button"
+    const nextHide = ((page === Object.keys(title).length - 1 && "remove-button") || (page === 22 && "remove-button") )
     
     const submitHide = page !== Object.keys(title).length - 1 && "remove-button"
 
