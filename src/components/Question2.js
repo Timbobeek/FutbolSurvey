@@ -9,7 +9,7 @@ const Question2 = () => {
             <div className="split-container">
 
                 <p className="questionText">Favorite position?</p>
-                <div className="flex-col radioBtns">
+                <div className="flex-col">
                     
                     <input
                         type="radio"
