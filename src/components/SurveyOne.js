@@ -1,5 +1,3 @@
-import Form from "./Form";
-import { FormProvider } from "../context/FormContext";
 import './SurveyOne.css'
 import { SurveyProvider } from "./SurveyContext";
 import SurveyForm from "./SurveyForm";

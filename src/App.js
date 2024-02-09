@@ -35,7 +35,7 @@ const PageLayout = ({ page, title }) => {
     <>
         <main className="page">
 
-              <a href="/" style={{display: "flex", alignItems: "center", textDecoration: "none" }}>
+              <a href="/" style={{display: "flex", alignItems: "center", textDecoration: "none", marginTop: "2em" }}>
                 <i className="arrowBackHome left"></i>
                 <p style={{color: "yellow"}}>HOME</p>
               </a>

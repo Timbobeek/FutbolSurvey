@@ -22,11 +22,6 @@ button{
   flex-grow: 1;
 }
 
-.welcomeDiv{
-  display: flex;
-  align-items: baseline;
-}
-
 .welcomeText{
   color: yellow;
   font-size: 5em;
@@ -94,7 +89,7 @@ button{
   opacity: 0.4;
 }
 
-.genericBtn{
+/* .genericBtn{
   width: 180px;
   height: 40px;
   background-color: green;
@@ -106,7 +101,7 @@ button{
   background-color: yellow;
   color: green;
   border: solid green;
-}
+} */
 
 .arrowBackHome {
   border: solid yellow;

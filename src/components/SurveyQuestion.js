@@ -36,9 +36,10 @@ export function numericTextControl(id, name, placeholder) {
   }
 }
 
-export function radioButtonsControl(name, options) {
+export function radioButtonsControl(name, radioButtonStyle, options) {
   return {
     type: InputTypes.radioButtons,
+    radioButtonStyle,
     data: options.map(option => ({
       name,
       id: option.id,
@@ -60,76 +61,36 @@ export function checkBoxesControl(options) {
   }
 }
 
-/*
-
-text: controlData =         {
-            id="def"
-            name="position"
-            value="Defense"
-        }
-
-
-numericText: controlData =         {
-            id="def"
-            name="position"
-            value="Defense"
-        }
-
-
-radioButtons: controlData = {
-    items: [
-        {
-            id="def"
-            name="position"
-            value="Defense"
-        }
-    ]
-}
-
-checkBoxes: controlData = {
-    items: [
-        {
-            id="hs"
-            name="hs"
-            value="high school"
-        }
-    ]
-}
-
-*/
-
-export const SurveyQuestion = ({ title, control }) => {
+export const SurveyQuestion = ({ title, control, options }) => {
   const { data, handleChange } = useFormContext();
 
   console.log(title, control)
 
   const content = (
-    <div className="flex-col">
+    <div>
       <div className="split-container">
-        <p className="questionText">{title}</p>
-
+        <p className={options?.titleStyle ?? "questionText"}>{title}</p>
         <div className="flex-col">
-          
           {/* radioButtons */}
           {control.type === InputTypes.radioButtons && (
-            <>
-              {control.data.map(option => (
-                <>
+            <div className="flex-row">
+              {control.data.map((option, i) => (
+                <div key={`radio-option-${i}`} className="radioOption">
                   <input
                     type="radio"
-                    className="radioButtons"
+                    className={control.radioButtonStyle}
                     id={option.id}
                     name={option.name}
                     value={option.value}
                     checked={data[option.name] === option.value} //value
                     onChange={handleChange}
                   />
-                  <label for={option.id} className="radioText">
+                  <label htmlFor={option.id} className="radioText">
                     {option.label}
                   </label>
-                </>
+                </div>
               ))}
-            </>
+            </div>
           )}
 
           {/* text */}
@@ -148,9 +109,9 @@ export const SurveyQuestion = ({ title, control }) => {
 
           {/* checkBoxes */}
           {control.type === InputTypes.checkBoxes && (
-            <>
-              {control.data.map(option => (
-                <>
+            <div className="flex-row">
+              {control.data.map((option, i) => (
+                <div key={`check-option-${i}`}>
                   <input
                     type="checkbox"
                     className="checkboxes"
@@ -161,96 +122,12 @@ export const SurveyQuestion = ({ title, control }) => {
                     checked={data[option.name]}
                     onChange={handleChange}
                   />
-                  <label for={option.id} className="checkboxText">
+                  <label htmlFor={option.id} className="checkboxText">
                     {option.label}
                   </label>
-              </>
+              </div>
               ))}
-
-              {/* <input
-                type="checkbox"
-                className="checkboxes"
-                id="amateur"
-                //name="level" ---> for name based validation
-                name="amateur" //this is what will be filtered by
-                value="amateur" //this is sent to the server?
-                checked={data.amateur}
-                onChange={handleChange}
-              />
-              <label for="amateur" className="checkboxText">
-                Amateur
-              </label>
-
-              <input
-                type="checkbox"
-                className="checkboxes"
-                id="hs"
-                //name="level"
-                name="hs"
-                value="high school"
-                checked={data.hs}
-                onChange={handleChange}
-              />
-              <label for="hs" className="checkboxText">
-                High School
-              </label>
-
-              <input
-                type="checkbox"
-                className="checkboxes"
-                id="acad"
-                //name="level"
-                name="acad"
-                value="pro academy"
-                checked={data.acad}
-                onChange={handleChange}
-              />
-              <label for="proacademy" className="checkboxText">
-                Pro Academy
-              </label>
-
-              <input
-                type="checkbox"
-                className="checkboxes"
-                id="college"
-                name="college"
-                //name="level"
-                value="college"
-                checked={data.college}
-                onChange={handleChange}
-              />
-              <label for="college" className="checkboxText">
-                College
-              </label>
-
-              <input
-                type="checkbox"
-                className="checkboxes"
-                id="semipro"
-                name="semipro"
-                //name="level"
-                value="semi-pro"
-                checked={data.semipro}
-                onChange={handleChange}
-              />
-              <label for="semipro" className="checkboxText">
-                Semi-Pro
-              </label>
-
-              <input
-                type="checkbox"
-                className="checkboxes"
-                id="pro"
-                name="pro"
-                //name="level"
-                value="pro"
-                checked={data.pro}
-                onChange={handleChange}
-              />
-              <label for="pro" className="checkboxText">
-                Pro
-              </label> */}
-            </>
+            </div>
           )}
 
           {/* numericText */}
