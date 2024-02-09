@@ -77,27 +77,47 @@
   }
 
 .form-inputs{
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: yellow;
+  background-color: yellow; */
   /* be careful with these two below */
   border-bottom-left-radius: 8% 14%; 
   border-bottom-right-radius: 8% 14% ;
-  height: 150px;
+  /* height: 150px; */
+  margin-top: 10px;
 }
 
 .questionText{
     font-size: 2rem;
-    margin: 0%;
+    margin: 1%;
     color: green;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 
 .questionTextLong{
-  font-size: 1.5rem;
-  margin: 2%;
+  font-size: 1.7rem;
+  margin: 0;
   color: green;
+  line-height: 30px;
+}
+
+.questionField{
+  display: flex;
+  justify-content: center;
+  height: 70px;
+}
+
+.submissionMessage {
+  display: flex;
+  justify-content: center;
+  height: 120px;
+}
+
+.controlsField{
+  display: flex;
+  justify-content: center;
+  height: 70px;
 }
 
 .textField{
