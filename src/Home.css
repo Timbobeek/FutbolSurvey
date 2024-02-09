@@ -27,12 +27,10 @@
   /* --------------------------------- */
 
 
-  .footer{
+  /* .footer{
     color: green;
     background-color: yellow;
-    /* position: fixed; */
     bottom: 0;
-    /* width: 100%; */
     display: flex;
     flex-direction: column;
     border: solid green 5px;
@@ -40,19 +38,19 @@
     border-top-left-radius: 25%;
     border-top-right-radius: 25%;
     padding: 10px;
-    line-height: 20px;
+    line-height: 20px; */
 
     /* background-image: url(../../public/background.jpg);
     background-size: cover;
     background-position: bottom right 45px; */
 
-  }
+  /* } */
 
-  .footerLinks{
+  /* .footerLinks{
     display: flex;
-    justify-content: center;
+    justify-content: center; */
     /* margin: 0; */
-  }
+  /* }
 
   .footerText{
     margin-bottom: 0px;
@@ -60,7 +58,7 @@
 
   .git{
     margin-right: 1px;
-  }
+  } */
 
 
   @media (max-width: 1000px){

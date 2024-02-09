@@ -1,10 +1,10 @@
 import github from '../github.png'
 import linkedin from '../linkedin.png'
+import './Footer.css';
 
 const Footer = () => {
     return(
             <div className="footer">
-                {/* <div className='footerText'>built by Tim Goloshchapov</div> */}
                 <div className='footerLinks'>
                     <div className="git">
                         <a
