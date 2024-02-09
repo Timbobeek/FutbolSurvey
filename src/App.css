@@ -1,14 +1,57 @@
-.App {
+/* .App {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   height: 60rem;
-}
+} */
 
-#loadingTxt{
+.loadingTxt{
   color: yellow;
 }
+
+.page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.topHomeButton{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 2em;
+}
+
+.topHomeButtonArrow {
+  border: solid yellow;
+  border-width: 0 5px 5px 0;
+  display: inline-block;
+  padding: 10px;
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+#topHomeButtonText{
+  color: yellow;
+}
+
+.pageHead{
+  color: yellow;
+  font-size: 4em;
+  font-weight: bold;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+
+
+/* -------------------------------------------- */
 
 button{
   font-family: 'MuseoModerno';
@@ -89,29 +132,6 @@ button{
   opacity: 0.4;
 }
 
-/* .genericBtn{
-  width: 180px;
-  height: 40px;
-  background-color: green;
-  color: yellow;
-  border: solid yellow;
-}
 
-.genericBtn:hover{
-  background-color: yellow;
-  color: green;
-  border: solid green;
-} */
 
-.arrowBackHome {
-  border: solid yellow;
-  border-width: 0 5px 5px 0;
-  display: inline-block;
-  padding: 10px;
-}
-
-.left {
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-}
 

@@ -8,33 +8,6 @@
     flex-grow: 1;
   } */
 
-  .page{
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-    text-align: center;
-    /* the reason home arrow up top has a margin */
-    flex-grow: 1;
-  }
-
-  .pageHead{
-    color: yellow;
-    font-size: 4em;
-    font-weight: bold;
-    margin-top: 5%;
-    margin-bottom: 5%;
-  }
-
-  .pageContent {
-    /* margin-top: 2rem; */
-  }
-
-  /* .surveyHead2{
-    color: yellow;
-    font-size: 60px;
-  } */
-
   #goBack{
     color: green;
     font-size: 2rem;

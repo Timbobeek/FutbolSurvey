@@ -76,7 +76,7 @@ export const SurveyQuestion = ({ title, control, options }) => {
   /* title */
   if (control.type === InputTypes.title) {
     return (
-      <div style={{color: "green", fontSize: "30px"}}>
+      <div className="submissionMessage" style={{color: "green", fontSize: "30px"}}>
         All done, look at you!
         Thank you for taking the time, means a lot &#x1F49A;
       </div>
