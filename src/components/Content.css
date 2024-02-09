@@ -1,0 +1,99 @@
+/* .Home {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  } */
+
+/* .surveyHead{
+    color: yellow;
+    margin-top: 0;
+    background-color: green;
+  } */
+
+  .surveyBoard1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 10px solid green;
+    border-radius: 30%;
+    min-width: 800px;
+    min-height: 80px;
+    background: url(/public/ro.webp);
+    background-position: 0% 40%;
+    background-size: cover;
+    margin: 20px;
+  }
+
+  .surveyBoard2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 10px solid green;
+    border-radius: 30%;
+    min-width: 800px;
+    min-height: 80px;
+    background: url(/public/cr77.avif);
+    background-position: 0% 55%;
+    background-size: cover;
+    margin: 20px;
+  }
+
+  .surveyBoard3{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 10px solid green;
+    border-radius: 30%;
+    min-width: 800px;
+    min-height: 80px;
+    background: url(/public/messi.webp);
+    background-position: 0% 90%;
+    background-size: cover;
+    margin: 20px;
+  }
+
+  .surveyTitle{
+    font-size: 30px;
+    color: yellow;
+    margin: 0;
+  }
+
+  .resultsTxt{
+    color: yellow;
+    margin-right: 5px;
+  }
+
+  #surveyBtn{
+    width: 80px;
+    height: 40px;
+    background-color: green;
+    color: yellow;
+    border: solid yellow;
+  }
+  
+  #surveyBtn:hover{
+    background-color: yellow;
+    color: green;
+    border-color: green;
+  }
+  
+  #surveyBtn:disabled:hover{
+    background-color: green;
+    color: yellow;
+    border-color: yellow;
+  }
+  
+  #surveyBtn:disabled{
+    width: 80px;
+    height: 40px;
+    background-color: green;
+    color: yellow;
+    opacity: 0.4;
+  }

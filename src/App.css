@@ -71,36 +71,6 @@ button{
   border-color: red;
 }
 
-#surveyBtn{
-  width: 80px;
-  height: 40px;
-  background-color: green;
-  color: yellow;
-  border: solid yellow;
-  /* background-color: blue;
-  color: white;
-  border: solid white; */
-}
-
-#surveyBtn:hover{
-  background-color: yellow;
-  color: green;
-  border-color: green;
-}
-
-#surveyBtn:disabled:hover{
-  background-color: green;
-  color: yellow;
-  border-color: yellow;
-}
-
-#surveyBtn:disabled{
-  width: 80px;
-  height: 40px;
-  background-color: green;
-  color: yellow;
-  opacity: 0.4;
-}
 
 
 

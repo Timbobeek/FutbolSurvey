@@ -1,5 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
-// import '../Home.css';
+import './Content.css';
 
 
 const Content = () => {
@@ -9,7 +9,7 @@ const Content = () => {
           <div className="Home">
             {/* <h1 className="surveyHead">Choose a Survey Below</h1> */}
 
-            <div className="survey1">
+            <div className="surveyBoard1">
               <div className="leftSrvSide">
                 <p className="surveyTitle">Basic Survey</p>
               </div>
@@ -19,7 +19,7 @@ const Content = () => {
               </div>
             </div>
 
-            <div className="survey2">
+            <div className="surveyBoard2">
               <div className="leftSrvSide">
                 <p className="surveyTitle">Survey #2</p>
               </div>
@@ -28,7 +28,7 @@ const Content = () => {
               </div>
             </div>
 
-            <div className="survey3">
+            <div className="surveyBoard3">
               <div className="leftSrvSide">
                 <p className="surveyTitle">Survey #3</p>
               </div>
