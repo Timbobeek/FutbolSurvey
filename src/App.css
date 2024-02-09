@@ -51,25 +51,6 @@
 
 
 
-/* -------------------------------------------- */
-
-button{
-  font-family: 'MuseoModerno';
-}
-
-.logBtn{
-  width: 180px;
-  height: 40px;
-  background-color: red;
-  color: azure;
-  border: solid azure;
-}
-
-.logBtn:hover{
-  background-color: azure;
-  color: red;
-  border-color: red;
-}
 
 
 
