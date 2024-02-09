@@ -3,7 +3,7 @@
     /* align-items: center; */
     justify-content: space-between;
     flex-direction: column;
-    margin-top: 10%;
+    /* margin-top: 10%; */
     background-color: yellow;
     min-height: 350px;
     /* border-radius: 10%; */
@@ -96,7 +96,7 @@
 
 .questionTextLong{
   font-size: 1.5rem;
-  margin: 0%;
+  margin: 2%;
   color: green;
 }
 

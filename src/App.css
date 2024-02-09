@@ -22,11 +22,6 @@ button{
   flex-grow: 1;
 }
 
-.welcomeDiv{
-  display: flex;
-  align-items: baseline;
-}
-
 .welcomeText{
   color: yellow;
   font-size: 5em;
@@ -94,7 +89,7 @@ button{
   opacity: 0.4;
 }
 
-.genericBtn{
+/* .genericBtn{
   width: 180px;
   height: 40px;
   background-color: green;
@@ -106,5 +101,17 @@ button{
   background-color: yellow;
   color: green;
   border: solid green;
+} */
+
+.arrowBackHome {
+  border: solid yellow;
+  border-width: 0 5px 5px 0;
+  display: inline-block;
+  padding: 10px;
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
 }
 

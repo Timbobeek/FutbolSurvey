@@ -1,8 +1,8 @@
 import { createContext, useEffect, useState} from "react";
 
-const FormContext = createContext({});
+const SurveyContext = createContext({});
 
-export const FormProvider = ({children})=> {
+export const SurveyProvider = ({children})=> {
 
     // this code defines the order of pages and where is the submit button at! and title for each
     const title = {
@@ -64,6 +64,7 @@ export const FormProvider = ({children})=> {
     })
 
     const handleChange = e => {
+
         const type = e.target.type
 
         const name = e.target.name
@@ -73,7 +74,7 @@ export const FormProvider = ({children})=> {
         const value = type === ( "checkbox" || "radio" )
             ? e.target.checked
             : name === "age"
-                ? parseInt(e.target.value)
+                ? !isNaN(e.target.value) ? parseInt(e.target.value) : 0
                 : e.target.value 
 
         setData(prevData => ({
@@ -81,7 +82,7 @@ export const FormProvider = ({children})=> {
             [name]: value
         }))
 
-        console.log(data);
+        console.log(page, data);
     }
 
     const { amateur, hs, acad, college, semipro, pro, ...requiredInputs } = data
@@ -134,10 +135,10 @@ export const FormProvider = ({children})=> {
     const submitHide = page !== Object.keys(title).length - 1 && "remove-button"
 
     return(
-        <FormContext.Provider value={{title, page, setPage, data, setData, canSubmit, handleChange, disablePrev, enableNext, prevHide, nextHide, submitHide}}>
+        <SurveyContext.Provider value={{title, page, setPage, data, setData, canSubmit, handleChange, disablePrev, enableNext, prevHide, nextHide, submitHide}}>
             {children}
-        </FormContext.Provider>
+        </SurveyContext.Provider>
     )
 }
 
-export default FormContext
+export default SurveyContext

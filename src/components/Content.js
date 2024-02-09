@@ -1,11 +1,8 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import './Home.css';
 
-//https://www.youtube.com/watch?v=QSBc8bABwE0&t=181s&ab_channel=DaveGray
-//https://github.com/gitdagray/react-multi-step-form/blob/main/src/components/Form.js 
 
-
-const Home = () => {
+const Content = () => {
     const { isAuthenticated} = useAuth0();
     return(
         isAuthenticated && (
@@ -44,4 +41,4 @@ const Home = () => {
     )
 }
 
-  export default Home;
+  export default Content;

@@ -1,27 +1,62 @@
-import './App.css';
-import LoginButton from './components/LoginButton';
-import LogoutButton from './components/LogoutButton';
-import Home from './components/Home';
+import Home from "./Home";
+import SurveyOne from "./components/SurveyOne";
+import Results from "./components/Results";
+import { withAuthenticationRequired } from "@auth0/auth0-react";
+import { Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
 import { useAuth0 } from "@auth0/auth0-react";
 
-function App() {
-  const { isLoading, error } = useAuth0();
-  return (
-    <main className="welcome">
-      {/* <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro"></link> */}
-        <h1 className='welcomeText'>Welcome!</h1>
-        <p className='welcomeTextSmall'>to FutbolSurvey, <br></br> a page built to get to know my fellow <br></br>&#9917;futbol/soccer/football&#9917; enjoyers</p>
-        {error && <p>Authentication Error</p>}
-        {!error && isLoading && <p id='loadingTxt'>Loading....</p>}
-        {!error && !isLoading && (
-          <>
-            <LoginButton/>
-            <LogoutButton/>
-            <Home/>
-          </>
-        )}
-    </main>
-  );
+const ProtectedRoute = ({ component, ...args }) => {
+  const Component = withAuthenticationRequired(component, args);
+  return <Component />;
+};
+
+const HomeLayout = () => {
+    const { isLoading } = useAuth0();
+
+    if (isLoading) {
+        return <h1 style={{color: "yellow"}}>loading...</h1>
+    }
+
+    return (<>
+        <Home />
+        <Footer />
+    </>)
 }
 
-export default App;
+const PageLayout = ({ page, title }) => {
+    const { isLoading } = useAuth0();
+
+    if (isLoading) {
+        return <h1 style={{color: "yellow"}}>loading...</h1>
+    }
+
+    return (
+    <>
+        <main className="page">
+
+              <a href="/" style={{display: "flex", alignItems: "center", textDecoration: "none", marginTop: "2em" }}>
+                <i className="arrowBackHome left"></i>
+                <p style={{color: "yellow"}}>HOME</p>
+              </a>
+            <header className="pageHead">{title}</header>
+            <div className="pageContent">
+                <ProtectedRoute component={page} />
+            </div>
+        </main>
+        <Footer />
+    </>)
+}
+
+export const App = () => {
+
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<HomeLayout/>} />
+        <Route path="/survey1" element={<PageLayout page={SurveyOne} title={"Welcome to Basic Survey!"} />} />
+        <Route path="/results" element={<PageLayout page={Results} title={"Results"} />} />
+      </Routes>
+    </>
+  );
+};

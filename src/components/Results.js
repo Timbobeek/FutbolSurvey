@@ -102,12 +102,7 @@ const Results = () => {
 
 
   return (
-    <div className="resultsPage">
-      <header className="resultsHeader">Results</header>
-      <a href="/" className="resultsHome">
-        <button className="genericBtn">Home</button>
-      </a>
-
+    <>
       {data.map((member, i) => (
         <div key={`member-${i}`} className="accordionItem">
           <h2
@@ -141,7 +136,7 @@ const Results = () => {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 
