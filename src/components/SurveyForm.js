@@ -28,7 +28,7 @@ import img19 from "../surveyImages/nike-total-90-laser-i-remake-boots-9.jpg"
 import img20 from "../surveyImages/brazuca.jpg"
 import img21 from "../surveyImages/jabulani.avif"
 import img22 from "../surveyImages/klopp.jpg"
-import { InputTypes, SurveyQuestion, checkBoxesControl, numericTextControl, radioButtonsControl, textControl } from "./SurveyQuestion";
+import { InputTypes, SurveyQuestion, checkBoxesControl, numericTextControl, radioButtonsControl, textControl, titleControl } from "./SurveyQuestion";
 
 import { useContext } from "react"
 import SurveyContext from "./SurveyContext";
@@ -67,9 +67,9 @@ const pages = [
     page(img7, { title: "What's your favorite league?", control: textControl("favleague", "favleague", "MLS")} ),
     page(img8, { title: "What's the favorite jersey you own?", control: textControl("favjersey", "favjersey", "2004 Barcelona Puyol Away")} ),
     page(img9, { title: "What's your favorite futbol memory as a spectator?", control: textControl("favmemspec", "favmemspec", "Greece winning EURO2004"), options: {titleStyle: "questionTextLong"}} ),
-    page(img10, { title: "What's your worst futbol memory as a spectator?", control: textControl("wrsmemspec", "wrsmemspec", "Ronaldo not winning WC2022")} ),
-    page(img11, { title: "What's your favorite futbol memory as a player?", control: textControl("favmemplr", "favmemplr", "Winning Kickers in 2016")} ),
-    page(img12, { title: "What's your worst futbol memory as a player?", control: textControl("wrsmemplr", "wrsmemplr", "Breaking my leg in 2003")} ),
+    page(img10, { title: "What's your worst futbol memory as a spectator?", control: textControl("wrsmemspec", "wrsmemspec", "Ronaldo not winning WC2022"), options: {titleStyle: "questionTextLong"}} ),
+    page(img11, { title: "What's your favorite futbol memory as a player?", control: textControl("favmemplr", "favmemplr", "Winning Kickers in 2016"), options: {titleStyle: "questionTextLong"}} ),
+    page(img12, { title: "What's your worst futbol memory as a player?", control: textControl("wrsmemplr", "wrsmemplr", "Breaking my leg in 2003"), options: {titleStyle: "questionTextLong"}} ),
     page(img13, { title: "At what age did you start playing?", control: numericTextControl("age", "age", "4")} ),
     page(img14, { title: "Why did you start playing?", control: textControl("why", "why", "My dad was a pro player")} ),
     page(img15, { title: "What level did you play at?", control: checkBoxesControl([
@@ -80,7 +80,7 @@ const pages = [
         { id: 'semipro', name: 'semipro', value: 'semi-pro', label: 'Semi-Pro' },
         { id: 'pro', name: 'pro', value: 'pro', label: 'Pro' },
     ])} ),
-    page(img16, { title: "What's your biggest achievement in futbol so far?", control: textControl("achv", "achv", "Winning State with Tate High")} ),
+    page(img16, { title: "What's your biggest achievement in futbol so far?", control: textControl("achv", "achv", "Winning State with Tate High"), options: {titleStyle: "questionTextLong"}} ),
     page(img17, { title: "Any futbol-related goals/dreams?", control: textControl("goals", "goals", "Coaching my local HS by 2030")} ),
     page(img18, { title: "Best futbol advice you've received?", control: textControl("advc", "advc", "Listen to your heart")} ),
     page(img19, { title: "Favorite pair of cleats?", control: textControl("clt", "clt", "Nike Total 90")} ),
@@ -91,10 +91,7 @@ const pages = [
         { id: 'noidea', value: 'noidea', label: 'No idea' },
     ])} ),
     page(img22, { title: "Best futbol compliment ever received?", control: textControl("love", "love", "Your touch is magical")} ),
-    page(loadingImg, <div className="submissionTxt">
-            All done, look at you!
-            Thank you for taking the time, means a lot &#x1F49A;
-    </div>)
+    page(loadingImg, { title: "", control: titleControl() } )
 ]
 
 const pageToButtonPosition = new Map([
@@ -166,12 +163,14 @@ const SurveyForm = () => {
                     {/* redirect on submission pf the form written below */}
                     <button type="button" id="surveyBtnBig" className={`button ${submitHide}`} disabled={!canSubmit} onClick={handleSubmit} >Submit</button>
                 </div>
-                <div className="form-inputs">
-                    <SurveyQuestion key={`question-${page}`} 
-                        title={pages[page].question.title} 
-                        control={pages[page].question.control}
-                        options={pages[page].question.options} />
-                </div>
+                { pages[page].question && (
+                    <div className="form-inputs">
+                        <SurveyQuestion key={`question-${page}`} 
+                            title={pages[page].question.title} 
+                            control={pages[page].question.control}
+                            options={pages[page].question.options} />
+                    </div>
+                )}
 
             </div>
 

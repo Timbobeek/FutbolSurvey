@@ -12,6 +12,7 @@ export const InputTypes = {
   radioButtons: "RADIO",
   checkBoxes: "CHECK",
   numericText: "NUMBER",
+  title: "TITLE"
 };
 
 export function textControl(id, name, placeholder) {
@@ -61,6 +62,12 @@ export function checkBoxesControl(options) {
   }
 }
 
+export function titleControl() {
+  return {
+    type: InputTypes.title
+  }
+}
+
 export const SurveyQuestion = ({ title, control, options }) => {
   const { data, handleChange } = useFormContext();
 
@@ -71,6 +78,15 @@ export const SurveyQuestion = ({ title, control, options }) => {
       <div className="split-container">
         <p className={options?.titleStyle ?? "questionText"}>{title}</p>
         <div className="flex-col">
+
+          {/* title */}
+          {control.type === InputTypes.title && (
+            <div style={{color: "green", fontSize: "30px"}}>
+              All done, look at you!
+              Thank you for taking the time, means a lot &#x1F49A;
+            </div>
+          )}
+
           {/* radioButtons */}
           {control.type === InputTypes.radioButtons && (
             <div className="flex-row">
