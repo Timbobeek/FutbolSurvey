@@ -1,23 +1,4 @@
 
-.resultsPage{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin-bottom: 10px;
-	flex-grow: 1;
-}
-
-.resultsHeader{
-	color: yellow;
-	font-weight: bold;
-	font-size: 5em;
-	margin-top: 40px; 
-}
-
-.resultsHome{
-	margin: 30px;
-}
-
 .accordionTitle {
 	display: flex;
 	justify-content: space-between;
@@ -83,11 +64,8 @@
 .answers{
 	display: flex;
 	margin: 0px;
-
 	/* border-bottom: yellow;
     border-bottom-style: dotted; */
-
-
 }
 
 .answersName{
@@ -118,14 +96,14 @@
 	padding-left: 10px;
 }
 
-#diagonal{
+/* #diagonal{
 	content: '';
 	top: 0;
-	left: 0;
+	left: 0; */
 	/* border-top: 25px solid yellow;
   	border-right: 25px solid green; */
-	border-bottom-style: dashed;
-}
+	/* border-bottom-style: dashed;
+} */
 
 .spacer {
 	flex-grow: 1;
