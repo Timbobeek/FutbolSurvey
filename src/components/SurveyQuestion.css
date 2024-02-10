@@ -1,0 +1,72 @@
+.submissionMessage {
+    display: flex;
+    justify-content: center;
+    height: 120px;
+    color: green;
+    font-size: 30px;
+  }
+
+  
+.questionText{
+    font-size: 2rem;
+    margin: 1%;
+    color: green;
+    /* margin-bottom: 10px; */
+}
+
+.questionTextLong{
+  font-size: 1.7rem;
+  margin: 0;
+  color: green;
+  line-height: 30px;
+}
+
+.questionField{
+  display: flex;
+  justify-content: center;
+  height: 70px;
+}
+
+.controlsField{
+  display: flex;
+  justify-content: center;
+  height: 70px;
+}
+
+.textField{
+    width: 60%;
+    height: 50px;
+    background-color: green;
+    color: yellow;
+    font-size: 1.5rem;
+    font-family: 'MuseoModerno';
+    resize: vertical;
+}
+
+::placeholder{
+    color: yellow;
+    opacity: 40%;
+}
+
+.radioButtons{
+  accent-color: green;
+  border: 0px;
+  width: 30px;
+  height: 30px;
+}
+
+.checkboxes{
+  accent-color: green;
+}
+
+.smallRadioButtons{
+  accent-color: green;
+}
+
+.radioText{
+  color: green;
+}
+
+.checkboxText{
+  color: green;
+}

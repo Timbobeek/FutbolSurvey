@@ -1,7 +1,6 @@
-// import useFormContext from "../hooks/useFormContext";
-
 import { useContext } from "react"
 import SurveyContext from "./SurveyContext";
+import "./SurveyQuestion.css";
 
 const useFormContext = () => {
     return useContext(SurveyContext)
@@ -73,19 +72,23 @@ export const SurveyQuestion = ({ title, control, options }) => {
 
   console.log(title, control)
 
+  /* title */
+  if (control.type === InputTypes.title) {
+    return (
+      <div className="submissionMessage">
+        All done, look at you!
+        Thank you for taking the time, means a lot &#x1F49A;
+      </div>
+    )
+  }
+
   const content = (
     <div>
-      <div className="split-container">
-        <p className={options?.titleStyle ?? "questionText"}>{title}</p>
-        <div className="flex-col">
-
-          {/* title */}
-          {control.type === InputTypes.title && (
-            <div style={{color: "green", fontSize: "30px"}}>
-              All done, look at you!
-              Thank you for taking the time, means a lot &#x1F49A;
-            </div>
-          )}
+      {/* <div className="split-container"> */}
+        <div className="questionField">
+          <p className={options?.titleStyle ?? "questionText"}>{title}</p>
+        </div>
+        <div className="controlsField">
 
           {/* radioButtons */}
           {control.type === InputTypes.radioButtons && (
@@ -166,7 +169,7 @@ export const SurveyQuestion = ({ title, control, options }) => {
             />
           )}
         </div>
-      </div>
+      {/* </div> */}
     </div>
   );
 

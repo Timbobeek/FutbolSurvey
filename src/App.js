@@ -15,7 +15,7 @@ const HomeLayout = () => {
     const { isLoading } = useAuth0();
 
     if (isLoading) {
-        return <h1 style={{color: "yellow"}}>loading...</h1>
+        return <h1 className="loadingTxt">loading...</h1>
     }
 
     return (<>
@@ -28,16 +28,15 @@ const PageLayout = ({ page, title }) => {
     const { isLoading } = useAuth0();
 
     if (isLoading) {
-        return <h1 style={{color: "yellow"}}>loading...</h1>
+        return <h1 className="loadingTxt">loading...</h1>
     }
 
     return (
     <>
         <main className="page">
-
-              <a href="/" style={{display: "flex", alignItems: "center", textDecoration: "none", marginTop: "2em" }}>
-                <i className="arrowBackHome left"></i>
-                <p style={{color: "yellow"}}>HOME</p>
+              <a href="/" className="topHomeButton">
+                <i className="topHomeButtonArrow left"></i>
+                <p id="topHomeButtonText">HOME</p>
               </a>
             <header className="pageHead">{title}</header>
             <div className="pageContent">

@@ -4,22 +4,14 @@
     text-align: center;
     flex-direction: column;
   } */
-  
-/* .Home-header {
-    background-color: black;
-    min-height: 10vh;
-    max-width: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-    padding: 20px;
-    border-radius: 20px;
+
+/* .surveyHead{
+    color: yellow;
+    margin-top: 0;
+    background-color: green;
   } */
 
-  .survey1{
+  .surveyBoard1{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -35,7 +27,7 @@
     margin: 20px;
   }
 
-  .survey2{
+  .surveyBoard2{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -45,14 +37,13 @@
     border-radius: 30%;
     min-width: 800px;
     min-height: 80px;
-    /* background-color: yellow; */
     background: url(/public/cr77.avif);
     background-position: 0% 55%;
     background-size: cover;
     margin: 20px;
   }
 
-  .survey3{
+  .surveyBoard3{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -62,7 +53,6 @@
     border-radius: 30%;
     min-width: 800px;
     min-height: 80px;
-    /* background-color: yellow; */
     background: url(/public/messi.webp);
     background-position: 0% 90%;
     background-size: cover;
@@ -75,66 +65,35 @@
     margin: 0;
   }
 
-  .surveyHead{
-    color: yellow;
-    margin-top: 0;
-    background-color: green;
-  }
-
   .resultsTxt{
     color: yellow;
     margin-right: 5px;
   }
 
-  .footer{
-    color: green;
-    background-color: yellow;
-    /* position: fixed; */
-    bottom: 0;
-    /* width: 100%; */
-    display: flex;
-    flex-direction: column;
-    border: solid green 5px;
-    border-bottom: 0px;
-    border-top-left-radius: 25%;
-    border-top-right-radius: 25%;
-    padding: 10px;
-    line-height: 20px;
-
-    /* background-image: url(../../public/background.jpg);
-    background-size: cover;
-    background-position: bottom right 45px; */
-
+  #surveyBtn{
+    width: 80px;
+    height: 40px;
+    background-color: green;
+    color: yellow;
+    border: solid yellow;
   }
-
-  .footerLinks{
-    display: flex;
-    justify-content: center;
-    /* margin: 0; */
-  }
-
-  .footerText{
-    margin-bottom: 0px;
-  }
-
-  .git{
-    margin-right: 1px;
-  }
-
-
-  @media (max-width: 1000px){
-    .survey1{
-      min-width: 600px;
-      background-size: cover;
-    }
-  }
-
-  @media (max-width: 768px){
-
-  }
-
-  @media (max-width: 480px) {
-    
-  }
-
   
+  #surveyBtn:hover{
+    background-color: yellow;
+    color: green;
+    border-color: green;
+  }
+  
+  #surveyBtn:disabled:hover{
+    background-color: green;
+    color: yellow;
+    border-color: yellow;
+  }
+  
+  #surveyBtn:disabled{
+    width: 80px;
+    height: 40px;
+    background-color: green;
+    color: yellow;
+    opacity: 0.4;
+  }

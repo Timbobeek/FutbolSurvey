@@ -14,7 +14,7 @@ import SurveyForm from "./SurveyForm";
 const SurveyOne = () => {
   return(
     <SurveyProvider>
-      <SurveyForm className="form" />
+      <SurveyForm/>
     </SurveyProvider>
   )
 }

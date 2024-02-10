@@ -1,40 +1,4 @@
 
-  /* .surveyPage{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-grow: 1;
-  } */
-
-  .page{
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-    text-align: center;
-    /* the reason home arrow up top has a margin */
-    flex-grow: 1;
-  }
-
-  .pageHead{
-    color: yellow;
-    font-size: 4em;
-    font-weight: bold;
-    margin-top: 5%;
-    margin-bottom: 5%;
-  }
-
-  .pageContent {
-    /* margin-top: 2rem; */
-  }
-
-  /* .surveyHead2{
-    color: yellow;
-    font-size: 60px;
-  } */
-
   #goBack{
     color: green;
     font-size: 2rem;
@@ -50,23 +14,6 @@
     display: flex;
     flex-direction: row;
   }
-
-  .radioOption {
-
-  }
-
-  /* .App-link {
-    color: #61dafb;
-  } */
-  
-  /* #q1answer{
-    width: 500px;
-    height: 40px;
-    background-color: green;
-    color: yellow;
-    font-size: large;
-    border-radius: 20px;
-  } */
   
   .submitBtn{
     margin-top: 20px;
@@ -76,10 +23,6 @@
     background-color: yellow;
     width: 8em;
     padding: 15px;
-  }
-
-  .form{
-    background-color: yellow
   }
 
   .remove-button {

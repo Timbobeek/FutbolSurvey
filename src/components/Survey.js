@@ -5,7 +5,7 @@ import "./SurveyOne.css";
 const Survey = () => {
   return (
     <SurveyProvider>
-      <SurveyForm className="form" />
+      <SurveyForm/>
     </SurveyProvider>
   );
 };
