@@ -6,7 +6,7 @@ const Content = () => {
     const { isAuthenticated} = useAuth0();
     return(
         isAuthenticated && (
-          <div className="Home">
+          <div className="surveyBoards">
             {/* <h1 className="surveyHead">Choose a Survey Below</h1> */}
 
             <div className="surveyBoard1">
