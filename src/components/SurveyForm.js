@@ -47,7 +47,7 @@ function page(image, question) {
 }
 
 const pages = [
-    page(img1, { title: "What's your name?", control: textControl("name", "name", "Timmy")} ),
+    page(img1, { title: "What's your name?", control: textControl("name", "name", "Danny Drinkwater")} ),
     page(img2, { title: "Favorite position?", control: radioButtonsControl('position', 'radioButtons', [
         { id: 'gk', value: 'Goalkeeping', label: 'GK' },
         { id: 'def', value: 'Defense', label: 'DEF' },
@@ -90,7 +90,7 @@ const pages = [
         { id: 'enjoyable', value: 'enjoyable', label: 'Enjoyable' },
         { id: 'noidea', value: 'noidea', label: 'No idea' },
     ])} ),
-    page(img22, { title: "Best futbol compliment ever received?", control: textControl("love", "love", "Your touch is magical")} ),
+    page(img22, { title: "Best futbol compliment ever received?", control: textControl("love", "love", "Your backheels are magical")} ),
     page(loadingImg, { title: "", control: titleControl() } )
 ]
 
