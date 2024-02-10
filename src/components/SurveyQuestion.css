@@ -1,4 +1,12 @@
+.submissionMessage {
+    display: flex;
+    justify-content: center;
+    height: 120px;
+    color: green;
+    font-size: 30px;
+  }
 
+  
 .questionText{
     font-size: 2rem;
     margin: 1%;
@@ -17,12 +25,6 @@
   display: flex;
   justify-content: center;
   height: 70px;
-}
-
-.submissionMessage {
-  display: flex;
-  justify-content: center;
-  height: 120px;
 }
 
 .controlsField{
@@ -68,5 +70,3 @@
 .checkboxText{
   color: green;
 }
-
-

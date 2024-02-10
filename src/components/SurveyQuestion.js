@@ -1,7 +1,6 @@
-// import useFormContext from "../hooks/useFormContext";
-
 import { useContext } from "react"
 import SurveyContext from "./SurveyContext";
+import "./SurveyQuestion.css";
 
 const useFormContext = () => {
     return useContext(SurveyContext)
@@ -76,7 +75,7 @@ export const SurveyQuestion = ({ title, control, options }) => {
   /* title */
   if (control.type === InputTypes.title) {
     return (
-      <div className="submissionMessage" style={{color: "green", fontSize: "30px"}}>
+      <div className="submissionMessage">
         All done, look at you!
         Thank you for taking the time, means a lot &#x1F49A;
       </div>

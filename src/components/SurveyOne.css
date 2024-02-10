@@ -1,13 +1,4 @@
 
-  /* .surveyPage{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-grow: 1;
-  } */
-
   #goBack{
     color: green;
     font-size: 2rem;
@@ -23,23 +14,6 @@
     display: flex;
     flex-direction: row;
   }
-
-  .radioOption {
-
-  }
-
-  /* .App-link {
-    color: #61dafb;
-  } */
-  
-  /* #q1answer{
-    width: 500px;
-    height: 40px;
-    background-color: green;
-    color: yellow;
-    font-size: large;
-    border-radius: 20px;
-  } */
   
   .submitBtn{
     margin-top: 20px;
