@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import SurveyContext from "./SurveyContext";
-import "./SurveyQuestion.css";
+// import "./SurveyQuestion.css";
+import "./SurveyPage.css";
 
 const useFormContext = () => {
     return useContext(SurveyContext)
