@@ -21,7 +21,7 @@
     border: 10px solid green;
     border-radius: 30%;
     /* min-width: 800px; */
-    min-height: 80px;
+    height: 80px;
     background: url(/public/ro.webp);
     background-position: 0% 40%;
     background-size: cover;
@@ -37,7 +37,7 @@
     border: 10px solid green;
     border-radius: 30%;
     /* min-width: 800px; */
-    min-height: 80px;
+    height: 80px;
     background: url(/public/cr77.avif);
     background-position: 0% 55%;
     background-size: cover;
@@ -53,7 +53,7 @@
     border: 10px solid green;
     border-radius: 30%;
     /* min-width: 800px; */
-    min-height: 80px;
+    height: 80px;
     background: url(/public/messi.webp);
     background-position: 0% 90%;
     background-size: cover;
@@ -105,6 +105,16 @@
   .surveyBoards{
     width: 700px;
   }
+  .surveyTitle{
+    font-size: 25px;
+  }
+  .resultsTxt{
+    font-size: 12px;
+  }
+  #surveyBtn{
+    width: 65px;
+    height: 35px;
+  }
 }
 
 /* -----------------------------------------tablet view---------------------------------- */
@@ -112,11 +122,46 @@
 @media (max-width: 768px) {
   .surveyBoards{
     width: 460px;
+    margin-top: 10px;
+  }
+  .surveyBoard1, .surveyBoard2, .surveyBoard3{
+    height: 40px;
+    margin: 5px;
+    border: 5px solid green;
+  }
+  .surveyTitle{
+    font-size: 18px;
+  }
+  .resultsTxt{
+    font-size: 10px;
+  }
+  #surveyBtn{
+    width: 50px;
+    height: 30px;
+    font-size: 10px;
   }
 }
 
 /* -----------------------------------------phone view----------------------------------------- */
 
 @media (max-width: 480px) {
-
+  .surveyBoards{
+    width: 320px;
+  }
+  .surveyBoard1, .surveyBoard2, .surveyBoard3{
+    height: 25px;
+    margin: 5px;
+    border: 5px solid green;
+  }
+  .surveyTitle{
+    font-size: 12px;
+  }
+  .resultsTxt{
+    font-size: 8px;
+  }
+  #surveyBtn{
+    width: 35px;
+    height: 25px;
+    font-size: 8px;
+  }
 }

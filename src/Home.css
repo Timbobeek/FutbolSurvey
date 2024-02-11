@@ -23,6 +23,41 @@
   width: 24em;
 }
 
+/* ------------------------------------------laptop view------------------------------------------- */
+
+@media (max-width: 1000px) {
+  .welcomeText{
+    font-size: 4em;
+  }
+  .welcomeTextSmall{
+    width: 20em;
+  }
+}
+
+/* -----------------------------------------tablet view---------------------------------- */
+
+@media (max-width: 768px) {
+  .welcomeText{
+    font-size: 3.5em;
+  }
+  .welcomeTextSmall{
+    font-size: 1em;
+    min-width: 14em;
+  }
+
+}
+
+/* -----------------------------------------phone view----------------------------------------- */
+
+@media (max-width: 480px) {
+  .welcomeText{
+    font-size: 4em;
+  }
+  .welcomeTextSmall{
+    font-size: 1em;
+  }
+}
+
 
 
   
