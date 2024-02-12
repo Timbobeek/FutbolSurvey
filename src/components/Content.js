@@ -30,10 +30,10 @@ const Content = () => {
 
             <div className="surveyBoard3">
               <div className="leftSrvSide">
-                <p className="surveyTitle">Survey #3</p>
+                <p className="surveyTitleGreen">Survey #3</p>
               </div>
               <div className="rightSrvSide">
-                <p className="surveyTitle"> Coming Soon</p>
+                <p className="surveyTitleGreen"> Coming Soon</p>
               </div>
             </div>
           </div>
