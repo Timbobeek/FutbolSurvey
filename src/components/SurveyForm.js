@@ -161,7 +161,6 @@ const SurveyForm = () => {
                 <div className="button-container" style={{display: "flex", justifyContent: position }}>
                     <button type="button" id="surveyBtnBig" className={`button ${prevHide}`} onClick={handlePrev} disabled={disablePrev} >Prev</button>
                     <button type="button" id="surveyBtnBig" className={`button ${nextHide}`} onClick={handleNext} disabled={!enableNext} >Next</button>
-                    {/* redirect on submission pf the form written below */}
                     <button type="button" id="surveyBtnBig" className={`button ${submitHide}`} disabled={!canSubmit} onClick={handleSubmit} >Submit</button>
                 </div>
                 { pages[page].question && (
