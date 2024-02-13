@@ -243,6 +243,9 @@
   .smallRadioButtons{
     height: 15px;
   }
+  .bigRadioText{
+    margin: 2px;
+  }
   .smallRadioText{
     font-size: 12px;
   }
@@ -258,9 +261,13 @@
     height: 24px;
   }
   .radioButtons{
-    height: 14px;
+    margin: 0;
+    width: 20px;
+    height: 20px;
   }
   .submissionMessage{
-    font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
   }
 }
