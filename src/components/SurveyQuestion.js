@@ -37,10 +37,11 @@ export function numericTextControl(id, name, placeholder) {
   }
 }
 
-export function radioButtonsControl(name, radioButtonStyle, options) {
+export function radioButtonsControl(name, radioButtonStyle, radioButtonText, options) {
   return {
     type: InputTypes.radioButtons,
     radioButtonStyle,
+    radioButtonText,
     data: options.map(option => ({
       name,
       id: option.id,
@@ -105,7 +106,7 @@ export const SurveyQuestion = ({ title, control, options }) => {
                     checked={data[option.name] === option.value} //value
                     onChange={handleChange}
                   />
-                  <label htmlFor={option.id} className="radioText">
+                  <label htmlFor={option.id} className={control.radioButtonText}>
                     {option.label}
                   </label>
                 </div>

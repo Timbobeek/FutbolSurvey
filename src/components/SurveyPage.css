@@ -179,7 +179,7 @@
       accent-color: green;
     }
     
-    .radioText{
+    .bigRadioText, .smallRadioText{
       color: green;
     }
     
@@ -222,6 +222,8 @@
     margin: 0;
   }
   .questionField{
+    display: flex;
+    align-items: center;
     height: 40px;
   }
   .questionText{
@@ -238,5 +240,16 @@
   #surveyBtnBig, #surveyBtnBig:disabled{
     width: 80px;
     height: 40px;
+  }
+  .smallRadioText{
+    font-size: 10px;
+  }
+  .checkboxText{
+    font-size: 10px;
+  }
+  .flex-row{
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
   }
 }
