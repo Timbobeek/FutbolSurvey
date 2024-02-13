@@ -240,11 +240,14 @@
     width: 80px;
     height: 40px;
   }
+  .smallRadioButtons{
+    height: 15px;
+  }
   .smallRadioText{
-    font-size: 10px;
+    font-size: 12px;
   }
   .checkboxText{
-    font-size: 10px;
+    font-size: 12px;
   }
   .flex-row{
     flex-direction: column;
@@ -256,5 +259,8 @@
   }
   .radioButtons{
     height: 14px;
+  }
+  .submissionMessage{
+    font-size: 1.5em;
   }
 }
