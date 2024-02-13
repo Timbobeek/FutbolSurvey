@@ -21,6 +21,7 @@
 	border: solid 5px green;
 }
 
+
 .accordionContent {
 	overflow-y: scroll;
 	/* scrollbar-color: green green; */
@@ -30,7 +31,7 @@
 	display: flex;
 	flex-direction: column;
 	/* align-items: center; */
-
+	
 	/* width: 90%; */
 	border-radius: 10px;
 
@@ -41,13 +42,16 @@
 	height: 15px;
 	background: green;
 	-webkit-border-radius: 10px;
- }
+}
 
- .accordionContent::-webkit-scrollbar-thumb {
-    background: yellow;
+.accordionContent::-webkit-scrollbar-thumb {
+	background: yellow;
 	-webkit-border-radius: 1ex;
 }
 
+.accordionItem p {
+	overflow: hidden;
+}
 
 .accordionTitle + .accordionContent {
 	/* overflow: hidden; */
@@ -141,13 +145,18 @@
 /* ------------------------------------------laptop view------------------------------------------- */
 
 @media (max-width: 1000px) {
-
+	.accordionItem{
+		width: 600px;
+	}
 }
 
 /* -----------------------------------------tablet view---------------------------------- */
 
 @media (max-width: 768px) {
-
+	.accordionItem{
+		width: 550px;
+	}
+	
 }
 
 /* -----------------------------------------phone view----------------------------------------- */
