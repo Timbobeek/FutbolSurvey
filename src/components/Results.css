@@ -153,7 +153,29 @@
 /* -----------------------------------------phone view----------------------------------------- */
 
 @media (max-width: 480px) {
-	
+	.accordionItem{
+		width: 340px;
+	}
+	.accordionTitle{
+		font-size: 1em;
+	}
+	.answersLeft{
+		text-align: left;
+		border-bottom-style: none;
+	}
+	.answersRight{
+		border-bottom-style: none;
+		width: 96%;
+		text-align: left;
+		padding-left: 0px;
+	}
+	.answers{
+		display: block;
+		border-bottom-style: dashed;
+	}
+	.spacer{
+		border-bottom-style: none;
+	}
 
 }
 
