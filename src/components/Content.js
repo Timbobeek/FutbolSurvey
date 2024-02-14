@@ -14,7 +14,7 @@ const Content = () => {
                 <p className="surveyTitle">Basic Survey</p>
               </div>
               <div className="rightSrvSide">
-                <a href="/results" className="resultsTxt">What Others Said</a>
+                <a href="/results" className="resultsTxt">Results</a>
                 <a href="/survey1"><button id="surveyBtn">Start</button></a>
               </div>
             </div>

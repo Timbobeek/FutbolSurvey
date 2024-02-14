@@ -37,8 +37,11 @@
   color: yellow;
   font-size: 4em;
   font-weight: bold;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  /* margin-top: 5%;
+  margin-bottom: 5%; */
+  margin-top: .5em;
+  margin-bottom: .5em;
+
 }
 
 /* ------------------------------------------laptop view------------------------------------------- */
@@ -58,6 +61,7 @@
 @media (max-width: 480px) {
   .pageHead{
     font-size: 1.8em;
+    margin-bottom: 1em;
   }
 }
 

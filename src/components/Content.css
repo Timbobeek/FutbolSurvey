@@ -73,6 +73,7 @@
   }
 
   .resultsTxt{
+    font-size: 1.2em;
     color: yellow;
     margin-right: 5px;
   }
@@ -115,7 +116,7 @@
     font-size: 25px;
   }
   .resultsTxt{
-    font-size: 12px;
+    font-size: 1em;
   }
   #surveyBtn{
     width: 65px;
@@ -139,7 +140,7 @@
     font-size: 18px;
   }
   .resultsTxt{
-    font-size: 10px;
+    font-size: .8em;
   }
   #surveyBtn{
     width: 50px;
@@ -163,7 +164,7 @@
     font-size: 14px;
   }
   .resultsTxt{
-    font-size: 8px;
+    font-size: .8em;
   }
   #surveyBtn{
     width: 60px;
