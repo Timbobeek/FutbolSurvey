@@ -21,6 +21,7 @@
 	border: solid 5px green;
 }
 
+
 .accordionContent {
 	overflow-y: scroll;
 	/* scrollbar-color: green green; */
@@ -30,7 +31,7 @@
 	display: flex;
 	flex-direction: column;
 	/* align-items: center; */
-
+	
 	/* width: 90%; */
 	border-radius: 10px;
 
@@ -41,13 +42,16 @@
 	height: 15px;
 	background: green;
 	-webkit-border-radius: 10px;
- }
+}
 
- .accordionContent::-webkit-scrollbar-thumb {
-    background: yellow;
+.accordionContent::-webkit-scrollbar-thumb {
+	background: yellow;
 	-webkit-border-radius: 1ex;
 }
 
+.accordionItem p {
+	overflow: hidden;
+}
 
 .accordionTitle + .accordionContent {
 	/* overflow: hidden; */
@@ -137,5 +141,58 @@
 	transform: rotate(-135deg);
 	-webkit-transform: rotate(-135deg);
 }
+
+/* ------------------------------------------laptop view------------------------------------------- */
+
+@media (max-width: 1000px) {
+	.accordionItem{
+		width: 600px;
+	}
+}
+
+/* -----------------------------------------tablet view---------------------------------- */
+
+@media (max-width: 768px) {
+	.accordionItem{
+		width: 550px;
+	}
+	
+}
+
+/* -----------------------------------------phone view----------------------------------------- */
+
+@media (max-width: 480px) {
+	.accordionItem{
+		width: 340px;
+	}
+	.accordionTitle{
+		font-size: 1em;
+	}
+	.answersLeft{
+		text-align: left;
+		border-bottom-style: none;
+	}
+	.answersRight{
+		border-bottom-style: none;
+		width: 96%;
+		text-align: left;
+		padding-left: 0px;
+	}
+	.answers{
+		display: block;
+		border-bottom-style: dashed;
+	}
+	.spacer{
+		border-bottom-style: none;
+	}
+
+}
+
+
+
+
+
+
+
 
 

@@ -12,6 +12,7 @@
     border-top-right-radius: 25%;
     padding: 10px;
     line-height: 20px;
+    /* margin-top: 10px; */
 
     /* background-image: url(../../public/background.jpg);
     background-size: cover;
@@ -31,3 +32,9 @@
   .git{
     margin-right: 1px;
   }
+
+  /* -----------------------------------------phone view----------------------------------------- */
+
+@media (max-width: 480px) {
+  
+}

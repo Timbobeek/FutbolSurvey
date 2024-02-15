@@ -15,3 +15,32 @@ button{
     color: red;
     border-color: red;
   }
+
+  /* ------------------------------------------laptop view------------------------------------------- */
+
+@media (max-width: 1000px) {
+  .logBtn{
+    width: 140px;
+    height: 35px;
+  }
+}
+
+/* -----------------------------------------tablet view---------------------------------- */
+
+@media (max-width: 768px) {
+  .logBtn{
+    width: 120px;
+    height: 30px;
+    font-size: 10px;
+  }
+
+}
+
+/* -----------------------------------------phone view----------------------------------------- */
+
+@media (max-width: 480px) {
+  .logBtn{
+    font-size: 12px;
+  }
+}
+

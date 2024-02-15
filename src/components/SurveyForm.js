@@ -2,7 +2,8 @@ import { useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
-import './SurveyForm.css';
+// import './SurveyForm.css';
+import './SurveyPage.css';
 
 
 import loadingImg from "../surveyImages/danburn.jpg"
@@ -48,14 +49,14 @@ function page(image, question) {
 
 const pages = [
     page(img1, { title: "What's your name?", control: textControl("name", "name", "Danny Drinkwater")} ),
-    page(img2, { title: "Favorite position?", control: radioButtonsControl('position', 'radioButtons', [
+    page(img2, { title: "Favorite position?", control: radioButtonsControl('position', 'radioButtons', 'bigRadioText', [
         { id: 'gk', value: 'Goalkeeping', label: 'GK' },
         { id: 'def', value: 'Defense', label: 'DEF' },
         { id: 'mid', value: 'Midfield', label: 'MID' },
         { id: 'fwd', value: 'Forward', label: 'FWD' },
     ])} ),
     page(img3, { title: "Who's your favorite player?", control: textControl("favplayer", "favplayer", "Ronaldo")} ),
-    page(img4, { title: "Messi or Ronaldo?", control: radioButtonsControl('mr', 'smallRadioButtons', [
+    page(img4, { title: "Messi or Ronaldo?", control: radioButtonsControl('mr', 'smallRadioButtons', 'smallRadioText', [
         { id: 'messi', value: 'Messi', label: 'Messi' },
         { id: 'ronaldo', value: 'Ronaldo', label: 'Ronaldo' },
         { id: 'both', value: 'Both', label: 'Like and respect both' },
@@ -85,7 +86,7 @@ const pages = [
     page(img18, { title: "Best futbol advice you've received?", control: textControl("advc", "advc", "Listen to your heart")} ),
     page(img19, { title: "Favorite pair of cleats?", control: textControl("clt", "clt", "Nike Total 90")} ),
     page(img20, { title: "Favorite ball?", control: textControl("ball", "ball", "Brazuca")} ),
-    page(img21, { title: "Jabulani ball is ...", control: radioButtonsControl('jabu', 'radioButtons', [
+    page(img21, { title: "Jabulani ball is ...", control: radioButtonsControl('jabu', 'radioButtons', 'bigRadioText', [
         { id: 'trash', value: 'trash', label: 'Trash' },
         { id: 'enjoyable', value: 'enjoyable', label: 'Enjoyable' },
         { id: 'noidea', value: 'noidea', label: 'No idea' },
@@ -160,7 +161,6 @@ const SurveyForm = () => {
                 <div className="button-container" style={{display: "flex", justifyContent: position }}>
                     <button type="button" id="surveyBtnBig" className={`button ${prevHide}`} onClick={handlePrev} disabled={disablePrev} >Prev</button>
                     <button type="button" id="surveyBtnBig" className={`button ${nextHide}`} onClick={handleNext} disabled={!enableNext} >Next</button>
-                    {/* redirect on submission pf the form written below */}
                     <button type="button" id="surveyBtnBig" className={`button ${submitHide}`} disabled={!canSubmit} onClick={handleSubmit} >Submit</button>
                 </div>
                 { pages[page].question && (

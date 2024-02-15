@@ -1,4 +1,5 @@
-import './SurveyOne.css'
+// import './SurveyOne.css';
+import './SurveyPage.css';
 import { SurveyProvider } from "./SurveyContext";
 import SurveyForm from "./SurveyForm";
 

@@ -12,6 +12,16 @@
   margin-bottom: 0;
 }
 
+/* .textBackground{
+  height: 7em;
+}
+
+.textBackground::before{
+  content: "";
+  opacity: 30%;
+  background-color: black;
+} */
+
 .welcomeTextSmall{
   text-align: center;
   color: yellow;
@@ -21,6 +31,43 @@
   border-radius: 10px;
   padding: 2%;
   width: 24em;
+  background: rgba(60,60,60,0.7)
+  
+}
+
+/* ------------------------------------------laptop view------------------------------------------- */
+
+@media (max-width: 1000px) {
+  .welcomeText{
+    font-size: 4em;
+  }
+  .welcomeTextSmall{
+    width: 20em;
+  }
+}
+
+/* -----------------------------------------tablet view---------------------------------- */
+
+@media (max-width: 768px) {
+  .welcomeText{
+    font-size: 3.5em;
+  }
+  .welcomeTextSmall{
+    font-size: 1em;
+    min-width: 14em;
+  }
+
+}
+
+/* -----------------------------------------phone view----------------------------------------- */
+
+@media (max-width: 480px) {
+  .welcomeText{
+    font-size: 4em;
+  }
+  .welcomeTextSmall{
+    font-size: 1em;
+  }
 }
 
 
