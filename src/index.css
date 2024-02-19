@@ -3,6 +3,13 @@ body {
   font-family: 'MuseoModerno', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: #282c34;
+  background-image: url(../public/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 code {
@@ -11,17 +18,20 @@ code {
 }
 
 #root{
-  height: 100%;
-  background-color: #282c34;
-  min-height: 100vh;
+  /* https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(../public/background.jpg);
+  /* background-image: url(../public/background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: fixed; */
+
   /* justify-content: center; */
   /* font-size: calc(10px + 2vmin); */
   /* color: white; */
