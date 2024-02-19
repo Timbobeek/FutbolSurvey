@@ -4,9 +4,27 @@ import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton';
 import Content from './components/Content';
 import { useAuth0 } from "@auth0/auth0-react";
+import { useEffect } from 'react';
 
 function Home() {
   const { isLoading, error } = useAuth0();
+
+  useEffect(() => {
+    // https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+
+    function fixHeight() {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`)
+    }
+
+    fixHeight()
+    window.addEventListener('resize', fixHeight)
+
+    return () => {
+      window.removeEventListener('resize', fixHeight)
+    }
+  }, [])
+
   return (
     <main className="welcome">
       {/* <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro"></link> */}
