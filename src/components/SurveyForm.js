@@ -130,9 +130,9 @@ const SurveyForm = () => {
     const handleSubmit = e => {
         e.preventDefault()
 
-        // const postData = { ...data, userId: user.sub };
+        const postData = { ...data, userId: user.sub };
 
-        axios.post('https://ferrata-crud2.builtwithdark.com/v1/surveys/', data, {headers: {'x-api-key': apiKey}})
+        axios.post('https://ferrata-crud2.builtwithdark.com/v1/surveys/', postData, {headers: {'x-api-key': apiKey}})
         .then((res) => {
             console.log('dsadsad', res.status, res.data)
             handleNext();
