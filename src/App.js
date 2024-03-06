@@ -51,6 +51,7 @@ export const App = () => {
 
   return (
     <>
+      <div className="backImg" />
       <Routes>
         <Route path="/" element={<HomeLayout/>} />
         <Route path="/survey1" element={<PageLayout page={SurveyOne} title={"Welcome to Basic Survey!"} />} />
