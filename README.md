@@ -4,11 +4,11 @@ npm start opens the page on pc
 
 ### Things to work on
 
--After signing in initially and clicking to start the survey, I'm taken back to the auth0 sign in form. When I click sign in with github, I don't need to submit credentials and it redirects to the survey. This seems to only happen once, after the initial sign in, but I effectively need to sign in twice before taking the survey
--Border radius seems just a tad bit off around the question number
--The number form for the age question will convert to NaN when you hit backspace
--as of 11/11/24 cannot Sign In
--Make it so that you can only edit/delete your own entry 
+- [ ] After signing in initially and clicking to start the survey, I'm taken back to the auth0 sign in form. When I click sign in with github, I don't need to submit credentials and it redirects to the survey. This seems to only happen once, after the initial sign in, but I effectively need to sign in twice before taking the survey
+- [ ] Border radius seems just a tad bit off around the question number
+- [ ] The number form for the age question will convert to NaN when you hit backspace
+- [ ] as of 11/11/24 cannot Sign In
+- [ ] Make it so that you can only edit/delete your own entry 
 
 ### Backend
 
