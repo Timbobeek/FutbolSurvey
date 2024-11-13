@@ -9,7 +9,8 @@ use zrok for other devices: 1. run zrok share public http://localhost1234 2. ope
 - [ ] Currently, any user can sign in under different emails, should be some verification process to prevent that
 - [ ] Border radius seems just a tad bit off around the question number
 - [ ] The number form for the age question will convert to NaN when you hit backspace
-- [ ] Make it so that you can only edit/delete your own entry 
+- [ ] Make it so that you can only edit/delete your own entry
+- [ ] Get clean green GitHub and LinkedIn logos (noticeable on phone)
 
 ### Backend
 
