@@ -1,6 +1,7 @@
 ### How to run
 
 npm start opens the page on pc
+use zrok for other devices: 1. run zrok share public http://localhost1234 2. open generated zrok link on another device
 
 ### Things to work on
 
