@@ -1,5 +1,3 @@
-import github from '../github.png'
-import linkedin from '../linkedin.png'
 import './Footer.css';
 
 const Footer = () => {
@@ -12,7 +10,11 @@ const Footer = () => {
                             target="_blank"
                             rel="noreferrer"
                         >
-                        <img src={github} width="40" height="40" alt="logo" />
+                        <i class="fa-brands fa-github" style={{
+                            fontSize: 40,
+                            color: 'green'
+                        }} />
+
                         </a>
                     </div>
                     <div className="lin">
@@ -21,7 +23,10 @@ const Footer = () => {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <img src={linkedin} width="40" height="40" alt="logo" />
+                        <i class="fa-brands fa-linkedin" style={{
+                            fontSize: 42,
+                            color: 'green'
+                        }} />
                     </a>
                     </div>
                 </div>
