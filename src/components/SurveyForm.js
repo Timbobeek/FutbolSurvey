@@ -142,7 +142,7 @@ const SurveyForm = () => {
     const content = (
         <form id="formCont" className="formContainer" >
             
-            <div className="questionTitle">{title[page]}</div>
+            {/* <div className="questionTitle">{title[page]}</div> */}
 
             <div className="bannerImg" style={{backgroundImage: `url(${pages[page].image})`, 
                 // backgroundPosition: "top",
