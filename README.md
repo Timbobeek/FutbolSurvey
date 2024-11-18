@@ -7,10 +7,10 @@ use zrok for other devices: 1. run zrok share public http://localhost1234 2. ope
 
 - [ ] After signing in initially and clicking to start the survey, I'm taken back to the auth0 sign in form. When I click sign in with github, I don't need to submit credentials and it redirects to the survey. This seems to only happen once, after the initial sign in, but I effectively need to sign in twice before taking the survey  (use incognito mode when testing in order to preroduce)
 - [ ] Currently, any user can sign in under different emails, should be some verification process to prevent that
-- [ ] Border radius seems just a tad bit off around the question number
-- [ ] The number form for the age question will convert to NaN when you hit backspace
+- [ ] (Ready for Push) Border radius seems just a tad bit off around the question number
+- [ ] (Ready for Push) The number form for the age question will convert to NaN when you hit backspace
 - [ ] Make it so that you can only edit/delete your own entry
-- [ ] Get clean green GitHub and LinkedIn logos (noticeable on phone)
+- [ ] (Ready for Push) Get clean green GitHub and LinkedIn logos (noticeable on phone)
 - [ ] Selected radio-buttons or checkboxes stay darker on phone
 
 ### New features?
