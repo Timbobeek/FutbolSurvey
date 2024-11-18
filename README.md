@@ -11,6 +11,7 @@ use zrok for other devices: 1. run zrok share public http://localhost1234 2. ope
 - [ ] The number form for the age question will convert to NaN when you hit backspace
 - [ ] Make it so that you can only edit/delete your own entry
 - [ ] Get clean green GitHub and LinkedIn logos (noticeable on phone)
+- [ ] Selected radio-buttons or checkboxes stay darker on phone
 
 ### New features?
 
