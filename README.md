@@ -12,6 +12,12 @@ use zrok for other devices: 1. run zrok share public http://localhost1234 2. ope
 - [ ] Make it so that you can only edit/delete your own entry
 - [ ] Get clean green GitHub and LinkedIn logos (noticeable on phone)
 
+### New features?
+
+For multiple choice questions, generate a result pie/diagram that is shown in the results?  
+Add quizzes later  
+Add a page for weird/random facts
+
 ### Backend
 
 Poll data:
