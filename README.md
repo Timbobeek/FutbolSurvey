@@ -18,9 +18,9 @@ use zrok for other devices: 1. run zrok share public http://localhost1234 2. ope
 
 For multiple choice questions, generate a result pie/diagram that is shown in the results?  
 Add quizzes later  
-Add a page for weird/random facts
-Little pop-up on home page explaining why this page was made
-Registered users get verified by email about new surveys
+Add a page for weird/random facts  
+Little pop-up on home page explaining why this page was made  
+Registered users get verified by email about new surveys  
 
 ### Backend
 
