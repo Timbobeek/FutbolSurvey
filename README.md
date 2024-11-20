@@ -12,6 +12,7 @@ use zrok for other devices: 1. run zrok share public http://localhost1234 2. ope
 - [ ] Make it so that you can only edit/delete your own entry
 - [ ] (Ready for Push) Get clean green GitHub and LinkedIn logos (noticeable on phone)
 - [ ] Selected radio-buttons or checkboxes stay darker on phone
+- [ ] Remove console logs from the survey code
 
 ### New features?
 
