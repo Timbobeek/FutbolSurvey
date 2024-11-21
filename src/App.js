@@ -24,11 +24,47 @@ const HomeLayout = () => {
     </>)
 }
 
+// export default function isVerified(user) {
+//   if (user == null) return false
+
+//   if (user.email_verified === true) { // for google acct or email
+//     console.log('verfiied email')
+//     return true
+//   }
+
+//   if (user.sub != null) { // for github acct
+//     return true
+//   }
+// }
+
+export default function isVerified(user) {
+  if (user == null) return false
+
+  if (user.email_verified === true) { // for google acct or email
+    console.log('verfiied email/google')
+    return true
+  }
+
+  if (user.email_verified == null && user.sub){ // for guthub
+    console.log('verified github')
+    return true
+  }
+
+  return false
+}
+
 const PageLayout = ({ page, title }) => {
-    const { isLoading } = useAuth0();
+    const { isLoading, user } = useAuth0();
+
+    console.log('verfication status', isVerified)
+    console.log('user data', user)
 
     if (isLoading) {
         return <h1 className="loadingTxt">loading...</h1>
+    }
+
+    if (!isVerified(user)) {
+      return <h1 className="loadingTxt">Please verify your account</h1>
     }
 
     return (
