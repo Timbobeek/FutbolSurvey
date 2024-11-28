@@ -2,7 +2,7 @@ import Home from "./Home";
 import SurveyOne from "./components/SurveyOne";
 import Results from "./components/Results";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Footer from "./components/Footer";
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -24,37 +24,25 @@ const HomeLayout = () => {
     </>)
 }
 
-// export default function isVerified(user) {
-//   if (user == null) return false
-
-//   if (user.email_verified === true) { // for google acct or email
-//     console.log('verfiied email')
-//     return true
-//   }
-
-//   if (user.sub != null) { // for github acct
-//     return true
-//   }
-// }
-
 export default function isVerified(user) {
   if (user == null) return false
 
-  if (user.email_verified === true) { // for google acct or email
-    console.log('verfiied email/google')
+  if (user.email_verified === true) { // works for google, fb, microsoft
+    console.log('verfiied email')
     return true
   }
 
-  if (user.email_verified == null && user.sub){ // for guthub
-    console.log('verified github')
-    return true
-  }
+  // if (user.email_verified == null && user.sub){ // for guthub
+  //   console.log('verified github')
+  //   return true
+  // }
 
   return false
 }
 
 const PageLayout = ({ page, title }) => {
     const { isLoading, user } = useAuth0();
+    let redirect = useNavigate()
 
     console.log('verfication status', isVerified)
     console.log('user data', user)
@@ -64,7 +52,10 @@ const PageLayout = ({ page, title }) => {
     }
 
     if (!isVerified(user)) {
-      return <h1 className="loadingTxt">Please verify your account</h1>
+      //add redirect to home page w/message below
+      // return <h1 className="loadingTxt">Please verify your account</h1>
+      redirect('/')
+      return
     }
 
     return (
