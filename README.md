@@ -15,6 +15,7 @@ use zrok for other devices: 1. run zrok share public http://localhost1234 2. ope
 - [ ] Production socials
 - [ ] Production database
 - [ ] Results do not seem to be in any specific order
+- [ ] Page not found text for nonexistent routes? (maybe use a fun image for it)
 
 ### New features?
 
