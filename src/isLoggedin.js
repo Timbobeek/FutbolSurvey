@@ -3,19 +3,12 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export function isLoggedIn(isAuthenticated, user) {
-  //add redirect to home page here as well?
-
-  console.log({
-    user,
-    isAuthenticated
-  })
 
   if (user == null || !isAuthenticated) return false;
 
   if (user.email_verified === true && isAuthenticated) {
     return true;
   }
-
   return false;
 }
 
@@ -27,10 +20,9 @@ export function ProtectedContent({ children }) {
 
   useEffect(() => {
     if (!isLoading && !loggedIn) {
-      console.log('redirecting to root')
       redirect("/");
     }
-  }, [isLoading, loggedIn])
+  }, [isLoading, loggedIn, redirect])
 
   if (isLoading) {
     return <h1 className="loadingTxt">loading...</h1>;

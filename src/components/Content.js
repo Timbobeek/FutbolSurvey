@@ -2,13 +2,9 @@ import "./Content.css";
 import { ProtectedContent } from "../isLoggedIn";
 
 const Content = () => {
-  // const { isAuthenticated, user } = useAuth0();
   return (
     <ProtectedContent>
-      {/* isLoggedIn(isAuthenticated, user) && ( */}
       <div className="surveyBoards">
-        {/* <h1 className="surveyHead">Choose a Survey Below</h1> */}
-
         <div className="surveyBoard1">
           <div className="leftSrvSide">
             <p className="surveyTitle">Basic Survey</p>

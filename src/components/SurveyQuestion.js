@@ -1,6 +1,5 @@
 import { useContext } from "react"
 import SurveyContext from "./SurveyContext";
-// import "./SurveyQuestion.css";
 import "./SurveyPage.css";
 
 const useFormContext = () => {
@@ -72,8 +71,6 @@ export function titleControl() {
 export const SurveyQuestion = ({ title, control, options }) => {
   const { data, handleChange } = useFormContext();
 
-  console.log(title, control)
-
   /* title */
   if (control.type === InputTypes.title) {
     return (
@@ -86,7 +83,6 @@ export const SurveyQuestion = ({ title, control, options }) => {
 
   const content = (
     <div>
-      {/* <div className="split-container"> */}
         <div className="questionField">
           <p className={options?.titleStyle ?? "questionText"}>{title}</p>
         </div>
@@ -154,7 +150,6 @@ export const SurveyQuestion = ({ title, control, options }) => {
           {/* numericText */}
           {control.type === InputTypes.numericText && (
             <input
-              // type="number"
               type="text"
               min={0}
               className="textField"
@@ -171,7 +166,6 @@ export const SurveyQuestion = ({ title, control, options }) => {
             />
           )}
         </div>
-      {/* </div> */}
     </div>
   );
 
