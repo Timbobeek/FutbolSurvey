@@ -14,6 +14,7 @@ use zrok for other devices: 1. run zrok share public http://localhost1234 2. ope
 - [ ] Remove console logs from the survey code
 - [ ] Production socials
 - [ ] Production database
+- [ ] Results do not seem to be in any specific order
 
 ### New features?
 
