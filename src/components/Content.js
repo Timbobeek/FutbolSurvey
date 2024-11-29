@@ -1,11 +1,12 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import './Content.css';
+import IsLoggedin from "../isLoggedin";
 
 
 const Content = () => {
-    const { isAuthenticated} = useAuth0();
+    // const { isAuthenticated} = useAuth0();
     return(
-        isAuthenticated && (
+        IsLoggedin() && (
           <div className="surveyBoards">
             {/* <h1 className="surveyHead">Choose a Survey Below</h1> */}
 

@@ -5,6 +5,7 @@ import { withAuthenticationRequired } from "@auth0/auth0-react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import Footer from "./components/Footer";
 import { useAuth0 } from "@auth0/auth0-react";
+import IsLoggedin from "./isLoggedin";
 
 const ProtectedRoute = ({ component, ...args }) => {
   const Component = withAuthenticationRequired(component, args);
@@ -24,36 +25,33 @@ const HomeLayout = () => {
     </>)
 }
 
-export default function isVerified(user) {
-  if (user == null) return false
+// export default function isVerified(user) {
+//   if (user == null) return false
 
-  if (user.email_verified === true) { // works for google, fb, microsoft
-    console.log('verfiied email')
-    return true
-  }
+//   if (user.email_verified === true) { // works for google, fb, microsoft
+//     console.log('verfiied email')
+//     return true
+//   }
 
-  // if (user.email_verified == null && user.sub){ // for guthub
-  //   console.log('verified github')
-  //   return true
-  // }
+//   // if (user.email_verified == null && user.sub){ // for guthub
+//   //   console.log('verified github')
+//   //   return true
+//   // }
 
-  return false
-}
+//   return false
+// }
 
 const PageLayout = ({ page, title }) => {
-    const { isLoading, user } = useAuth0();
+    const { isLoading} = useAuth0();
     let redirect = useNavigate()
 
-    console.log('verfication status', isVerified)
-    console.log('user data', user)
+    //console.log('user data', user)
 
     if (isLoading) {
         return <h1 className="loadingTxt">loading...</h1>
     }
 
-    if (!isVerified(user)) {
-      //add redirect to home page w/message below
-      // return <h1 className="loadingTxt">Please verify your account</h1>
+    if (!IsLoggedin()) {
       redirect('/')
       return
     }
