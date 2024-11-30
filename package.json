@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://3m2gj5apik21.share.zrok.io",
   "dependencies": {
     "@auth0/auth0-react": "^2.2.3",
     "@testing-library/jest-dom": "^5.17.0",

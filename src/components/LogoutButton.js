@@ -5,7 +5,9 @@ const LogoutButton = () => {
   const { logout } = useAuth0();
   return (
     <ProtectedContent>
-      <button className="logBtn" onClick={() => logout()}>
+      <button className="logBtn" onClick={() => logout({
+        logoutParams: {returnTo: window.location.origin}
+      })}>
         Sign Out
       </button>
     </ProtectedContent>
