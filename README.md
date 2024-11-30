@@ -16,7 +16,7 @@ use zrok for other devices: 1. run zrok share public http://localhost1234 2. ope
 - [ ] Production database
 - [ ] Results do not seem to be in any specific order
 - [ ] Page not found text for nonexistent routes? (maybe use a fun image for it)
-- [ ] Redirect to localhost home page (should be home page of domain)
+- [ ] (Fixed) Redirect to localhost home page (should be home page of domain)
 
 ### New features?
 
