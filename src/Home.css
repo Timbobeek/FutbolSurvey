@@ -12,27 +12,15 @@
   margin-bottom: 0;
 }
 
-/* .textBackground{
-  height: 7em;
-}
-
-.textBackground::before{
-  content: "";
-  opacity: 30%;
-  background-color: black;
-} */
-
 .welcomeTextSmall{
   text-align: center;
   color: yellow;
   font-size: 1.3em;
   margin-top: 0;
-  border: dotted 4px green;
   border-radius: 10px;
   padding: 2%;
   width: 24em;
   background: rgba(60,60,60,0.7)
-  
 }
 
 /* ------------------------------------------laptop view------------------------------------------- */
