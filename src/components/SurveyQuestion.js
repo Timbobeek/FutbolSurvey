@@ -151,7 +151,6 @@ export const SurveyQuestion = ({ title, control, options }) => {
           {control.type === InputTypes.numericText && (
             <input
               type="number"
-              //type="text"
               min={0}
               className="textField"
               id={control.data.id}
