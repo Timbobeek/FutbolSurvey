@@ -160,6 +160,16 @@
         font-family: 'MuseoModerno';
         resize: vertical;
     }
+
+    .textField::-webkit-outer-spin-button,
+    .textField::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    .textField[type="number"] {
+      -moz-appearance: textfield;
+    }
     
     ::placeholder{
         color: yellow;
