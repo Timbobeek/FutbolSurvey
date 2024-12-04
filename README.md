@@ -11,12 +11,12 @@ use zrok for other devices: 1. run zrok share public http://localhost1234 2. ope
 - [ ] Make it so that you can only edit/delete your own entry
 - [ ] (Ready for Push) Get clean green GitHub and LinkedIn logos (noticeable on phone)
 - [ ] Selected radio-buttons or checkboxes stay darker on phone
-- [ ] Remove console logs from the survey code
+- [ ] (Ready for Push) Remove console logs from the survey code
 - [ ] Production socials
 - [ ] Production database
 - [ ] Results do not seem to be in any specific order
-- [ ] Page not found text for nonexistent routes? (maybe use a fun image for it)
-- [ ] (Fixed) Redirect to localhost home page (should be home page of domain)
+- [ ] (Ready for Push) Page not found text for nonexistent routes? (maybe use a fun image for it)
+- [ ] (Ready for Push) Redirect to localhost home page (should be home page of domain)
 
 ### New features?
 
