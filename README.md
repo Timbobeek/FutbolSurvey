@@ -5,18 +5,18 @@ use zrok for other devices: 1. run zrok share public http://localhost1234 2. ope
 
 ### Things to work on
 
-- [ ] (Refactoring) Currently, any user can sign in under different emails, should be some verification process to prevent that
+- [x] (Refactoring) Currently, any user can sign in under different emails, should be some verification process to prevent that
 - [ ] (Ready for Push) Border radius seems just a tad bit off around the question number
 - [ ] (Ready for Push) The number form for the age question will convert to NaN when you hit backspace
 - [ ] Make it so that you can only edit/delete your own entry
 - [ ] (Ready for Push) Get clean green GitHub and LinkedIn logos (noticeable on phone)
 - [ ] Selected radio-buttons or checkboxes stay darker on phone
-- [ ] (Ready for Push) Remove console logs from the survey code
+- [x] (Ready for Push) Remove console logs from the survey code
 - [ ] Production socials
 - [ ] Production database
 - [ ] Results do not seem to be in any specific order
-- [ ] (Ready for Push) Page not found text for nonexistent routes? (maybe use a fun image for it)
-- [ ] (Ready for Push) Redirect to localhost home page (should be home page of domain)
+- [x] (Ready for Push) Page not found text for nonexistent routes? (maybe use a fun image for it)
+- [x] (Ready for Push) Redirect to localhost home page (should be home page of domain)
 
 ### New features?
 
