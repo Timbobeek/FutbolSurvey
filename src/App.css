@@ -1,3 +1,7 @@
+body h1 {
+  color: yellow;
+}
+
 .loadingTxt{
   color: yellow;
 }
@@ -58,17 +62,46 @@
   z-index: -10;
 }
 
+.pagenotfound{
+  margin-top: 20vh;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.pagenotfound h1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  color: white;
+  /* font-size: 2.5vw; */
+  font-size: 3em;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 500;
+}
+
+.pagenotfound img{
+  width: 60%;
+}
 
 /* ------------------------------------------laptop view------------------------------------------- */
 
 @media (max-width: 1000px) {
-
+  .pagenotfound h1{
+    font-size: 4vw;
+  }
 }
 
 /* -----------------------------------------tablet view---------------------------------- */
 
 @media (max-width: 768px) {
-
+  .pagenotfound img{
+    width: 70%;
+  }
+  .pagenotfound h1{
+    font-size: 4.5vw;
+  }
 }
 
 /* -----------------------------------------phone view----------------------------------------- */
@@ -77,6 +110,9 @@
   .pageHead{
     font-size: 1.8em;
     margin-bottom: 1em;
+  }
+  .pagenotfound img{
+    width: 80%;
   }
 }
 

@@ -2,10 +2,11 @@ import Home from "./Home";
 import SurveyOne from "./components/SurveyOne";
 import Results from "./components/Results";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
-import { Route, Routes} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import { useAuth0 } from "@auth0/auth0-react";
 import { ProtectedContent } from "./isLoggedIn";
+import PageNotFound from "./PageNotFound";
 
 const ProtectedRoute = ({ component, ...args }) => {
   const Component = withAuthenticationRequired(component, args);
@@ -26,7 +27,6 @@ const HomeLayout = () => {
     </>
   );
 };
-
 
 const PageLayout = ({ page, title }) => {
   return (
@@ -53,19 +53,22 @@ export const App = () => {
     <>
       <div className="backImg" />
       {error && <p>Authentication Error</p>}
-      {!error && (<Routes>
-        <Route path="/" element={<HomeLayout />} />
-        <Route
-          path="/survey1"
-          element={
-            <PageLayout page={SurveyOne} title={"Welcome to Basic Survey!"} />
-          }
-        />
-        <Route
-          path="/results"
-          element={<PageLayout page={Results} title={"Results"} />}
-        />
-      </Routes>)}
+      {!error && (
+        <Routes>
+          <Route path="/" element={<HomeLayout />} />
+          <Route
+            path="/survey1"
+            element={
+              <PageLayout page={SurveyOne} title={"Welcome to Basic Survey!"} />
+            }
+          />
+          <Route
+            path="/results"
+            element={<PageLayout page={Results} title={"Results"} />}
+          />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      )}
     </>
   );
 };
