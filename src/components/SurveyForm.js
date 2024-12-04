@@ -1,11 +1,7 @@
-import { useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
-// import './SurveyForm.css';
 import './SurveyPage.css';
-
-
 import loadingImg from "../surveyImages/danburn.jpg"
 import img1 from "../surveyImages/vennegor.jpg"
 import img2 from "../surveyImages/Soccer-Formation~.png"
@@ -29,8 +25,7 @@ import img19 from "../surveyImages/nike-total-90-laser-i-remake-boots-9.jpg"
 import img20 from "../surveyImages/brazuca.jpg"
 import img21 from "../surveyImages/jabulani.avif"
 import img22 from "../surveyImages/klopp.jpg"
-import { InputTypes, SurveyQuestion, checkBoxesControl, numericTextControl, radioButtonsControl, textControl, titleControl } from "./SurveyQuestion";
-
+import { SurveyQuestion, checkBoxesControl, numericTextControl, radioButtonsControl, textControl, titleControl } from "./SurveyQuestion";
 import { useContext } from "react"
 import SurveyContext from "./SurveyContext";
 
@@ -106,7 +101,6 @@ const defaultButtonPosition = "space-between";
 const SurveyForm = () => {
 
     const { user } = useAuth0();
-    const navigate = useNavigate();
     const [image, setImage] = useState(defaultImage)
     const [position, setPosition] = useState(defaultButtonPosition)
 
@@ -134,9 +128,7 @@ const SurveyForm = () => {
 
         axios.post('https://ferrata-crud2.builtwithdark.com/v1/surveys/', postData, {headers: {'x-api-key': apiKey}})
         .then((res) => {
-            console.log('dsadsad', res.status, res.data)
             handleNext();
-            // navigate('/')
         })
     }
 

@@ -81,8 +81,6 @@ export const SurveyProvider = ({children})=> {
             ...prevData,
             [name]: value
         }))
-
-        console.log(page, data);
     }
 
     const { amateur, hs, acad, college, semipro, pro, ...requiredInputs } = data

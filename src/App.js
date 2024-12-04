@@ -5,6 +5,8 @@ import { withAuthenticationRequired } from "@auth0/auth0-react";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import { useAuth0 } from "@auth0/auth0-react";
+import { ProtectedContent } from "./isLoggedIn";
+import PageNotFound from "./PageNotFound";
 
 const ProtectedRoute = ({ component, ...args }) => {
   const Component = withAuthenticationRequired(component, args);
@@ -12,51 +14,61 @@ const ProtectedRoute = ({ component, ...args }) => {
 };
 
 const HomeLayout = () => {
-    const { isLoading } = useAuth0();
+  const { isLoading } = useAuth0();
 
-    if (isLoading) {
-        return <h1 className="loadingTxt">loading...</h1>
-    }
+  if (isLoading) {
+    return <h1 className="loadingTxt">loading...</h1>;
+  }
 
-    return (<>
-        <Home />
-        <Footer />
-    </>)
-}
+  return (
+    <>
+      <Home />
+      <Footer />
+    </>
+  );
+};
 
 const PageLayout = ({ page, title }) => {
-    const { isLoading } = useAuth0();
-
-    if (isLoading) {
-        return <h1 className="loadingTxt">loading...</h1>
-    }
-
-    return (
-    <>
-        <main className="page">
-              <a href="/" className="topHomeButton">
-                <i className="topHomeButtonArrow left"></i>
-                <p id="topHomeButtonText">HOME</p>
-              </a>
-            <header className="pageHead">{title}</header>
-            <div className="pageContent">
-                <ProtectedRoute component={page} />
-            </div>
-        </main>
-        <Footer />
-    </>)
-}
+  return (
+    <ProtectedContent>
+      <main className="page">
+        <a href="/" className="topHomeButton">
+          <i className="topHomeButtonArrow left"></i>
+          <p id="topHomeButtonText">HOME</p>
+        </a>
+        <header className="pageHead">{title}</header>
+        <div className="pageContent">
+          <ProtectedRoute component={page} />
+        </div>
+      </main>
+      <Footer />
+    </ProtectedContent>
+  );
+};
 
 export const App = () => {
+  const { error } = useAuth0();
 
   return (
     <>
       <div className="backImg" />
-      <Routes>
-        <Route path="/" element={<HomeLayout/>} />
-        <Route path="/survey1" element={<PageLayout page={SurveyOne} title={"Welcome to Basic Survey!"} />} />
-        <Route path="/results" element={<PageLayout page={Results} title={"Results"} />} />
-      </Routes>
+      {error && <p>Authentication Error</p>}
+      {!error && (
+        <Routes>
+          <Route path="/" element={<HomeLayout />} />
+          <Route
+            path="/survey1"
+            element={
+              <PageLayout page={SurveyOne} title={"Welcome to Basic Survey!"} />
+            }
+          />
+          <Route
+            path="/results"
+            element={<PageLayout page={Results} title={"Results"} />}
+          />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      )}
     </>
   );
 };

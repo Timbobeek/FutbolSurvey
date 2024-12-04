@@ -21,7 +21,7 @@ const Auth0ProviderWithRedirectCallback = ({ children }) => {
       onRedirectCallback={onRedirectCallback}
       domain={domain}
       clientId={clientId}
-      authorizationParams={{ redirectUri: window.location.origin }}
+      authorizationParams={{ redirect_uri: window.location.origin }}
       cacheLocation="localstorage"
     >
       {children}
