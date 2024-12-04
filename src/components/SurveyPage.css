@@ -40,6 +40,7 @@
 
 .formBottom{
   z-index: 1;
+  margin-top: 300px;
 }
 
 
@@ -120,6 +121,7 @@
         height: 120px;
         color: green;
         font-size: 30px;
+        margin-top: 70px;
       }
     
       
@@ -213,6 +215,9 @@
     width: 70px;
     border-top-left-radius: 70%;
   }
+  .formBottom{
+    margin-top: 140px;
+  }
   .bannerImg{
     height: 180px;
     width: 300px;
@@ -270,5 +275,6 @@
     display: flex;
     flex-direction: column;
     font-size: 1em;
+    margin-top: 40px;
   }
 }
