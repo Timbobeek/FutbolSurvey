@@ -9,7 +9,7 @@ use zrok for other devices: 1. run zrok share public http://localhost1234 2. ope
 - [x] Border radius seems just a tad bit off around the question number -> ended up removing 
 - [x] The number form for the age question will convert to NaN when you hit backspace
 - [ ] Make it so that you can only edit/delete your own entry
-- [ ] (Ready for Push) Get clean green GitHub and LinkedIn logos (noticeable on phone)
+- [x] Get clean green GitHub and LinkedIn logos (noticeable on phone)
 - [ ] Selected radio-buttons or checkboxes stay darker on phone
 - [x] Remove console logs from the survey code
 - [ ] Production socials
