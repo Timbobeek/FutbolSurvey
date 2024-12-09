@@ -25,6 +25,7 @@ Add quizzes later
 Add a page for weird/random facts  
 Little pop-up on home page explaining why this page was made  
 Registered users get verified by email about new surveys  
+Topic discussions (like would you wear AG shoes on turf, etc)
 
 ### Backend
 
