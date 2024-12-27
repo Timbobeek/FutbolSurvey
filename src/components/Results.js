@@ -96,7 +96,7 @@ const Results = () => {
         setData(result)
       })
       .catch((err) => {
-        console.log(err);
+        console.error(err?.message ?? 'Error fetching data');
       });
   }, []);
 
