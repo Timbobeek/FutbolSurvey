@@ -12,7 +12,7 @@ use zrok for other devices: 1. run zrok share public http://localhost1234 2. ope
 - [x] Get clean green GitHub and LinkedIn logos (noticeable on phone)
 - [ ] Selected radio-buttons or checkboxes stay darker on phone
 - [x] Remove console logs from the survey code
-- [ ] Production socials
+- [x] Production passwordless sign-in
 - [ ] Production database
 - [ ] Results do not seem to be in any specific order
 - [x] Page not found text for nonexistent routes? (maybe use a fun image for it)
@@ -26,6 +26,7 @@ Add a page for weird/random facts
 Little pop-up on home page explaining why this page was made  
 Registered users get verified by email about new surveys  
 Topic discussions (like would you wear AG shoes on turf, etc)
+When hovering on a board, a pop-up shows explaining what the board has
 
 ### Backend
 
